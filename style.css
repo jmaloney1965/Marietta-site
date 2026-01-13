@@ -1,11 +1,11 @@
 /* ----------------- General Body ----------------- */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    color: #333;
-    background-color: #fafafa;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fafafa;
 }
 
 /* ----------------- Sticky Header ----------------- */
@@ -17,7 +17,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 header h1 {
@@ -25,411 +25,296 @@ header h1 {
   font-size: 1.8rem;
 }
 
+/* ✅ Nav layout fix (keeps header consistent across pages) */
 nav {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
 }
 
 nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 0.7rem;
-    font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  margin: 0;
+  font-weight: bold;
 }
 
 nav a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* ----------------- Hero Banner ----------------- */
 .hero {
-    position: relative;
-    background: url('images/hero-bg.jpg') no-repeat center center/cover;
-    color: #fff;
-    padding: 3.6rem 1rem 2rem 1rem;
-    text-align: center;
+  position: relative;
+  background: url("images/hero-bg.jpg") no-repeat center center/cover;
+  color: #fff;
+  padding: 3.6rem 1rem 2rem 1rem; /* moved hero text up ~10% */
+  text-align: center;
 }
 
 .hero::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.4);
-    z-index: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
 }
 
-.hero h2, .hero p, .hero-icons {
-    position: relative;
-    z-index: 1;
+.hero h2,
+.hero p,
+.hero-icons {
+  position: relative;
+  z-index: 1;
 }
 
 .hero h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
 /* ----------------- Hero Icons ----------------- */
 .hero-icons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
 }
 
 .hero-icon {
-    width: 50px;
-    height: 50px;
-    filter: brightness(0) invert(1); /* white icons on dark background */
-    transition: transform 0.2s;
-    cursor: pointer;
+  width: 50px;
+  height: 50px;
+  filter: brightness(0) invert(1); /* white icons */
+  transition: transform 0.2s;
+  cursor: pointer;
 }
 
 .hero-icon:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 /* ----------------- Container ----------------- */
 .container {
-    max-width: 1100px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
 /* ----------------- Services Grid ----------------- */
 .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
 .service-card {
-    background: #fff;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-    text-align: center;
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .service-card h3 {
-    color: #1f3a5f;
-    margin-top: 0.5rem;
+  color: #1f3a5f;
+  margin-top: 0.5rem;
 }
 
 .service-card img.icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 0.8rem;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.8rem;
 }
 
 /* ----------------- Footer ----------------- */
 footer {
-    background: #eee;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-    margin-top: 3rem;
+  background: #eee;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 3rem;
 }
 
 /* ----------------- Back to Top Button ----------------- */
 #backToTop {
-    display: none; /* Hidden by default */
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 99;
-    font-size: 2rem;
-    border: none;
-    outline: none;
-    background-color: #1f3a5f;
-    color: white;
-    cursor: pointer;
-    padding: 0.5rem 0.8rem;
-    border-radius: 50%;
-    transition: background-color 0.3s;
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  background-color: #1f3a5f;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem 0.8rem;
+  border-radius: 50%;
+  transition: background-color 0.3s;
 }
 
 #backToTop:hover {
-    background-color: #16305a;
+  background-color: #16305a;
 }
 
 /* ----------------- Contact Page Layout ----------------- */
 .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 1.5rem;
-    align-items: start;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: start;
 }
 
 .contact-card {
-    background: #fff;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
 }
 
 .contact-card h2 {
-    margin-top: 0;
-    color: #1f3a5f;
+  margin-top: 0;
+  color: #1f3a5f;
 }
 
 /* ----------------- Form Styles ----------------- */
 form label {
-    display: block;
-    margin: 0.8rem 0 0.3rem;
-    font-weight: bold;
+  display: block;
+  margin: 0.8rem 0 0.3rem;
+  font-weight: bold;
 }
 
-form input, form select, form textarea {
-    width: 100%;
-    padding: 0.65rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-    box-sizing: border-box;
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
 }
 
 form textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
 form button {
-    margin-top: 1rem;
-    width: 100%;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 6px;
-    background: #1f3a5f;
-    color: #fff;
-    font-size: 1.05rem;
-    font-weight: bold;
-    cursor: pointer;
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  background: #1f3a5f;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 form button:hover {
-    background: #16305a;
+  background: #16305a;
 }
 
 .fineprint {
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.8rem;
 }
 
 .divider {
-    border: none;
-    border-top: 1px solid #ddd;
-    margin: 2rem 0;
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2rem 0;
 }
 
 .notes {
-    padding-left: 1.2rem;
+  padding-left: 1.2rem;
 }
 
 /* ----------------- Buttons (Thanks Page CTA) ----------------- */
 .cta-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    margin: 1rem 0 0.5rem;
-}
-
-.btn {
-    display: inline-block;
-    text-align: center;
-    padding: 0.75rem 1rem;
-    border-radius: 6px;
-    background: #1f3a5f;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.btn:hover {
-    background: #16305a;
-}
-
-.btn-outline {
-    background: transparent;
-    color: #1f3a5f;
-    border: 2px solid #1f3a5f;
-}
-
-.btn-outline:hover {
-    background: #1f3a5f;
-    color: #fff;
-}
-
-/* ----------------- Honeypot (spam protection) ----------------- */
-.hp-field {
-    display: none !important;
-}
-
-/* ----------------- Checkbox Row ----------------- */
-.checkbox-row {
-    display: flex;
-    gap: 0.6rem;
-    align-items: flex-start;
-    margin-top: 1rem;
-}
-
-.checkbox-row input[type="checkbox"] {
-    width: auto;
-    margin-top: 0.25rem;
-}
-
-/* ----------------- Responsive Adjustments ----------------- */
-@media(max-width: 800px){
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media(max-width: 600px){
-    .hero h2 { font-size: 1.5rem; }
-    .hero p { font-size: 1rem; }
-    .hero-icon { width: 40px; height: 40px; }
-}
-/* Contact Page Layout */
-.page {
-  padding: 48px 0;
-}
-
-.container {
-  width: min(1100px, 92%);
-  margin: 0 auto;
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 28px;
-  align-items: start;
-}
-
-.contact-info h1 {
-  margin-bottom: 8px;
-}
-
-.lead {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  opacity: 0.9;
-  margin-bottom: 18px;
-}
-
-.info-card,
-.form-card {
-  background: #ffffff;
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 14px;
-  padding: 18px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-}
-
-.muted {
-  opacity: 0.75;
-  margin-top: 0;
-}
-
-.contact-form {
-  margin-top: 14px;
-  display: grid;
-  gap: 14px;
-}
-
-.form-row label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.15);
-  outline: none;
-  font-size: 16px;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: rgba(0,0,0,0.35);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 1rem 0 0.5rem;
 }
 
 .btn {
   display: inline-block;
-  padding: 12px 16px;
-  border-radius: 10px;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  background: #1f3a5f;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.btn.primary {
-  background: #0b5fff;
-  color: #ffffff;
+.btn:hover {
+  background: #16305a;
 }
 
-.small-note {
-  margin-top: 12px;
-  font-size: 0.92rem;
-  opacity: 0.8;
+.btn-outline {
+  background: transparent;
+  color: #1f3a5f;
+  border: 2px solid #1f3a5f;
 }
 
-/* Header / Footer quick polish */
-.site-header {
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-  padding: 14px 0;
-  background: #fff;
+.btn-outline:hover {
+  background: #1f3a5f;
+  color: #fff;
 }
 
-.header-inner {
+/* ----------------- Honeypot (spam protection) ----------------- */
+.hp-field {
+  display: none !important;
+}
+
+/* ----------------- Checkbox Row ----------------- */
+.checkbox-row {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin-top: 1rem;
 }
 
-.logo {
-  font-weight: 800;
-  text-decoration: none;
-  color: #111;
+.checkbox-row input[type="checkbox"] {
+  width: auto;
+  margin-top: 0.25rem;
 }
 
-.nav a {
-  text-decoration: none;
-  margin-left: 12px;
-  color: #111;
-  opacity: 0.8;
-}
-
-.nav a.active {
-  opacity: 1;
-  font-weight: 700;
-}
-
-.site-footer {
-  margin-top: 40px;
-  padding: 18px 0;
-  border-top: 1px solid rgba(0,0,0,0.08);
-  background: #fff;
-}
-
-/* Mobile */
-@media (max-width: 900px) {
+/* ----------------- Responsive Adjustments ----------------- */
+@media (max-width: 800px) {
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .hero-icon {
+    width: 40px;
+    height: 40px;
   }
 }
