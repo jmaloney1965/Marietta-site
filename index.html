@@ -20,14 +20,29 @@
     <h2>Personalized Professional Solutions</h2>
     <p>Helping small businesses, law firms, inventors, and individuals achieve their goals efficiently.</p>
 
+    <!-- Hero Icons with Links -->
     <div class="hero-icons">
-        <img class="hero-icon" src="images/icons/engineering.svg" alt="Engineering Icon" title="Engineering Consulting">
-        <img class="hero-icon" src="images/icons/paralegal.svg" alt="Paralegal Icon" title="Paralegal Services">
-        <img class="hero-icon" src="images/icons/patent.svg" alt="Patent Icon" title="Patent Drafting Support">
-        <img class="hero-icon" src="images/icons/ai.svg" alt="AI Icon" title="AI Services">
-        <img class="hero-icon" src="images/icons/prison.svg" alt="Prison Consulting Icon" title="Prison Consulting">
-        <img class="hero-icon" src="images/icons/sbir.svg" alt="SBIR Icon" title="SBIR Grant Support">
-        <img class="hero-icon" src="images/icons/notary.svg" alt="Notary Icon" title="Notary Services">
+        <a href="engineering.html">
+            <img class="hero-icon" src="images/icons/engineering.svg" alt="Engineering Icon" title="Electrical Engineering Consulting">
+        </a>
+        <a href="paralegal.html">
+            <img class="hero-icon" src="images/icons/paralegal.svg" alt="Paralegal Icon" title="Paralegal Services">
+        </a>
+        <a href="patents.html">
+            <img class="hero-icon" src="images/icons/patent.svg" alt="Patent Icon" title="Patent Drafting Support">
+        </a>
+        <a href="ai.html">
+            <img class="hero-icon" src="images/icons/ai.svg" alt="AI Icon" title="AI Services">
+        </a>
+        <a href="prison-consulting.html">
+            <img class="hero-icon" src="images/icons/prison.svg" alt="Prison Consulting Icon" title="Prison Consulting">
+        </a>
+        <a href="sbir.html">
+            <img class="hero-icon" src="images/icons/sbir.svg" alt="SBIR Icon" title="SBIR Grant Support">
+        </a>
+        <a href="notary.html">
+            <img class="hero-icon" src="images/icons/notary.svg" alt="Notary Icon" title="Notary Services">
+        </a>
     </div>
 </div>
 
@@ -45,6 +60,26 @@
 <footer>
     © 2026 Marietta Research Solutions | Marietta, GA
 </footer>
+
+<!-- Back to Top Button -->
+<button id="backToTop" title="Back to Top">&#8679;</button>
+
+<script>
+// Back to Top Button
+const backToTopBtn = document.getElementById("backToTop");
+
+window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopBtn.style.display = "block";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+};
+
+backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
 
 </body>
 </html>
