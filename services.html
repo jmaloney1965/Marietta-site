@@ -62,5 +62,25 @@
     © 2026 Marietta Research Solutions
 </footer>
 
+<!-- Back to Top Button -->
+<button id="backToTop" title="Back to Top">&#8679;</button>
+
+<script>
+// Back to Top Button
+const backToTopBtn2 = document.getElementById("backToTop");
+
+window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        backToTopBtn2.style.display = "block";
+    } else {
+        backToTopBtn2.style.display = "none";
+    }
+};
+
+backToTopBtn2.addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
 </body>
 </html>
