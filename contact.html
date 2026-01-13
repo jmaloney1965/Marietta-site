@@ -1,37 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Contact | Marietta Research Solutions</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 
-<header>
-    <h1>Contact</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-    </nav>
-</header>
+  <input type="hidden" name="_subject" value="New inquiry from MariettaResearchSolutions.com" />
+  <input type="hidden" name="_next" value="thanks.html" />
 
-<div class="container">
-    <p>
-        Marietta Research Solutions<br>
-        1640 Powers Ferry Road SE<br>
-        bldg 11, suite 200<br>
-        Marietta, GA 30067
-    </p>
+  <!-- Honeypot spam protection (bots fill this, humans won't) -->
+  <label class="hp-field" for="company">Company</label>
+  <input class="hp-field" id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
 
-    <p>
-        By appointment only.<br>
-        Email and phone available upon request.
-    </p>
-</div>
+  <label for="name">Name</label>
+  <input id="name" name="name" type="text" autocomplete="name" required />
 
-<footer>
-    © 2026 Marietta Research Solutions
-</footer>
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" autocomplete="email" required />
 
-</body>
-</html>
+  <label for="phone">Phone (optional)</label>
+  <input id="phone" name="phone" type="tel" autocomplete="tel" />
+
+  <label for="contact_method">Preferred Contact Method</label>
+  <select id="contact_method" name="preferred_contact_method" required>
+    <option value="" selected disabled>Select one</option>
+    <option value="Email">Email</option>
+    <option value="Phone">Phone</option>
+    <option value="Either">Either</option>
+  </select>
+
+  <label for="service">Service of Interest</label>
+  <select id="service" name="service" required>
+    <option value="" selected disabled>Select one</option>
+    <option>Electrical Engineering Consulting</option>
+    <option>AI for Small Businesses & Law Firms</option>
+    <option>Paralegal Support & Document Preparation</option>
+    <option>Patent Drafting Support</option>
+    <option>SBIR Grant Writing Support</option>
+    <option>Prison Consulting & Reentry Support</option>
+    <option>Notary Public Services</option>
+    <option>Other</option>
+  </select>
+
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="6" required
+    placeholder="Briefly describe what you need and your preferred timeline."></textarea>
+
+  <p class="fineprint">
+    <strong>Document sharing:</strong> Please do not attach sensitive personal information in your message.
+    If documents are needed, we will reply with a secure method to share files.
+  </p>
+
+  <div class="checkbox-row">
+    <input id="disclaimer" name="disclaimer_acknowledged" type="checkbox" required />
+    <label for="disclaimer">
+      I understand Marietta Research Solutions does not provide legal advice or legal representation.
+      Paralegal/document services are non-legal support only.
+    </label>
+  </div>
+
+  <button type="submit">Send</button>
+
+</form>
