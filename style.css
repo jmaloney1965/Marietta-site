@@ -162,7 +162,138 @@ footer {
     background-color: #16305a;
 }
 
+/* ----------------- Contact Page Layout ----------------- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.contact-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+}
+
+.contact-card h2 {
+    margin-top: 0;
+    color: #1f3a5f;
+}
+
+/* ----------------- Form Styles ----------------- */
+form label {
+    display: block;
+    margin: 0.8rem 0 0.3rem;
+    font-weight: bold;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 0.65rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+form textarea {
+    resize: vertical;
+}
+
+form button {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 6px;
+    background: #1f3a5f;
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #16305a;
+}
+
+.fineprint {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.8rem;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 2rem 0;
+}
+
+.notes {
+    padding-left: 1.2rem;
+}
+
+/* ----------------- Buttons (Thanks Page CTA) ----------------- */
+.cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1rem 0 0.5rem;
+}
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    background: #1f3a5f;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #16305a;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #1f3a5f;
+    border: 2px solid #1f3a5f;
+}
+
+.btn-outline:hover {
+    background: #1f3a5f;
+    color: #fff;
+}
+
+/* ----------------- Honeypot (spam protection) ----------------- */
+.hp-field {
+    display: none !important;
+}
+
+/* ----------------- Checkbox Row ----------------- */
+.checkbox-row {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+    margin-top: 1rem;
+}
+
+.checkbox-row input[type="checkbox"] {
+    width: auto;
+    margin-top: 0.25rem;
+}
+
 /* ----------------- Responsive Adjustments ----------------- */
+@media(max-width: 800px){
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media(max-width: 600px){
     .hero h2 { font-size: 1.5rem; }
     .hero p { font-size: 1rem; }
