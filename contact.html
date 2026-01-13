@@ -1,59 +1,124 @@
-<form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Marietta Research Solutions</title>
 
-  <input type="hidden" name="_subject" value="New inquiry from MariettaResearchSolutions.com" />
-  <input type="hidden" name="_next" value="thanks.html" />
+  <!-- IMPORTANT: make sure this path is correct -->
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-  <!-- Honeypot spam protection (bots fill this, humans won't) -->
-  <label class="hp-field" for="company">Company</label>
-  <input class="hp-field" id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+<body>
 
-  <label for="name">Name</label>
-  <input id="name" name="name" type="text" autocomplete="name" required />
+  <!-- HEADER / NAV -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Marietta Research Solutions</a>
 
-  <label for="email">Email</label>
-  <input id="email" name="email" type="email" autocomplete="email" required />
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a class="active" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <label for="phone">Phone (optional)</label>
-  <input id="phone" name="phone" type="tel" autocomplete="tel" />
+  <!-- MAIN -->
+  <main class="page">
+    <section class="container contact-grid">
 
-  <label for="contact_method">Preferred Contact Method</label>
-  <select id="contact_method" name="preferred_contact_method" required>
-    <option value="" selected disabled>Select one</option>
-    <option value="Email">Email</option>
-    <option value="Phone">Phone</option>
-    <option value="Either">Either</option>
-  </select>
+      <!-- LEFT SIDE: INFO -->
+      <div class="contact-info">
+        <h1>Contact Us</h1>
+        <p class="lead">
+          Have a question or want to request a consultation? Send a message and we’ll get back to you.
+        </p>
 
-  <label for="service">Service of Interest</label>
-  <select id="service" name="service" required>
-    <option value="" selected disabled>Select one</option>
-    <option>Electrical Engineering Consulting</option>
-    <option>AI for Small Businesses & Law Firms</option>
-    <option>Paralegal Support & Document Preparation</option>
-    <option>Patent Drafting Support</option>
-    <option>SBIR Grant Writing Support</option>
-    <option>Prison Consulting & Reentry Support</option>
-    <option>Notary Public Services</option>
-    <option>Other</option>
-  </select>
+        <div class="info-card">
+          <h3>Marietta Research Solutions</h3>
+          <p>
+            <strong>Jim Maloney, PhD, MBA</strong><br />
+            Consulting Engineer / Paralegal
+          </p>
 
-  <label for="message">Message</label>
-  <textarea id="message" name="message" rows="6" required
-    placeholder="Briefly describe what you need and your preferred timeline."></textarea>
+          <p>
+            <strong>Phone:</strong>
+            <a href="tel:7702860254">(770) 286-0254</a>
+          </p>
 
-  <p class="fineprint">
-    <strong>Document sharing:</strong> Please do not attach sensitive personal information in your message.
-    If documents are needed, we will reply with a secure method to share files.
-  </p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:jim@mariettaresearchsolutions.com">jim@mariettaresearchsolutions.com</a>
+          </p>
 
-  <div class="checkbox-row">
-    <input id="disclaimer" name="disclaimer_acknowledged" type="checkbox" required />
-    <label for="disclaimer">
-      I understand Marietta Research Solutions does not provide legal advice or legal representation.
-      Paralegal/document services are non-legal support only.
-    </label>
-  </div>
+          <p>
+            <strong>Address:</strong><br />
+            1519 Johnson Ferry Rd<br />
+            Bldg 11, Suite 200<br />
+            Marietta, GA 30062
+          </p>
+        </div>
+      </div>
 
-  <button type="submit">Send</button>
+      <!-- RIGHT SIDE: FORM -->
+      <div class="contact-form-wrap">
+        <div class="form-card">
+          <h2>Send a Message</h2>
+          <p class="muted">Fields marked with * are required.</p>
 
-</form>
+          <!-- Formspree example -->
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+
+            <div class="form-row">
+              <label for="name">Full Name *</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+
+            <div class="form-row">
+              <label for="email">Email *</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+
+            <div class="form-row">
+              <label for="phone">Phone (optional)</label>
+              <input id="phone" name="phone" type="tel" placeholder="(770) 000-0000" />
+            </div>
+
+            <div class="form-row">
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" type="text" placeholder="How can we help?" />
+            </div>
+
+            <div class="form-row">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="6" placeholder="Write your message..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn primary">Send Message</button>
+
+          </form>
+
+          <p class="small-note">
+            Prefer email? Contact us directly at
+            <a href="mailto:jim@mariettaresearchsolutions.com">jim@mariettaresearchsolutions.com</a>.
+          </p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Marietta Research Solutions. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
