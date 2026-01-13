@@ -299,3 +299,137 @@ form button:hover {
     .hero p { font-size: 1rem; }
     .hero-icon { width: 40px; height: 40px; }
 }
+/* Contact Page Layout */
+.page {
+  padding: 48px 0;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.contact-info h1 {
+  margin-bottom: 8px;
+}
+
+.lead {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 18px;
+}
+
+.info-card,
+.form-card {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.muted {
+  opacity: 0.75;
+  margin-top: 0;
+}
+
+.contact-form {
+  margin-top: 14px;
+  display: grid;
+  gap: 14px;
+}
+
+.form-row label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.15);
+  outline: none;
+  font-size: 16px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: rgba(0,0,0,0.35);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #0b5fff;
+  color: #ffffff;
+}
+
+.small-note {
+  margin-top: 12px;
+  font-size: 0.92rem;
+  opacity: 0.8;
+}
+
+/* Header / Footer quick polish */
+.site-header {
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding: 14px 0;
+  background: #fff;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.logo {
+  font-weight: 800;
+  text-decoration: none;
+  color: #111;
+}
+
+.nav a {
+  text-decoration: none;
+  margin-left: 12px;
+  color: #111;
+  opacity: 0.8;
+}
+
+.nav a.active {
+  opacity: 1;
+  font-weight: 700;
+}
+
+.site-footer {
+  margin-top: 40px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  background: #fff;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
