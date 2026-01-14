@@ -1,2 +1,3 @@
 # Marietta-site
-SFMercer website
+owner Susan F Mercer
+website
