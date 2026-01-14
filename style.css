@@ -57,6 +57,11 @@ nav a:hover {
 .hero {
   background-position: center bottom;
 }
+
+.hero p {
+  line-height: 1.1;   /* single-spaced look */
+}
+
 .hero::before {
   content: "";
   position: absolute;
