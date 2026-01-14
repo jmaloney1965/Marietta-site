@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Notary Services | Marietta Research Solutions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Marietta Research Solutions</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Notary Public Services</h2>
+  <p>
+    Notary services are available by appointment at our business address in Marietta, Georgia.
+    We prioritize clear communication and a smooth, professional signing experience.
+  </p>
+
+  <h3>What to Bring</h3>
+  <ul class="notes">
+    <li><strong>Valid photo ID:</strong> government-issued identification</li>
+    <li><strong>Unsigned documents:</strong> bring documents ready to sign (do not sign in advance)</li>
+    <li><strong>All signers present:</strong> each signer must appear with valid ID</li>
+  </ul>
+
+  <h3>Common Notarizations</h3>
+  <ul class="notes">
+    <li>Affidavits</li>
+    <li>Power of attorney (signing only; no advice)</li>
+    <li>Consent forms</li>
+    <li>Business documents</li>
+  </ul>
+
+  <hr class="divider" />
+
+  <h3>Important Disclaimers</h3>
+  <p class="fineprint">
+    <strong>No legal advice.</strong> Notary services do not include legal advice, document drafting, or interpretation.
+    We cannot tell you what to sign or which document you need.
+  </p>
+  <p class="fineprint">
+    <strong>Identification required.</strong> Notarization requires compliant identification and signer appearance per state rules.
+  </p>
+
+  <div class="cta-row">
+    <a class="btn" href="contact.html">Schedule Notary Appointment</a>
+    <a class="btn btn-outline" href="services.html">Back to Services</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 Marietta Research Solutions | Marietta, GA
+</footer>
+
+<button id="backToTop" title="Back to Top">&#8679;</button>
+<script>
+  const backToTopBtn = document.getElementById("backToTop");
+  window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) backToTopBtn.style.display = "block";
+    else backToTopBtn.style.display = "none";
+  };
+  backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+</body>
+</html>
