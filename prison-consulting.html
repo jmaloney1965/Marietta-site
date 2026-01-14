@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prison Consulting &amp; Reentry Support | Marietta Research Solutions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Marietta Research Solutions</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Prison Consulting &amp; Reentry Support</h2>
+  <p>
+    We provide practical, client-centered support for individuals and families navigating incarceration-related logistics,
+    documentation, and reentry planning. Our approach is respectful, organized, and focused on real-world next steps.
+  </p>
+
+  <h3>Support Areas</h3>
+  <ul class="notes">
+    <li><strong>Reentry planning:</strong> checklists, documentation, and resource planning</li>
+    <li><strong>Administrative support:</strong> forms, letters, and record organization (non-legal)</li>
+    <li><strong>Family support:</strong> helping families track requirements and timelines</li>
+    <li><strong>Employment planning:</strong> practical steps, documentation readiness, and support resources</li>
+  </ul>
+
+  <hr class="divider" />
+
+  <h3>Important Disclaimers</h3>
+  <p class="fineprint">
+    <strong>No legal advice or representation.</strong> We are not attorneys and do not provide legal advice, court representation,
+    or legal strategy. For legal matters, consult a licensed attorney.
+  </p>
+  <p class="fineprint">
+    <strong>No guarantee of outcomes.</strong> Outcomes depend on agencies, institutions, policies, eligibility, and other factors
+    outside our control.
+  </p>
+
+  <div class="cta-row">
+    <a class="btn" href="contact.html">Request Reentry Support</a>
+    <a class="btn btn-outline" href="services.html">Back to Services</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 Marietta Research Solutions | Marietta, GA
+</footer>
+
+<button id="backToTop" title="Back to Top">&#8679;</button>
+<script>
+  const backToTopBtn = document.getElementById("backToTop");
+  window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) backToTopBtn.style.display = "block";
+    else backToTopBtn.style.display = "none";
+  };
+  backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+</body>
+</html>
