@@ -50,10 +50,13 @@ nav a:hover {
   position: relative;
   background: url("images/hero-bg.jpg") no-repeat center center/cover;
   color: #fff;
-  padding: 3.2rem 1rem 2rem 1rem; /* moved hero text up ~10% */
+  padding: 6rem 1rem 4rem 1rem; /* moved hero text up ~20% */
   text-align: center;
 }
 
+.hero {
+  background-position: center bottom;
+}
 .hero::before {
   content: "";
   position: absolute;
