@@ -326,3 +326,75 @@ form button:hover {
     height: 40px;
   }
 }
+/* ===============================
+   Responsive typography & layout
+   =============================== */
+
+/* Better sizing behavior */
+* { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%; /* prevents iOS auto-text zoom */
+  text-size-adjust: 100%;
+}
+
+body {
+  font-size: 16px;
+}
+
+/* Fluid type scale */
+header h1 {
+  font-size: clamp(1.25rem, 2.4vw, 1.8rem);
+}
+
+.hero h2 {
+  font-size: clamp(1.4rem, 3.2vw, 2.1rem);
+}
+
+.hero p {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  line-height: 1.15;
+  max-width: 42rem;       /* keeps hero text readable on wide screens */
+  margin: 0.5rem auto 1.5rem;
+  padding: 0 0.5rem;
+}
+
+/* Keep nav tidy on phones */
+nav a {
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+}
+
+/* Container padding: more on desktop, less on phone */
+.container {
+  padding: 0 clamp(0.9rem, 2.2vw, 1.2rem);
+}
+
+/* Hero spacing */
+.hero {
+  padding: clamp(3.5rem, 6vw, 6rem) 1rem clamp(2.5rem, 4.5vw, 4rem);
+}
+
+/* Hero icons scale down on phones */
+.hero-icon {
+  width: clamp(36px, 6vw, 50px);
+  height: clamp(36px, 6vw, 50px);
+}
+
+/* Card text sizes */
+.service-card h3,
+.contact-card h2 {
+  font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+}
+
+/* Inputs: avoid iOS zooming when tapping fields */
+form input, form select, form textarea {
+  font-size: 16px; /* critical for iPhone */
+}
+
+/* Contact layout: already switches at 800px, but tighten on small phones */
+@media (max-width: 480px) {
+  header { padding: 0.85rem; }
+  nav { gap: 0.6rem; }
+  .service-card, .contact-card { padding: 1.1rem; }
+  .services-grid { gap: 1rem; }
+}
