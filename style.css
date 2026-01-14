@@ -53,54 +53,71 @@ nav a {
   font-weight: bold;
   margin: 0;
   font-size: clamp(0.95rem, 2.1vw, 1.05rem);
+
+  padding: 0.25rem 0.6rem; /* prevents hover "jump" */
+  border-radius: 999px;
+
+  transition: background-color 0.2s ease, transform 0.15s ease, opacity 0.2s ease;
 }
 
+/* Desktop hover glow */
 nav a:hover {
-  text-decoration: underline;
+  background: rgba(255,255,255,0.14);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+/* Mobile tap feedback */
+nav a:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+/* ✅ Active nav link (current page) */
+nav a.active {
+  background: rgba(255,255,255,0.18);
 }
 
 /* ===============================
    Hero
    =============================== */
 
-/* ===== Hero tuning for iPhone + PC ===== */
-
 .hero {
+  position: relative;
+  background: url("images/hero-bg.jpg") no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+
   /* taller hero so more background shows */
   padding: clamp(5rem, 7vw, 8rem) 1rem clamp(3.5rem, 5vw, 5.5rem);
-  text-align: center;
 }
 
-/* keep the two-line paragraph tight and centered */
-.hero p {
-  line-height: 1.1;
-  margin: 0.5rem auto 1.25rem;
-  max-width: 42rem;
-}
-
-/* make sure the <br> line break doesn’t add extra spacing */
-.hero p br {
+.hero::before {
   content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 0;
 }
 
-/* icon row layout: clean wrap and spacing */
+.hero h2,
+.hero p,
 .hero-icons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: clamp(0.75rem, 2vw, 1.2rem);
-  margin-top: 0.5rem;
+  position: relative;
+  z-index: 1;
 }
 
-/* icon sizing scales down on phones */
-.hero-icon {
-  width: clamp(34px, 6vw, 50px);
-  height: clamp(34px, 6vw, 50px);
+.hero h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: clamp(1.4rem, 3.2vw, 2.1rem);
 }
 
-/* extra small phones: keep hero text from feeling oversized */
-@media (max-width: 480px) {
-  .hero p { margin-bottom: 1rem; }
+.hero p {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  line-height: 1.1; /* single-spaced look */
+  max-width: 42rem;
+  margin: 0.5rem auto 1.25rem;
+  padding: 0 0.5rem;
 }
 
 /* Hero icons */
@@ -108,7 +125,8 @@ nav a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.2rem;
+  gap: clamp(0.75rem, 2vw, 1.2rem);
+  margin-top: 0.5rem;
 }
 
 .hero-icon {
@@ -240,7 +258,9 @@ form label {
   font-weight: bold;
 }
 
-form input, form select, form textarea {
+form input,
+form select,
+form textarea {
   width: 100%;
   padding: 0.65rem;
   border: 1px solid #ccc;
@@ -249,7 +269,9 @@ form input, form select, form textarea {
   box-sizing: border-box;
 }
 
-form textarea { resize: vertical; }
+form textarea {
+  resize: vertical;
+}
 
 form button {
   margin-top: 1rem;
@@ -264,7 +286,9 @@ form button {
   cursor: pointer;
 }
 
-form button:hover { background: #16305a; }
+form button:hover {
+  background: #16305a;
+}
 
 .fineprint {
   font-size: 0.9rem;
@@ -278,7 +302,9 @@ form button:hover { background: #16305a; }
   margin: 2rem 0;
 }
 
-.notes { padding-left: 1.2rem; }
+.notes {
+  padding-left: 1.2rem;
+}
 
 /* Buttons (Thanks page) */
 .cta-row {
@@ -299,7 +325,9 @@ form button:hover { background: #16305a; }
   font-weight: bold;
 }
 
-.btn:hover { background: #16305a; }
+.btn:hover {
+  background: #16305a;
+}
 
 .btn-outline {
   background: transparent;
@@ -313,7 +341,9 @@ form button:hover { background: #16305a; }
 }
 
 /* Honeypot */
-.hp-field { display: none !important; }
+.hp-field {
+  display: none !important;
+}
 
 /* Checkbox row */
 .checkbox-row {
@@ -333,12 +363,26 @@ form button:hover { background: #16305a; }
    =============================== */
 
 @media (max-width: 800px) {
-  .contact-grid { grid-template-columns: 1fr; }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
-  header { padding: 0.85rem; }
-  nav { gap: 0.6rem; }
-  .service-card, .contact-card { padding: 1.1rem; }
-  .services-grid { gap: 1rem; }
+  header {
+    padding: 0.85rem;
+  }
+
+  nav {
+    gap: 0.6rem;
+  }
+
+  .service-card,
+  .contact-card {
+    padding: 1.1rem;
+  }
+
+  .services-grid {
+    gap: 1rem;
+  }
 }
