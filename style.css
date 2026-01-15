@@ -384,3 +384,29 @@ form button:hover { background: #16305a; }
   .site-title { font-size: 1.12rem; }
   .site-nav a { font-size: 0.92rem; }
 }
+
+/* ===== iPhone header tightening (safe) ===== */
+
+/* Make the header more compact overall */
+@media (max-width: 480px) {
+  .site-header { padding: 0.45rem 0.6rem; }
+  .site-title  { font-size: 1.02rem; line-height: 1.1; }
+
+  /* Keep nav from taking over the screen */
+  .site-nav { margin-top: 0.25rem; gap: 0.35rem 0.6rem; }
+  .site-nav a { font-size: 0.90rem; padding: 0.1rem 0.15rem; }
+
+  /* Prevent the “Request Consult” link from blowing up the header */
+  .nav-cta-link { display: none; }
+}
+
+/* If you still want the CTA on mobile, uncomment this version instead:
+@media (max-width: 480px) {
+  .nav-cta-link{
+    display:inline-block;
+    border: 1px solid rgba(255,255,255,0.75);
+    border-radius: 999px;
+    padding: 0.15rem 0.55rem;
+  }
+}
+*/
