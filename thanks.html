@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thank You | Marietta Research Solutions</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="description" content="Thank you for contacting Marietta Research Solutions. We typically respond within 1–2 business days." />
+</head>
+
+<body>
+
+<div class="mobile-cta">
+  <div class="cta-inner">
+    <a href="tel:17702860254">Call</a>
+    <a href="mailto:jim@mariettaresearchsolutions.com">Email</a>
+    <a href="contact.html">Request Consult</a>
+  </div>
+</div>
+
+<header>
+  <h1>Marietta Research Solutions</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Thank You</h2>
+
+  <p>
+    Your message has been successfully submitted.
+    We typically respond within <strong>1–2 business days</strong>.
+  </p>
+
+  <div class="contact-card">
+    <h2>What Happens Next</h2>
+
+    <ul class="notes">
+      <li>We’ll review your request and respond using your preferred contact method.</li>
+      <li>If documents are needed, we’ll reply with a secure method to share files.</li>
+      <li>If your request is time-sensitive, please include deadlines in your message (or call).</li>
+    </ul>
+
+    <p class="fineprint">
+      <strong>Didn’t receive a response?</strong> Check your spam/junk folder or contact us directly:
+      <a href="mailto:jim@mariettaresearchsolutions.com">jim@mariettaresearchsolutions.com</a> |
+      <a href="tel:17702860254">770-286-0254</a>
+    </p>
+
+    <div class="cta-row">
+      <a class="btn" href="index.html">Back to Home</a>
+      <a class="btn btn-outline" href="services.html">View Services</a>
+      <a class="btn btn-outline" href="contact.html">Send Another Message</a>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <p class="fineprint">
+    <strong>Disclaimer:</strong> Marietta Research Solutions is not a law firm and does not provide legal advice or legal
+    representation. Paralegal/document services are non-legal support only. Notary services do not include document drafting,
+    legal interpretation, or advice.
+  </p>
+
+  <div class="cta-row">
+    <a class="btn btn-outline" href="faq.html">FAQ</a>
+    <a class="btn btn-outline" href="privacy.html">Privacy</a>
+    <a class="btn btn-outline" href="capabilities.pdf">Capabilities (PDF)</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 Marietta Research Solutions | Marietta, GA
+  <div class="footer-links">
+    <a href="privacy.html">Privacy</a>
+    <a href="faq.html">FAQ</a>
+    <a href="capabilities.pdf">Capabilities (PDF)</a>
+  </div>
+</footer>
+
+<button id="backToTop" title="Back to Top">&#8679;</button>
+
+<script>
+  const backToTopBtn = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    backToTopBtn.style.display =
+      (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) ? "block" : "none";
+  });
+  backToTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  const ctaBar = document.querySelector(".mobile-cta");
+  function toggleCTA() {
+    if (!ctaBar) return;
+    if (window.scrollY > 140 && window.innerWidth <= 700) {
+      ctaBar.style.display = "block";
+      document.body.classList.add("mobile-cta-on");
+    } else {
+      ctaBar.style.display = "none";
+      document.body.classList.remove("mobile-cta-on");
+    }
+  }
+  window.addEventListener("scroll", toggleCTA);
+  window.addEventListener("resize", toggleCTA);
+  toggleCTA();
+</script>
+
+</body>
+</html>
