@@ -413,3 +413,33 @@ form button:hover {
     margin-top: 0.3rem;
   }
 }
+
+/* ===== Accessibility / Skip link / Focus styles ===== */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 10px;
+  background: #fff;
+  color: #1f3a5f;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  border: 2px solid #1f3a5f;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 10px;
+}
+
+/* Visible focus ring for keyboard users */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #1f3a5f;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
