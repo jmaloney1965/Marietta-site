@@ -75,7 +75,7 @@ nav a:hover,
   /* Hero background image */
   background-image: url("images/hero-bg.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: bottom center;
   background-repeat: no-repeat;
 
   /* Overlay setup */
