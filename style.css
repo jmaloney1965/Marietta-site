@@ -83,7 +83,7 @@ nav a:hover {
 
 .site-title {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.35rem; /* bumped up one increment */
   line-height: 1.15;
 }
 
