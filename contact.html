@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact / Consult | Marietta Research Solutions</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <meta name="description" content="Contact Marietta Research Solutions to request a consultation. We provide engineering, AI workflows, paralegal support, patent drafting support, SBIR support, prison consulting, and notary services." />
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-wrap">
+    <h1 class="site-title">Marietta Research Solutions</h1>
+
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <h2>Contact / Consult</h2>
+
+  <p>
+    Use the form below to request a consultation or ask a question.
+    We typically respond within 1–2 business days.
+  </p>
+
+  <div class="contact-grid">
+
+    <!-- Contact Info Card -->
+    <div class="contact-card">
+      <h2>Contact Information</h2>
+
+      <p>
+        <strong>Jim Maloney, PhD, MBA</strong><br />
+        Consulting Engineer / Paralegal
+      </p>
+
+      <p>
+        <strong>Phone:</strong>
+        <a href="tel:17702860254">770-286-0254</a><br />
+
+        <strong>Email:</strong>
+        <a href="mailto:jim@mariettaresearchsolutions.com">jim@mariettaresearchsolutions.com</a>
+      </p>
+
+      <p><strong>Business Address:</strong><br />
+        1640 Powers Ferry Rd SE<br />
+        Bldg 11, Suite 200<br />
+        Marietta, GA 30067
+      </p>
+
+      <p><strong>Hours:</strong> By appointment</p>
+    </div>
+
+    <!-- Form Card -->
+    <div class="contact-card">
+      <h2>Send a Message</h2>
+
+      <form id="contactForm" action="https://formspree.io/f/xykkyvoz" method="POST">
+
+        <input type="hidden" name="_subject" value="New inquiry from MariettaResearchSolutions.com" />
+
+        <!-- IMPORTANT: absolute redirect works best -->
+        <input type="hidden" name="_next" value="https://jmaloney1965.github.io/Marietta-site/thanks.html" />
+
+        <!-- Honeypot spam protection -->
+        <label class="hp-field" for="company">Company</label>
+        <input class="hp-field" id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required />
+
+        <label for="phone">Phone (optional)</label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" />
+
+        <label for="contact_method">Preferred Contact Method</label>
+        <select id="contact_method" name="preferred_contact_method" required>
+          <option value="" selected disabled>Select one</option>
+          <option value="Email">Email</option>
+          <option value="Phone">Phone</option>
+          <option value="Either">Either</option>
+        </select>
+
+        <label for="service">Service of Interest</label>
+        <select id="service" name="service" required>
+          <option value="" selected disabled>Select one</option>
+          <option>Electrical Engineering Consulting</option>
+          <option>AI for Small Businesses & Law Firms</option>
+          <option>Paralegal Support & Document Preparation</option>
+          <option>Patent Drafting Support</option>
+          <option>SBIR Grant Writing Support</option>
+          <option>Prison Consulting & Reentry Support</option>
+          <option>Notary Public Services</option>
+          <option>Other</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required
+          placeholder="Briefly describe what you need and your preferred timeline."></textarea>
+
+        <p class="fineprint">
+          <strong>Document sharing:</strong> Please do not send sensitive personal data or confidential legal strategy
+          through this form. If documents are needed, we will reply with a secure method to share files.
+        </p>
+
+        <div class="checkbox-row">
+          <input id="disclaimer" name="disclaimer_acknowledged" type="checkbox" required />
+          <label for="disclaimer">
+            I understand Marietta Research Solutions does not provide legal advice or legal representation.
+            Paralegal/document services are non-legal support only.
+          </label>
+        </div>
+
+        <button id="submitBtn" type="submit">Send</button>
+
+      </form>
+
+      <p class="fineprint">
+        By submitting this form, you consent to be contacted regarding your inquiry.
+      </p>
+    </div>
+
+  </div>
+
+  <hr class="divider" />
+
+  <h2>Important Notes</h2>
+  <ul class="notes">
+    <li><strong>No legal advice.</strong> Paralegal/document services are non-legal support and do not constitute legal advice or representation.</li>
+    <li><strong>Notary limitations.</strong> Notary services do not include document drafting, legal interpretation, or advice.</li>
+    <li><strong>Confidentiality.</strong> Please avoid sensitive personal data and confidential legal strategy in messages. Ask for a secure method to share documents if needed.</li>
+  </ul>
+</div>
+
+<footer>
+  <p>
+    © 2026 Marietta Research Solutions<br />
+    1640 Powers Ferry Rd SE<br />
+    Bldg 11, Suite 200<br />
+    Marietta, GA 30067<br />
+    <a href="contact.html">Contact / Consult</a> |
+    <a href="privacy.html">Privacy</a>
+  </p>
+</footer>
+
+<button id="backToTop" title="Back to Top">&#8679;</button>
+
+<script>
+  const backToTopBtn = document.getElementById("backToTop");
+
+  window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+</body>
+</html>
