@@ -1,0 +1,545 @@
+/* ===============================
+   Global / Reset
+   =============================== */
+
+* { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%; /* prevents iOS auto-text resizing */
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fafafa;
+  font-size: 16px; /* stable baseline for iPhone + desktop */
+}
+
+/* ===============================
+   Header / Nav
+   =============================== */
+
+header {
+  background: #1f3a5f;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.4vw, 1.8rem);
+}
+
+nav {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0;
+  font-size: clamp(0.95rem, 2.1vw, 1.05rem);
+
+  padding: 0.25rem 0.6rem; /* prevents hover "jump" */
+  border-radius: 999px;
+
+  transition: background-color 0.2s ease, transform 0.15s ease, opacity 0.2s ease;
+}
+
+/* Desktop hover glow */
+nav a:hover {
+  background: rgba(255,255,255,0.14);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+/* Mobile tap feedback */
+nav a:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+/* Active page link */
+nav a.active {
+  background: rgba(255,255,255,0.18);
+}
+
+/* ===============================
+   Mobile CTA Bar (Call / Email)
+   =============================== */
+
+.mobile-cta {
+  position: sticky;
+  top: 0;
+  z-index: 110;
+  background: rgba(31, 58, 95, 0.95);
+  backdrop-filter: blur(6px);
+  padding: 0.5rem;
+  display: none;
+}
+
+.mobile-cta .cta-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.mobile-cta a {
+  display: inline-block;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.mobile-cta a:hover {
+  background: rgba(255,255,255,0.20);
+}
+
+@media (max-width: 700px) {
+  .mobile-cta { display: block; }
+}
+
+/* ===============================
+   Hero
+   =============================== */
+
+.hero {
+  position: relative;
+  background: url("images/hero-bg.jpg") no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+
+  /* taller hero so more background shows */
+  padding: clamp(5rem, 7vw, 8rem) 1rem clamp(3.5rem, 5vw, 5.5rem);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 0;
+}
+
+.hero h2,
+.hero p,
+.hero-icons {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: clamp(1.4rem, 3.2vw, 2.1rem);
+}
+
+.hero p {
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  line-height: 1.1; /* single-spaced look */
+  max-width: 42rem;
+  margin: 0.5rem auto 1.25rem;
+  padding: 0 0.5rem;
+}
+
+/* Hero icons */
+.hero-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(0.75rem, 2vw, 1.2rem);
+  margin-top: 0.5rem;
+}
+
+.hero-icon {
+  width: clamp(36px, 6vw, 50px);
+  height: clamp(36px, 6vw, 50px);
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.hero-icon:hover {
+  transform: scale(1.15);
+}
+
+/* ===============================
+   Layout Containers
+   =============================== */
+
+.container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 clamp(0.9rem, 2.2vw, 1.2rem);
+}
+
+/* ===============================
+   Homepage Sections
+   =============================== */
+
+.section {
+  margin-top: 2rem;
+}
+
+.kicker {
+  color: #1f3a5f;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.badge {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 999px;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.9rem;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.step-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+}
+
+.step-num {
+  font-weight: bold;
+  color: #1f3a5f;
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 900px) {
+  .split { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+}
+
+/* ===============================
+   Services Grid / Cards
+   =============================== */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+.service-card h3 {
+  color: #1f3a5f;
+  margin: 0.5rem 0 0.25rem 0;
+  font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+}
+
+.service-card img.icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.8rem;
+}
+
+/* Clickable service cards without looking like links */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card-link:focus {
+  outline: 3px solid rgba(31, 58, 95, 0.35);
+  outline-offset: 4px;
+  border-radius: 10px;
+}
+
+/* ===============================
+   Contact Page Layout
+   =============================== */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.contact-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+}
+
+.contact-card h2 {
+  margin-top: 0;
+  color: #1f3a5f;
+  font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+}
+
+/* ===============================
+   Forms
+   =============================== */
+
+form label {
+  display: block;
+  margin: 0.8rem 0 0.3rem;
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px; /* prevents iPhone zoom on focus */
+  box-sizing: border-box;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form button {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  background: #1f3a5f;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #16305a;
+}
+
+.fineprint {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.8rem;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2rem 0;
+}
+
+.notes {
+  padding-left: 1.2rem;
+}
+
+/* Buttons */
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  background: #1f3a5f;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #16305a;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #1f3a5f;
+  border: 2px solid #1f3a5f;
+}
+
+.btn-outline:hover {
+  background: #1f3a5f;
+  color: #fff;
+}
+
+/* Honeypot */
+.hp-field {
+  display: none !important;
+}
+
+/* Checkbox row */
+.checkbox-row {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+
+.checkbox-row input[type="checkbox"] {
+  width: auto;
+  margin-top: 0.25rem;
+}
+
+/* ===============================
+   FAQ Styling
+   =============================== */
+
+.faq {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+  margin: 1rem 0;
+}
+
+.faq h3 {
+  margin: 0 0 0.4rem 0;
+  color: #1f3a5f;
+}
+
+.faq p {
+  margin: 0.25rem 0 0 0;
+}
+
+/* ===============================
+   Footer
+   =============================== */
+
+footer {
+  background: #eee;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+.footer-links {
+  margin-top: 0.35rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #1f3a5f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* ===============================
+   Back to Top Button
+   =============================== */
+
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 99;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  background-color: #1f3a5f;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem 0.8rem;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+#backToTop:hover {
+  background-color: #16305a;
+}
+
+/* ===============================
+   Responsive Breakpoints
+   =============================== */
+
+@media (max-width: 800px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 0.85rem;
+  }
+
+  nav {
+    gap: 0.6rem;
+  }
+
+  .service-card,
+  .contact-card {
+    padding: 1.1rem;
+  }
+
+  .services-grid {
+    gap: 1rem;
+  }
+}
