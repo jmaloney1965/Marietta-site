@@ -109,7 +109,7 @@ nav a:hover {
 
 @media (max-width: 480px) {
   .site-header { padding: 0.55rem 0.7rem; }
-  .site-title { font-size: 1.12rem; }
+  .site-title { font-size: 1.18rem; }
   .site-nav { gap: 0.4rem 0.65rem; }
   .site-nav a { font-size: 0.92rem; }
 }
