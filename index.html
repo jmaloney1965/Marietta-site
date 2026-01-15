@@ -21,13 +21,21 @@
 
 <header class="site-header">
   <div class="header-wrap">
-    <h1 class="site-title">Marietta Research Solutions</h1>
+    <a class="brand" href="index.html" aria-label="Marietta Research Solutions home">
+      <span class="brand-mark">MRS</span>
+      <span class="site-title">Marietta Research Solutions</span>
+    </a>
 
-    <nav class="site-nav">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+      <span class="sr-only">Menu</span>
+      <span class="hamburger" aria-hidden="true"></span>
+    </button>
+
+    <nav class="site-nav" id="site-menu">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="contact.html">Contact</a>
-      <a href="contact.html">Request Consult</a>
+      <a class="cta" href="contact.html">Request Consult</a>
     </nav>
   </div>
 </header>
