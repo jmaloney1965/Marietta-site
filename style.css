@@ -529,3 +529,48 @@ form button:hover {
     line-height: 1.35;
   }
 }
+
+/* ===============================
+   Service Pages: cleaner reading
+   =============================== */
+
+.container h2 {
+  margin-top: 0;
+}
+
+.container h3 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+
+.container ul {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding-left: 1.2rem;
+}
+
+.container li {
+  margin-bottom: 0.4rem;
+}
+
+/* Thin divider line (use <hr class="divider" /> in HTML) */
+.divider {
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.12);
+  margin: 1.5rem 0;
+}
+
+/* slightly tighter on iPhone */
+@media (max-width: 480px) {
+  .container h3 {
+    margin-top: 1rem;
+  }
+
+  .container li {
+    margin-bottom: 0.35rem;
+  }
+
+  .divider {
+    margin: 1.2rem 0;
+  }
+}
