@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services | Marietta Research Solutions</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <meta name="description" content="Explore services offered by Marietta Research Solutions: engineering consulting, AI workflows, paralegal support, patent drafting support, SBIR support, prison consulting, and notary services." />
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-wrap">
+    <h1 class="site-title">Marietta Research Solutions</h1>
+
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact / Consult</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+  <h2>Services</h2>
+  <p>
+    Marietta Research Solutions provides one-to-one professional support tailored to your goals.
+    Select a service below to learn more.
+  </p>
+
+  <div class="section-panel">
+    <div class="services-grid">
+
+      <a class="card-link" href="engineering.html">
+        <div class="service-card">
+          <img class="icon" src="images/icons/engineering.svg" alt="Engineering Icon" />
+          <h3>Electrical Engineering Consulting</h3>
+          <p>Professional engineering support, technical documentation, and practical guidance.</p>
+        </div>
+      </a>
+
+      <a class="card-link" href="ai.html">
+        <div class="service-card">
+          <img class="icon" src="images/icons/ai.svg" alt="AI Icon" />
+          <h3>AI for Small Businesses &amp; Law Firms</h3>
+          <p>Responsible AI workflows, templates, automation support, and efficiency improvements.</p>
+        </div>
+      </a>
+
+      <a class="card-link" href="paralegal.html">
+        <div class="service-card">
+          <img class="icon" src="images/icons/paralegal.svg" alt="Paralegal Icon" />
+          <h3>Paralegal Support &amp; Document Preparation</h3>
+          <p>Non-legal support for formatting, organization, and documentation assistance.</p>
+        </div>
+      </a>
+
+      <a class="card-link" href="patents.html">
+        <div class="service-card">
+          <img class="icon" src="images/icons/patent.svg" alt="Patent Icon" />
+          <h3>Patent Drafting Support</h3>
+          <p>Technical drafting support to organize inventions for attorney review.</p>
+        </div>
+      </a>
+
+      <a class="card-link" href="sbir.html">
+        <div class="service-card">
+          <img class="icon" src="images/icons/sbir.svg" alt="SBIR Icon" />
+          <h3>SBIR Grant Writing Support</h3>
+          <p>Proposal drafting, editing, work plans, milestones, and narrative support.</p>
+        </div>
+      </a>
+
+      <a class="card-link" href="prison-consulting.html">
+        <div class="service-card">
+          <img class="icon" src="images/icons/prison.svg" alt="Prison Consulting Icon" />
+          <h3>Prison Consulting &amp; Reentry Support</h3>
+          <p>Practical planning, paperwork organization, and readiness guidance (non-legal).</p>
+        </div>
+      </a>
+
+      <a class="card-link" href="notary.html">
+        <div class="service-card">
+          <img class="icon" src="images/icons/notary.svg" alt="Notary Icon" />
+          <h3>Notary Public Services</h3>
+          <p>By-appointment notary services in Marietta, GA. Valid ID required.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>
+    © 2026 Marietta Research Solutions<br />
+    1640 Powers Ferry Rd SE<br />
+    Bldg 11, Suite 200<br />
+    Marietta, GA 30067<br />
+    <a href="contact.html">Contact / Consult</a> |
+    <a href="privacy.html">Privacy</a>
+  </p>
+</footer>
+
+<button id="backToTop" title="Back to Top">&#8679;</button>
+
+<script>
+  const backToTopBtn = document.getElementById("backToTop");
+
+  window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+</body>
+</html>
