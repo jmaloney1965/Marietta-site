@@ -781,3 +781,13 @@ a:focus-visible,
   outline-offset: 3px;
   border-radius: 6px;
 }
+
+/* Subtle page load animation */
+body {
+  animation: pageFade 0.18s ease-in;
+}
+
+@keyframes pageFade {
+  from { opacity: 0.92; }
+  to   { opacity: 1; }
+}
