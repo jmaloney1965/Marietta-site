@@ -764,3 +764,11 @@ footer a:hover { text-decoration: underline; }
     padding: 0.15rem 0.2rem;
   }
 }
+
+/* Better readability on small screens */
+@media (max-width: 480px) {
+  .container p,
+  .container li {
+    max-width: 36rem;
+  }
+}
