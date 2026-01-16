@@ -772,3 +772,12 @@ footer a:hover { text-decoration: underline; }
     max-width: 36rem;
   }
 }
+
+/* Button/link polish */
+a:focus-visible,
+.btn:focus-visible,
+.site-nav a:focus-visible {
+  outline: 3px solid rgba(31, 58, 95, 0.35);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
