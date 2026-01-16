@@ -800,3 +800,20 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Consistent heading spacing */
+.container h2 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.container h3 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.25;
+}
+
+.container ul {
+  margin-top: 0.4rem;
+}
