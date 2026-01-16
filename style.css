@@ -817,3 +817,13 @@ body {
 .container ul {
   margin-top: 0.4rem;
 }
+
+/* Subtle card edge highlight */
+.service-card,
+.contact-card,
+.leadership-card,
+.quick-contact-card {
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+              linear-gradient(180deg, rgba(31,58,95,0.10), rgba(0,0,0,0.05)) border-box;
+  border: 1px solid transparent;
+}
