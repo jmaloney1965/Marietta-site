@@ -758,3 +758,44 @@ footer a:hover {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+/* ===============================
+   Print-friendly styling
+   =============================== */
+@media print {
+  header,
+  .site-header,
+  nav,
+  .site-nav,
+  #backToTop,
+  .hero-icons,
+  .mobile-cta {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .container {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .service-card,
+  .contact-card,
+  .leadership-card,
+  .quick-contact-card,
+  .section-panel {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: underline !important;
+  }
+}
