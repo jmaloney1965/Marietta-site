@@ -757,3 +757,10 @@ footer a:hover { text-decoration: underline; }
     text-decoration: underline !important;
   }
 }
+
+/* Mobile footer links slightly larger for tap targets */
+@media (max-width: 480px) {
+  footer a {
+    padding: 0.15rem 0.2rem;
+  }
+}
