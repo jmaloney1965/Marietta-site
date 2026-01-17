@@ -424,6 +424,13 @@ footer a:hover { text-decoration: underline; }
   }
 }
 
+.last-updated{
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin: 1.25rem 0 0.5rem;
+}
+
 /* ===============================
    Back to Top Button
    =============================== */
