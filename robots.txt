@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jmaloney1965.github.io/Marietta-site/sitemap.xml
+Sitemap: https://www.mariettaresearchsolutions.com/sitemap.xml
