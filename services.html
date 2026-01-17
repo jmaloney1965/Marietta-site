@@ -125,7 +125,7 @@
    <!-- Buttons moved here: bottom above Important Notes -->
   <div class="cta-row">
     <a class="btn" href="contact.html">Contact / Consult</a>
-    <a class="btn btn-outline" href="capabilities.pdf" target="_blank" rel="noopener">
+    <a id="capabilitiesLink" class="btn btn-outline" href="capabilities.pdf" target="_blank" rel="noopener">
       Capabilities (PDF)
     </a>
   </div>
@@ -142,7 +142,7 @@
     Marietta, GA 30067<br />
     
     <a href="contact.html">Contact / Consult</a> |
-<a href="capabilities.pdf" target="_blank" rel="noopener">Capabilities (PDF)</a> |
+<a id="capabilitiesLink" href="capabilities.pdf" target="_blank" rel="noopener">Capabilities (PDF)</a> |
 <a href="privacy.html">Privacy</a>
 
   </p>
@@ -164,6 +164,20 @@
   backToTopBtn.addEventListener("click", function() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+</script>
+
+<script>
+  const capLink = document.getElementById("capabilitiesLink");
+  if (capLink) {
+    capLink.addEventListener("click", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "capabilities_pdf_click", {
+          event_category: "engagement",
+          event_label: "capabilities.pdf"
+        });
+      }
+    });
+  }
 </script>
 
 </body>
