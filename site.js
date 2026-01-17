@@ -36,6 +36,20 @@
   window.addEventListener("resize", toggleCTA);
   toggleCTA();
 
+// Contact form submit tracking (GA4)
+const contactSubmitBtn = document.getElementById("contactSubmitBtn") || document.getElementById("submitBtn");
+
+if (contactSubmitBtn) {
+  contactSubmitBtn.addEventListener("click", () => {
+    if (typeof gtag === "function") {
+      gtag("event", "contact_form_submit", {
+        event_category: "lead",
+        event_label: "contact.html"
+      });
+    }
+  });
+}
+
   // Capabilities PDF click tracking (GA4)
   // Use this class on any link you want to track:
   // <a class="capabilities-link" href="capabilities.pdf" ...>Capabilities (PDF)</a>
