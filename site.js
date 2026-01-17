@@ -64,38 +64,33 @@ if (contactForm) {
   });
 })();
 
-// Track Jim phone clicks (GA4)
+function trackEvent(name, label) {
+  if (typeof gtag !== "function") return;
+
+  gtag("event", name, {
+    event_category: "lead",
+    event_label: label,
+    transport_type: "beacon"
+  });
+}
+
+// Jim phone
 document.querySelectorAll(".track-phone-jim").forEach(link => {
   link.addEventListener("click", () => {
-    if (typeof gtag === "function") {
-      gtag("event", "phone_jim_click", {
-        event_category: "lead",
-        event_label: link.getAttribute("href") || "tel:jim"
-      });
-    }
+    trackEvent("phone_jim_click", link.getAttribute("href") || "tel:jim");
   });
 });
 
-// Track Jim email clicks (GA4)
+// Jim email
 document.querySelectorAll(".track-email-jim").forEach(link => {
   link.addEventListener("click", () => {
-    if (typeof gtag === "function") {
-      gtag("event", "email_jim_click", {
-        event_category: "lead",
-        event_label: link.getAttribute("href") || "mailto:jim"
-      });
-    }
+    trackEvent("email_jim_click", link.getAttribute("href") || "mailto:jim");
   });
 });
 
-// Track Susan email clicks (GA4)
+// Susan email
 document.querySelectorAll(".track-email-susan").forEach(link => {
   link.addEventListener("click", () => {
-    if (typeof gtag === "function") {
-      gtag("event", "email_susan_click", {
-        event_category: "lead",
-        event_label: link.getAttribute("href") || "mailto:susan"
-      });
-    }
+    trackEvent("email_susan_click", link.getAttribute("href") || "mailto:susan");
   });
 });
