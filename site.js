@@ -36,15 +36,14 @@
   window.addEventListener("resize", toggleCTA);
   toggleCTA();
 
-// Contact form submit tracking (GA4)
-const contactSubmitBtn = document.getElementById("contactSubmitBtn") || document.getElementById("submitBtn");
-
-if (contactSubmitBtn) {
-  contactSubmitBtn.addEventListener("click", () => {
+// Contact form submit tracking (GA4) - tracks real submit attempt
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+  contactForm.addEventListener("submit", () => {
     if (typeof gtag === "function") {
       gtag("event", "contact_form_submit", {
         event_category: "lead",
-        event_label: "contact.html"
+        event_label: window.location.pathname || "contact.html"
       });
     }
   });
