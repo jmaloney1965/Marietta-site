@@ -109,7 +109,7 @@
 
   <div class="cta-row">
     <a class="btn" href="services.html">View Services</a>
-    <a id="capabilitiesLink" class="btn btn-outline" href="capabilities.pdf" target="_blank" rel="noopener">
+    <a class="capabilities-link" class="btn btn-outline" href="capabilities.pdf" target="_blank" rel="noopener">
        Capabilities (PDF)
     </a>
     <a class="btn btn-outline" href="contact.html">Contact / Consult</a>
@@ -155,7 +155,7 @@
     Bldg 11, Suite 200<br />
     Marietta, GA 30067<br />
     <a href="contact.html">Contact / Consult</a> |
-    <a id="capabilitiesLink" href="capabilities.pdf" target="_blank" rel="noopener">Capabilities (PDF)</a> |
+    <a class="capabilities-link" href="capabilities.pdf" target="_blank" rel="noopener">Capabilities (PDF)</a> |
     <a href="privacy.html">Privacy</a>
   </p>
 </footer>
@@ -178,19 +178,6 @@
   });
 </script>
 
-<script>
-  const capLink = document.getElementById("capabilitiesLink");
-  if (capLink) {
-    capLink.addEventListener("click", function () {
-      if (typeof gtag === "function") {
-        gtag("event", "capabilities_pdf_click", {
-          event_category: "engagement",
-          event_label: "capabilities.pdf"
-        });
-      }
-    });
-  }
-</script>
-
+<script src="site.js"></script>
 </body>
 </html>
