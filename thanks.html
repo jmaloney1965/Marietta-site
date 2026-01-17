@@ -93,6 +93,15 @@
   });
 </script>
 
+<script>
+  if (typeof gtag === "function") {
+    gtag("event", "contact_form_success", {
+      event_category: "lead",
+      event_label: "thanks.html"
+    });
+  }
+</script>
 <script src="site.js"></script>
+
 </body>
 </html>
