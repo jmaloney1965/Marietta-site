@@ -242,5 +242,26 @@
 </script>
 
 <script src="site.js"></script>
+
+<script>
+  (function () {
+    const form = document.getElementById("contactForm");
+    const btn  = document.getElementById("contactSubmitBtn") || document.getElementById("submitBtn");
+
+    if (!form || !btn) return;
+
+    form.addEventListener("submit", function () {
+      btn.classList.add("is-sending");
+      btn.disabled = true;
+    });
+
+    // iPhone Safari can restore a submitted page from cache with the button still disabled
+    window.addEventListener("pageshow", function () {
+      btn.classList.remove("is-sending");
+      btn.disabled = false;
+    });
+  })();
+</script>
+
 </body>
 </html>
