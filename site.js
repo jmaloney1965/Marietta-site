@@ -63,3 +63,39 @@ if (contactForm) {
     });
   });
 })();
+
+// Track Jim phone clicks (GA4)
+document.querySelectorAll(".track-phone-jim").forEach(link => {
+  link.addEventListener("click", () => {
+    if (typeof gtag === "function") {
+      gtag("event", "phone_jim_click", {
+        event_category: "lead",
+        event_label: link.getAttribute("href") || "tel:jim"
+      });
+    }
+  });
+});
+
+// Track Jim email clicks (GA4)
+document.querySelectorAll(".track-email-jim").forEach(link => {
+  link.addEventListener("click", () => {
+    if (typeof gtag === "function") {
+      gtag("event", "email_jim_click", {
+        event_category: "lead",
+        event_label: link.getAttribute("href") || "mailto:jim"
+      });
+    }
+  });
+});
+
+// Track Susan email clicks (GA4)
+document.querySelectorAll(".track-email-susan").forEach(link => {
+  link.addEventListener("click", () => {
+    if (typeof gtag === "function") {
+      gtag("event", "email_susan_click", {
+        event_category: "lead",
+        event_label: link.getAttribute("href") || "mailto:susan"
+      });
+    }
+  });
+});
