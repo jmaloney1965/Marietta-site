@@ -178,5 +178,19 @@
   });
 </script>
 
+<script>
+  const capLink = document.getElementById("capabilitiesLink");
+  if (capLink) {
+    capLink.addEventListener("click", function () {
+      if (typeof gtag === "function") {
+        gtag("event", "capabilities_pdf_click", {
+          event_category: "engagement",
+          event_label: "capabilities.pdf"
+        });
+      }
+    });
+  }
+</script>
+
 </body>
 </html>
