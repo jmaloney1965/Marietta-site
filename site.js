@@ -66,7 +66,7 @@
   });
 
   // Jim phone
-  document.querySelectorAll(".track-phone-jim").forEach(link => {
+  document.querySelectorAll(".track-phone-").forEach(link => {
     link.addEventListener("click", () => {
       trackEvent("phone_jim_click", link.getAttribute("href") || "tel:jim", "lead");
     });
