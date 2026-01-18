@@ -65,17 +65,10 @@
     });
   });
 
-  // Jim phone
-  document.querySelectorAll(".track-phone-").forEach(link => {
+  // info email
+  document.querySelectorAll(".track-email-info").forEach(link => {
     link.addEventListener("click", () => {
-      trackEvent("phone_jim_click", link.getAttribute("href") || "tel:jim", "lead");
-    });
-  });
-
-  // Jim email
-  document.querySelectorAll(".track-email-jim").forEach(link => {
-    link.addEventListener("click", () => {
-      trackEvent("email_jim_click", link.getAttribute("href") || "mailto:jim", "lead");
+      trackEvent("email_info_click", link.getAttribute("href") || "mailto:info", "lead");
     });
   });
 
