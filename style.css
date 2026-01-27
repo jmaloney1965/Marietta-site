@@ -1,4 +1,4 @@
-/* ===============================
+=/* ===============================
    Global / Reset
    =============================== */
 
@@ -851,4 +851,21 @@ body {
   background: linear-gradient(#ffffff, #ffffff) padding-box,
               linear-gradient(180deg, rgba(31,58,95,0.10), rgba(0,0,0,0.05)) border-box;
   border: 1px solid transparent;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.site-logo {
+  height: 44px;          /* good for iPhone */
+  width: auto;
+  display: block;
+}
+
+/* tighten on small screens */
+@media (max-width: 480px) {
+  .site-logo { height: 38px; }
 }
