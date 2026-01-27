@@ -1,7 +1,7 @@
 {
   "name": "Marietta Research Solutions",
   "short_name": "MRS",
-  "start_url": "/Marietta-site/",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#1f3a5f",
   "theme_color": "#1f3a5f",
