@@ -62,16 +62,19 @@ header,
 }
 
 /* Logo link + image */
-.site-logo {
-  flex-shrink: 0;        /* ← CRITICAL */
-  display: block;
+.site-logo{
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;  /* centers the image */
+  width: 100%;              /* critical on mobile column layout */
 }
 
-.site-logo img {
+.site-logo img{
   display: block;
-  height: 160px;          /* desktop size */
-  width: auto;
-  max-width: none;       /* ← prevents invisible scaling */
+  height: auto;
+  width: min(92vw, 560px);  /* BIG, but capped on desktop */
+  max-width: 100%;
+  object-fit: contain;
 }
 
 /* Title (used on pages that still use text title instead of logo) */
@@ -114,43 +117,17 @@ nav a:hover,
 
 @media (max-width: 600px) {
   .header-wrap{
-    display: grid;
-    grid-template-rows: 180px auto; /* KNOB #1: make bigger/smaller */
-    justify-items: center;
-    align-items: center;
-    gap: 0.6rem;
-    text-align: center;
-  }
-
-  .site-logo{
-    height: 180px;               /* must match the row height */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-@media (max-width: 600px) {
-  .header-wrap {
     flex-direction: column;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.8rem;       /* keep the “gap helps” */
     text-align: center;
   }
 
-  .site-logo img {
-    display: block;
-    width: auto;
-    height: auto;
-    max-width: 92vw;
-    max-height: 180px;
-
-    margin: 0 auto;
-    object-fit: contain;
-    object-position: center;
+  .site-logo img{
+    width: min(94vw, 560px); /* bigger on mobile */
   }
 
-  nav,
-  .site-nav {
+  nav, .site-nav{
     justify-content: center;
     gap: 1.1rem;
     flex-wrap: wrap;
@@ -158,26 +135,17 @@ nav a:hover,
 }
 
 @media (max-width: 480px) {
-  header,
-  .site-header {
-    padding: 0.6rem;
+  header, .site-header{
+    padding: 0.65rem;  /* keeps blue box from getting too tall */
   }
 
-  .header-wrap {
-    gap: 0.4rem;
+  .header-wrap{
     padding: 0.5rem 0.75rem;
+    gap: 0.7rem;
   }
 
-  .site-logo img {
-    display: block;
-    width: auto;
-    height: auto;
-    max-width: 90vw;
-    max-height: 140px;
-
-    margin: 0 auto;
-    object-fit: contain;
-    object-position: center;
+  .site-logo img{
+    width: min(96vw, 560px); /* slightly bigger than 600 rule */
   }
 }
 
