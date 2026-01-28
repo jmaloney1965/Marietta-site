@@ -874,19 +874,17 @@ body {
 
 .site-logo img {
   display: block;
-  height: 42px;        /* adjust if needed */
+  height: 48px;        /* adjust if needed */
   width: auto;
-}
-
-.site-logo {
   line-height: 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .site-logo img {
-    height: 34px;
+    height: 56px;
   }
 }
+
 /* tighten on small screens */
 @media (max-width: 480px) {
   .site-logo { height: 38px; }
