@@ -158,26 +158,29 @@ nav a:hover,
 @media (max-width: 480px) {
   header,
   .site-header {
-    padding: 0.65rem 0.75rem;   /* was too small */
+    padding: 0.35rem 0.6rem;   /* was too small */
   }
 
   .header-wrap {
     padding: 0;                 /* keep tight */
-    gap: 0.45rem;               /* small, but not crushing */
+    gap: 0.25rem;               /* small, but not crushing */
   }
 
   .site-logo {
     display: flex;
     justify-content: center;
     width: 100%;
+    line-height: 0;   /* prevents extra “text line” height */
+    margin: 0;
   }
 
   .site-logo img {
-    width: 92vw;                /* big on phone */
-    height: auto;               /* scale correctly */
-    max-height: 190px;          /* THIS is the main knob */
+    width: 92vw;
+    height: auto;
+    max-height: 190px; /* main knob */
     object-fit: contain;
-  }
+    display: block;
+    }
 }
 
 /* ===============================
