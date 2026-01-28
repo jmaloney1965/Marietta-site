@@ -25,13 +25,14 @@ body {
 
 header,
 .site-header {
-  /* Brand gradient (matches business card) */
   background: linear-gradient(
     to bottom,
-    #144E9B 0%,
-    #0D3D82 55%,
-    #092F68 100%
+    #1E63B6 0%,   /* lighter top */
+    #144E9B 55%,
+    #0D3D82 100%  /* still deep at bottom */
   );
+}
+   
 
   color: #ffffff;
   padding: 1rem;
@@ -49,33 +50,33 @@ header,
 }
 
 /* Header Wrap: logo + nav */
-.header-wrap{
-  max-width: 1100px;
+
+.header-wrap {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0.75rem 1.25rem;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 2rem;
 
-  text-align: left; /* overrides header text-align:center */
+  text-align: left;
 }
 
 /* Logo link + image */
 .site-logo{
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
   line-height: 0;
   text-decoration: none;
 }
 
 .site-logo img{
   display: block;
-  height: 64px;   /* main knob */
+  height: 96px;        /* main knob */
   width: auto;
   max-width: 100%;
-}
+}  
 
 /* Title (used on pages that still use text title instead of logo) */
 header h1,
@@ -116,29 +117,34 @@ nav a:hover,
     padding: 0.85rem;
   }
 
-  .header-wrap {
-    padding: 0 0.75rem;
+   .header-wrap {
+    gap: 0.6rem;
+    padding: 0.65rem 0.9rem;
+  }
+   
+  .site-logo img {
+    height: 64px;
   }
 }
 
 /* Mobile header layout: logo above nav */
-@media (max-width: 600px){
-  .header-wrap{
+@media (max-width: 600px) {
+  .header-wrap {
     flex-direction: column;
     align-items: center;
     gap: 0.6rem;
     text-align: center;
   }
 
-  .site-logo img{
-    height: 58px;
+  .site-logo img {
+    height: 72px;   /* still strong on phones */
   }
 
   nav,
-  .site-nav{
+  .site-nav {
     justify-content: center;
     gap: 1.1rem;
-    flex-wrap: wrap; /* allows links to wrap nicely */
+    flex-wrap: wrap;
   }
 }
 
