@@ -144,10 +144,10 @@ nav a:hover,
     padding: 0.65rem 0.9rem;
   }
 
-.site-logo img {
-  height: 140px;
-  max-width: 100%;
-}
+  .site-logo img {
+    height: 140px;
+    max-width: 100%;
+  }
 
 }
 
