@@ -872,12 +872,21 @@ body {
   text-decoration: none;
 }
 
-.site-logo {
-  height: 44px;          /* good for iPhone */
-  width: auto;
+.site-logo img {
   display: block;
+  height: 42px;        /* adjust if needed */
+  width: auto;
 }
 
+.site-logo {
+  line-height: 0;
+}
+
+@media (max-width: 600px) {
+  .site-logo img {
+    height: 34px;
+  }
+}
 /* tighten on small screens */
 @media (max-width: 480px) {
   .site-logo { height: 38px; }
