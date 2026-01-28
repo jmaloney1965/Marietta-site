@@ -106,24 +106,12 @@ nav a:hover,
   text-decoration: underline;
 }
 
-/* Header: slightly tighter on iPhone */
-@media (max-width: 480px) {
-  header,
-  .site-header {
-    padding: 0.85rem;
-  }
-
-   .header-wrap {
-    gap: 0.6rem;
-    padding: 0.65rem 0.9rem;
-  }
-   
+@media (max-width: 900px) {
   .site-logo img {
-    height: 64px;
+    height: 120px;
   }
 }
 
-/* Mobile header layout: logo above nav */
 @media (max-width: 600px) {
   .header-wrap {
     flex-direction: column;
@@ -133,7 +121,7 @@ nav a:hover,
   }
 
   .site-logo img {
-    height: 72px;   /* mobile logo size */
+    height: 96px;   /* mobile logo size */
   }
 
   nav,
@@ -141,6 +129,22 @@ nav a:hover,
     justify-content: center;
     gap: 1.1rem;
     flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  header,
+  .site-header {
+    padding: 0.85rem;
+  }
+
+  .header-wrap {
+    gap: 0.6rem;
+    padding: 0.65rem 0.9rem;
+  }
+
+  .site-logo img {
+    height: 80px;
   }
 }
 
