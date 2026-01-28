@@ -31,8 +31,6 @@ header,
     #144E9B 55%,
     #0D3D82 100%  /* still deep at bottom */
   );
-}
-   
 
   color: #ffffff;
   padding: 1rem;
@@ -42,7 +40,6 @@ header,
   top: 0;
   z-index: 100;
 
-  /* Existing shadow works well with gradient */
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 
   /* subtle divider */
