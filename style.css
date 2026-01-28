@@ -113,20 +113,31 @@ nav a:hover,
 }
 
 @media (max-width: 600px) {
-  .header-wrap {
-    flex-direction: column;
+  .header-wrap{
+    display: grid;
+    grid-template-rows: 220px auto; /* KNOB #1: make bigger/smaller */
+    justify-items: center;
     align-items: center;
     gap: 0.6rem;
     text-align: center;
   }
-  
-  .site-logo img {
-  height: 240px;
-  max-width: 100%;
+
+  .site-logo{
+    height: 220px;               /* must match the row height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .site-logo img{
+    height: 100%;
+    width: auto;
+    max-width: 92vw;             /* prevent overflow */
+    object-fit: contain;         /* important */
   }
 
   nav,
-  .site-nav {
+  .site-nav{
     justify-content: center;
     gap: 1.1rem;
     flex-wrap: wrap;
@@ -139,16 +150,19 @@ nav a:hover,
     padding: 0.85rem;
   }
 
-  .header-wrap {
+  .header-wrap{
+    grid-template-rows: 260px auto; /* KNOB #2: small iPhone size */
     gap: 0.6rem;
     padding: 0.65rem 0.9rem;
   }
 
-  .site-logo img {
-    height: 400px;
-    max-width: 100%;
+  .site-logo{
+    height: 260px;               /* must match the row height */
   }
 
+  .site-logo img{
+    max-width: 94vw;
+  }
 }
 
 /* ===============================
