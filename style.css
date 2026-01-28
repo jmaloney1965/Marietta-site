@@ -144,9 +144,17 @@ nav a:hover,
     gap: 0.35rem;
   }
 
-  .site-logo img{
-    width: min(92vw, 520px); /* slightly bigger than 600 rule */
-  }
+.site-logo{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.site-logo img{
+  width: 92vw;     /* main knob for iPhone */
+  height: auto;
+  max-width: 92vw;
+}
   
   .site-nav a{
     font-size: 1.02rem;
