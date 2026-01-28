@@ -65,18 +65,17 @@ header,
 }
 
 /* Logo link + image */
-.site-logo{
-  display: inline-block;
-  line-height: 0;
-  text-decoration: none;
+.site-logo {
+  flex-shrink: 0;        /* ← CRITICAL */
+  display: block;
 }
 
-.site-logo img{
+.site-logo img {
   display: block;
-  height: 96px;        /* main knob */
+  height: 96px;          /* desktop size */
   width: auto;
-  max-width: 100%;
-}  
+  max-width: none;       /* ← prevents invisible scaling */
+}
 
 /* Title (used on pages that still use text title instead of logo) */
 header h1,
@@ -137,7 +136,7 @@ nav a:hover,
   }
 
   .site-logo img {
-    height: 72px;   /* still strong on phones */
+    height: 72px;   /* mobile logo size */
   }
 
   nav,
