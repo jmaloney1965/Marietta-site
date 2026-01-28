@@ -1,4 +1,4 @@
-/* ===============================
+ /* ===============================
    Global / Reset  
    =============================== */
 
@@ -146,6 +146,10 @@ nav a:hover,
 
   .site-logo img{
     width: min(92vw, 520px); /* slightly bigger than 600 rule */
+  }
+  
+  .site-nav a{
+    font-size: 1.02rem;
   }
 }
 
