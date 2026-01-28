@@ -126,7 +126,7 @@ nav a:hover,
     align-items: center;
     justify-content: center;
     padding: 0;               /* remove extra height */
-    gap: 0.35rem;             /* tighten vertical spacing */
+    gap: 0.30rem;             /* tighten vertical spacing */
     text-align: center;
   }
 
@@ -163,7 +163,7 @@ nav a:hover,
 
   .header-wrap {
     padding: 0;               /* remove extra height */
-    gap: 0.35rem;             /* tighten more */
+    gap: 0.30rem;             /* tighten more */
   }
 
   .site-logo img {
