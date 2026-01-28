@@ -158,12 +158,12 @@ nav a:hover,
 @media (max-width: 480px) {
   header,
   .site-header {
-    padding: 0.20rem 0.6rem;   /* was too small */
+    padding: 0.1rem 0.6rem;   /* was too small */
   }
 
   .header-wrap {
     padding: 0;                 /* keep tight */
-    gap: 0.15rem;               /* small, but not crushing */
+    gap: 0.5rem;               /* small, but not crushing */
   }
 
   .site-logo {
@@ -172,6 +172,7 @@ nav a:hover,
     width: 100%;
     line-height: 0;   /* prevents extra “text line” height */
     margin: 0;
+    padding: 0;
   }
 
   .site-logo img {
