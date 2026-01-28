@@ -1,7 +1,7 @@
 /* ===============================
    Global / Reset  
    =============================== */
-o
+
 * { box-sizing: border-box; }
 
 html {
@@ -145,7 +145,7 @@ nav a:hover,
   }
 
   .site-logo img {
-    height: 240px;
+    height: 320px;
     max-width: 100%;
   }
 
