@@ -158,33 +158,26 @@ nav a:hover,
 @media (max-width: 480px) {
   header,
   .site-header {
-    padding: 0.35rem 0.75rem; /* even shorter on iPhone */
+    padding: 0.65rem 0.75rem;   /* was too small */
   }
 
   .header-wrap {
-    padding: 0;               /* remove extra height */
-    gap: 0.25rem;             /* tighten more */
+    padding: 0;                 /* keep tight */
+    gap: 0.45rem;               /* small, but not crushing */
+  }
+
+  .site-logo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
   .site-logo img {
-    width: 92vw;
-    max-width: 520px;
-    height: 0;
-    max-height: 210pex;        /* keep logo big but stop tall blue box */
+    width: 92vw;                /* big on phone */
+    height: auto;               /* scale correctly */
+    max-height: 190px;          /* THIS is the main knob */
+    object-fit: contain;
   }
-
-  nav,
-  .site-nav {
-    margin: 0;
-    gap: 0.9rem;              /* slightly tighter */
-  }
-  
-  nav a,
-  .site-nav a{
-    line-height: 1;             /* tighten nav row height */
-    padding: 0;                 /* no extra tap padding here */
-  }
-  
 }
 
 /* ===============================
