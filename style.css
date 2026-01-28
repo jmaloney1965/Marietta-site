@@ -115,7 +115,7 @@ nav a:hover,
 @media (max-width: 600px) {
   .header-wrap{
     display: grid;
-    grid-template-rows: 220px auto; /* KNOB #1: make bigger/smaller */
+    grid-template-rows: 180px auto; /* KNOB #1: make bigger/smaller */
     justify-items: center;
     align-items: center;
     gap: 0.6rem;
@@ -123,7 +123,7 @@ nav a:hover,
   }
 
   .site-logo{
-    height: 220px;               /* must match the row height */
+    height: 180px;               /* must match the row height */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -151,13 +151,13 @@ nav a:hover,
   }
 
   .header-wrap{
-    grid-template-rows: 260px auto; /* KNOB #2: small iPhone size */
+    grid-template-rows: 200px auto; /* KNOB #2: small iPhone size */
     gap: 0.6rem;
     padding: 0.65rem 0.9rem;
   }
 
   .site-logo{
-    height: 260px;               /* must match the row height */
+    height: 200px;               /* must match the row height */
   }
 
   .site-logo img{
