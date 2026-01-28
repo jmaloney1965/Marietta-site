@@ -129,15 +129,28 @@ nav a:hover,
     justify-content: center;
   }
 
-  .site-logo img{
-    height: 100%;
+@media (max-width: 600px) {
+  .header-wrap {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    text-align: center;
+  }
+
+  .site-logo img {
+    display: block;
     width: auto;
-    max-width: 92vw;             /* prevent overflow */
-    object-fit: contain;         /* important */
+    height: auto;
+    max-width: 92vw;
+    max-height: 180px;
+
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center;
   }
 
   nav,
-  .site-nav{
+  .site-nav {
     justify-content: center;
     gap: 1.1rem;
     flex-wrap: wrap;
@@ -147,21 +160,24 @@ nav a:hover,
 @media (max-width: 480px) {
   header,
   .site-header {
-    padding: 0.85rem;
+    padding: 0.6rem;
   }
 
-  .header-wrap{
-    grid-template-rows: 200px auto; /* KNOB #2: small iPhone size */
-    gap: 0.6rem;
-    padding: 0.65rem 0.9rem;
+  .header-wrap {
+    gap: 0.4rem;
+    padding: 0.5rem 0.75rem;
   }
 
-  .site-logo{
-    height: 200px;               /* must match the row height */
-  }
+  .site-logo img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 90vw;
+    max-height: 140px;
 
-  .site-logo img{
-    max-width: 94vw;
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center;
   }
 }
 
