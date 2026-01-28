@@ -108,7 +108,7 @@ nav a:hover,
 
 @media (max-width: 900px) {
   .site-logo img {
-    height: 120px;
+    height: 140px;
   }
 }
 
@@ -121,7 +121,7 @@ nav a:hover,
   }
   
   .site-logo img {
-  height: 140px;
+  height: 130px;
   max-width: 100%;
   }
 
@@ -145,7 +145,7 @@ nav a:hover,
   }
 
   .site-logo img {
-    height: 140px;
+    height: 120px;
     max-width: 100%;
   }
 
