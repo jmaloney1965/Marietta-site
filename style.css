@@ -69,7 +69,7 @@ header,
 
 .site-logo img {
   display: block;
-  height: 96px;          /* desktop size */
+  height: 140px;          /* desktop size */
   width: auto;
   max-width: none;       /* ← prevents invisible scaling */
 }
