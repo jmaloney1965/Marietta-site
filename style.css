@@ -33,7 +33,7 @@ header,
   );
 
   color: #ffffff;
-  padding: 0.1rem;
+  padding: 1rem;
   text-align: center;
 
   position: sticky;
@@ -51,7 +51,7 @@ header,
 .header-wrap {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.75rem 1.25rem;
+  padding: 0.25rem 1.25rem;
 
   display: flex;
   align-items: center;
