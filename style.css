@@ -1,0 +1,946 @@
+/* ===============================
+Global / Reset  
+=============================== */
+
+- { box-sizing: border-box; }
+
+html {
+-webkit-text-size-adjust: 100%; /* prevents iOS auto-text resizing */
+text-size-adjust: 100%;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+margin: 0;
+padding: 0;
+line-height: 1.6;
+color: #333;
+background-color: #f2f4f7; /* slightly darker so cards pop */
+font-size: 16px; /* stable baseline for iPhone + desktop */
+}
+
+/* ===============================
+Header / Nav
+=============================== */
+
+header,
+.site-header {
+background: linear-gradient(
+to bottom,
+#1E63B6 0%,   /* lighter top */
+#144E9B 55%,
+#0D3D82 100%  /* still deep at bottom */
+);
+
+color: #ffffff;
+padding: 1rem;
+text-align: center;
+
+position: sticky;
+top: 0;
+z-index: 100;
+
+box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+
+/* subtle divider */
+border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Header Wrap: logo + nav */
+
+.header-wrap {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0.25rem 1.25rem;
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 2rem;
+
+text-align: left;
+}
+
+/* Logo link + image */
+.site-logo{
+flex-shrink: 0;
+display: flex;
+justify-content: center;  /* centers the image */
+width: 100%;              /* critical on mobile column layout */
+}
+
+.site-logo img{
+display: block;
+height: auto;
+width: min(92vw, 560px);  /* BIG, but capped on desktop */
+max-width: 100%;
+object-fit: contain;
+}
+
+/* Title (used on pages that still use text title instead of logo) */
+header h1,
+.site-title {
+margin: 0;
+font-size: clamp(1.25rem, 2.4vw, 1.8rem);
+}
+
+/* Nav */
+nav,
+.site-nav {
+margin-top: 0;              /* IMPORTANT: stop pushing nav down */
+display: flex;
+flex-wrap: nowrap;          /* keep it on one line on desktop */
+justify-content: flex-end;
+gap: 1rem;
+}
+
+nav a,
+.site-nav a {
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+margin: 0;
+font-size: clamp(0.95rem, 2.1vw, 1.05rem);
+white-space: nowrap;
+}
+
+nav a:hover,
+.site-nav a:hover {
+text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+.site-logo img {
+height: 140px;
+}
+}
+
+@media (max-width: 600px) {
+header,
+.site-header {
+padding: 0.3rem 0.5rem;   /* reduced padding for shorter header */
+}
+
+.header-wrap {
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 0;               /* remove extra height */
+gap: 0.15rem;             /* tightened vertical spacing */
+text-align: center;
+}
+
+.site-logo {
+width: 100%;
+display: flex;
+justify-content: center;  /* hard-center the logo */
+line-height: 0;           /* remove inline spacing */
+}
+
+.site-logo img {
+width: 92vw;              /* BIG, fills screen width */
+max-width: 520px;         /* keeps it from going insane */
+height: auto;             /* keep aspect ratio */
+max-height: 110px;        /* REDUCED BY 50% - cap height so header stays short */
+object-fit: contain;
+display: block;
+}
+
+nav,
+.site-nav {
+justify-content: center;
+gap: 1.0rem;
+flex-wrap: wrap;
+margin-top: 0;            /* don’t add extra height */
+}
+}
+
+@media (max-width: 480px) {
+header,
+.site-header {
+padding: 0.2rem 0.4rem;   /* even tighter for smallest screens */
+}
+
+.header-wrap {
+padding: 0;                 /* keep tight */
+gap: 0.1rem;                /* minimal gap */
+}
+
+.site-logo {
+display: flex;
+justify-content: center;
+width: 100%;
+line-height: 0;   /* prevents extra “text line” height */
+margin: 0;
+padding: 0;
+}
+
+.site-logo img {
+width: 92vw;
+height: auto;
+max-height: 95px; /* REDUCED BY 50% - main control for smallest screens */
+object-fit: contain;
+display: block;
+}
+}
+
+/* ===============================
+Hero
+=============================== */
+
+.hero {
+padding: clamp(5rem, 7vw, 8rem) 1rem clamp(3.5rem, 5vw, 5.5rem);
+text-align: center;
+
+/* Hero background image */
+background-image: url(“images/hero-bg.jpg”);
+background-size: cover;
+background-position: bottom center;
+background-repeat: no-repeat;
+
+/* Overlay setup */
+position: relative;
+}
+
+.hero::before {
+content: “”;
+position: absolute;
+inset: 0;
+background: rgba(0,0,0,0.50);
+}
+
+.hero > * {
+position: relative;
+z-index: 1;
+}
+
+.hero h2 {
+color: #fff;
+margin: 0 0 0.5rem;
+}
+
+.hero p {
+color: #fff;
+line-height: 1.1;
+margin: 0.5rem auto 1.25rem;
+max-width: 42rem;
+}
+
+.hero-icons {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: clamp(0.75rem, 2vw, 1.2rem);
+margin-top: 0.5rem;
+}
+
+.hero-icon {
+width: clamp(36px, 6vw, 50px);
+height: clamp(36px, 6vw, 50px);
+filter: brightness(0) invert(1);
+transition: transform 0.2s;
+cursor: pointer;
+}
+
+.hero-icon:hover {
+transform: scale(1.15);
+}
+
+/* Hero: tighter on iPhone */
+@media (max-width: 480px) {
+.hero {
+padding: 3.5rem 1rem 2.5rem; /* smaller top/bottom padding */
+}
+
+.hero h2 {
+margin: 0 0 0.4rem;
+font-size: 1.35rem;
+line-height: 1.15;
+}
+
+.hero p {
+margin: 0.4rem auto 1rem;
+max-width: 24rem;
+font-size: 1rem;
+line-height: 1.15;
+}
+
+.hero-icons {
+gap: 0.7rem;
+}
+
+.hero-icon {
+width: 40px;
+height: 40px;
+}
+}
+
+/* ===============================
+Layout Containers
+=============================== */
+
+.container {
+max-width: 1100px;
+margin: 2rem auto;
+padding: 0 clamp(0.9rem, 2.2vw, 1.2rem);
+}
+
+/* ===============================
+Thin Divider
+=============================== */
+
+.divider {
+border: none;
+border-top: 1px solid rgba(0,0,0,0.12);
+margin: 1.5rem 0;
+}
+
+@media (max-width: 480px) {
+.divider { margin: 1.2rem 0; }
+}
+
+/* ===============================
+Services Grid / Cards
+=============================== */
+
+.services-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 1.5rem;
+}
+
+/* Link wrapper for service cards */
+.card-link {
+text-decoration: none;
+color: inherit;
+display: block;
+}
+
+.card-link:focus,
+.card-link:hover {
+outline: none;
+}
+
+/* ===============================
+Service Card
+=============================== */
+
+.service-card {
+background: #ffffff;
+border: 1px solid rgba(0,0,0,0.06);
+border-radius: 10px;
+padding: 1.5rem;
+box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+transition: transform 0.2s, box-shadow 0.2s;
+text-align: center;
+}
+
+.service-card:hover {
+transform: translateY(-6px);
+box-shadow: 0 16px 34px rgba(0,0,0,0.16);
+}
+
+.service-card h3 {
+color: #1f3a5f;
+margin: 0.5rem 0 0.25rem 0;
+font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+}
+
+.service-card img.icon {
+width: 50px;
+height: 50px;
+margin-bottom: 0.8rem;
+}
+
+/* ===============================
+Subtle Section Panel (Services)
+=============================== */
+
+.section-panel {
+background: rgba(255,255,255,0.65);
+border: 1px solid rgba(0,0,0,0.05);
+border-radius: 14px;
+padding: 1.25rem;
+box-shadow: 0 10px 22px rgba(0,0,0,0.06);
+}
+
+/* ===============================
+Contact Page Layout
+=============================== */
+
+.contact-grid {
+display: grid;
+grid-template-columns: 1fr 1.2fr;
+gap: 1.5rem;
+align-items: start;
+}
+
+.contact-card {
+background: #ffffff;
+border: 1px solid rgba(0,0,0,0.06);
+border-radius: 10px;
+padding: 1.5rem;
+box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+}
+
+.contact-card h2 {
+margin-top: 0;
+color: #1f3a5f;
+font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+}
+
+/* ===============================
+Forms
+=============================== */
+
+form label {
+display: block;
+margin: 0.8rem 0 0.3rem;
+font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+width: 100%;
+padding: 0.65rem;
+border: 1px solid #ccc;
+border-radius: 6px;
+font-size: 16px; /* prevents iPhone zoom on focus */
+box-sizing: border-box;
+}
+
+form textarea { resize: vertical; }
+
+form button {
+margin-top: 1rem;
+width: 100%;
+padding: 0.8rem;
+border: none;
+border-radius: 6px;
+background: #1f3a5f;
+color: #fff;
+font-size: 1.05rem;
+font-weight: bold;
+cursor: pointer;
+}
+
+form button:hover { background: #16305a; }
+
+.fineprint {
+font-size: 0.9rem;
+color: #666;
+margin-top: 0.8rem;
+}
+
+/* Honeypot */
+.hp-field { display: none !important; }
+
+/* Checkbox row */
+.checkbox-row {
+display: flex;
+gap: 0.6rem;
+align-items: flex-start;
+margin-top: 1rem;
+}
+
+.checkbox-row input[type=“checkbox”] {
+width: auto;
+margin-top: 0.25rem;
+}
+
+/* ===============================
+Buttons (Thanks page + general)
+=============================== */
+
+.cta-row {
+display: flex;
+flex-wrap: wrap;
+gap: 0.8rem;
+margin: 1rem 0 0.5rem;
+}
+
+.btn {
+display: inline-block;
+text-align: center;
+padding: 0.75rem 1rem;
+border-radius: 6px;
+background: #1f3a5f;
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+}
+
+.btn:hover { background: #16305a; }
+
+.btn-outline {
+background: transparent;
+color: #1f3a5f;
+border: 2px solid #1f3a5f;
+}
+
+.btn-outline:hover {
+background: #1f3a5f;
+color: #fff;
+}
+
+/* ===============================
+Footer
+=============================== */
+
+footer {
+background: #eee;
+text-align: center;
+padding: 1rem;
+font-size: 0.9rem;
+margin-top: 3rem;
+}
+
+footer a {
+color: #1f3a5f;
+font-weight: bold;
+text-decoration: none;
+}
+
+footer a:hover { text-decoration: underline; }
+
+/* Footer: smaller/tighter on iPhone */
+@media (max-width: 480px) {
+footer {
+padding: 0.75rem;
+font-size: 0.82rem;
+line-height: 1.25;
+margin-top: 2rem;
+}
+
+footer p { margin: 0; }
+
+footer a {
+display: inline-block;
+margin-top: 0.3rem;
+}
+}
+
+/* “Last updated” line above footer */
+.last-updated{
+text-align: center;
+font-size: 0.82rem;
+color: #666;
+margin: 0.9rem 0 0; /* reduced bottom whitespace */
+}
+
+/* ===============================
+Back to Top Button
+=============================== */
+
+#backToTop {
+display: none;
+position: fixed;
+bottom: 30px;
+right: 30px;
+z-index: 99;
+font-size: 2rem;
+border: none;
+outline: none;
+background-color: #1f3a5f;
+color: white;
+cursor: pointer;
+padding: 0.5rem 0.8rem;
+border-radius: 50%;
+transition: background-color 0.3s;
+}
+
+#backToTop:hover { background-color: #16305a; }
+
+/* ===============================
+Responsive Breakpoints
+=============================== */
+
+@media (max-width: 800px) {
+.contact-grid { grid-template-columns: 1fr; }
+}
+
+/* ===============================
+Services: tighter on iPhone
+=============================== */
+
+@media (max-width: 480px) {
+.container { margin: 1.25rem auto; }
+
+.section-panel {
+padding: 0.9rem;
+border-radius: 12px;
+}
+
+.services-grid { gap: 0.85rem; }
+
+.service-card {
+padding: 1.05rem;
+border-radius: 12px;
+text-align: left; /* reads better on phones */
+}
+
+.service-card img.icon {
+width: 42px;
+height: 42px;
+margin-bottom: 0.6rem;
+}
+
+.service-card h3 { margin: 0.25rem 0 0.25rem; }
+
+.service-card p {
+margin: 0;
+font-size: 0.95rem;
+line-height: 1.35;
+}
+
+.btn { padding: 0.65rem 0.85rem; }
+
+.service-card,
+.contact-card {
+padding: 1.1rem;
+}
+}
+
+/* ===============================
+Leadership Card
+=============================== */
+
+.leadership-card {
+background: #ffffff;
+border: 1px solid rgba(0,0,0,0.06);
+border-radius: 12px;
+padding: 1.25rem 1.4rem;
+box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+margin: 1rem 0 1.5rem;
+}
+
+.leadership-card h4 {
+margin: 0 0 0.25rem;
+color: #1f3a5f;
+font-size: 1.15rem;
+}
+
+.leadership-card .role {
+margin: 0 0 0.85rem;
+font-weight: bold;
+color: #333;
+}
+
+.leadership-card p {
+margin: 0.6rem 0;
+color: #333;
+}
+
+.leadership-card .highlight {
+display: inline-block;
+background: rgba(31, 58, 95, 0.08);
+border: 1px solid rgba(31, 58, 95, 0.12);
+color: #1f3a5f;
+font-weight: bold;
+padding: 0.25rem 0.5rem;
+border-radius: 999px;
+font-size: 0.9rem;
+margin-right: 0.4rem;
+margin-top: 0.3rem;
+}
+
+.leadership-tags { margin-top: 0.8rem; }
+
+/* Leadership top row */
+.leadership-top {
+display: flex;
+align-items: center;
+gap: 1rem;
+margin-bottom: 0.75rem;
+}
+
+.leadership-avatar {
+width: 64px;
+height: 64px;
+border-radius: 50%;
+background: rgba(31, 58, 95, 0.10);
+border: 2px solid rgba(31, 58, 95, 0.18);
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+color: #1f3a5f;
+font-size: 1.15rem;
+flex-shrink: 0;
+}
+
+.leadership-avatar img {
+width: 100%;
+height: 100%;
+border-radius: 50%;
+object-fit: cover;
+display: block;
+}
+
+.leadership-nameblock { min-width: 0; }
+
+.leadership-nameblock h4 { margin: 0 0 0.25rem; }
+
+.leadership-nameblock .role { margin: 0; }
+
+/* ===============================
+Quick Contact Card
+=============================== */
+
+.quick-contact-card {
+background: #ffffff;
+border: 1px solid rgba(0,0,0,0.06);
+border-radius: 12px;
+padding: 1.15rem 1.35rem;
+box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+margin: 1.25rem 0 1.5rem;
+}
+
+.quick-contact-card h4 {
+margin: 0 0 0.6rem;
+color: #1f3a5f;
+font-size: 1.1rem;
+}
+
+.quick-contact-card p { margin: 0.35rem 0; }
+
+.quick-contact-card a {
+color: #1f3a5f;
+font-weight: bold;
+text-decoration: none;
+}
+
+.quick-contact-card a:hover { text-decoration: underline; }
+
+.quick-contact-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 0.9rem 1.25rem;
+margin-top: 0.75rem;
+}
+
+@media (max-width: 700px) {
+.quick-contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+.quick-contact-card { padding: 1rem 1.1rem; }
+}
+
+/* ===============================
+Leadership: slimmer on iPhone
+=============================== */
+
+@media (max-width: 480px) {
+.leadership-avatar {
+width: 56px;
+height: 56px;
+font-size: 1.05rem;
+}
+
+.leadership-top {
+gap: 0.85rem;
+margin-bottom: 0.55rem;
+}
+
+.leadership-card {
+padding: 0.95rem 1.05rem;
+margin: 0.85rem 0 1.15rem;
+}
+
+.leadership-card p {
+margin: 0.5rem 0;
+font-size: 0.95rem;
+line-height: 1.35;
+}
+
+.leadership-tags {
+display: flex;
+flex-wrap: wrap;
+gap: 0.4rem;
+margin-top: 0.6rem;
+}
+
+.leadership-card .highlight {
+font-size: 0.82rem;
+padding: 0.2rem 0.45rem;
+margin: 0;
+}
+
+.leadership-card .cta-row {
+margin-top: 0.75rem;
+}
+
+.leadership-card .btn {
+padding: 0.55rem 0.75rem;
+font-size: 0.95rem;
+}
+}
+
+/* ===============================
+Submit button spinner
+=============================== */
+
+.btn-spinner{
+display: none;
+width: 16px;
+height: 16px;
+border: 2px solid rgba(255,255,255,0.55);
+border-top-color: #fff;
+border-radius: 50%;
+margin-left: 0.6rem;
+vertical-align: middle;
+animation: spin 0.8s linear infinite;
+}
+
+button.is-sending .btn-spinner{ display: inline-block; }
+button.is-sending .btn-text{ opacity: 0.85; }
+button:disabled{ opacity: 0.85; cursor: not-allowed; }
+
+/* ===============================
+Contact form spinner overlay
+=============================== */
+
+.form-overlay {
+display: none;            /* shown via JS */
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.35);
+z-index: 9999;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+gap: 0.75rem;
+}
+
+.spinner {
+width: 44px;
+height: 44px;
+border-radius: 50%;
+border: 4px solid rgba(255,255,255,0.45);
+border-top-color: #fff;
+animation: spin 0.8s linear infinite;
+}
+
+.spinner-text {
+color: #fff;
+font-weight: bold;
+}
+
+/* shared keyframes */
+@keyframes spin {
+to { transform: rotate(360deg); }
+}
+
+/* ===============================
+Print-friendly styling
+=============================== */
+@media print {
+header,
+.site-header,
+nav,
+.site-nav,
+#backToTop,
+.hero-icons,
+.mobile-cta {
+display: none !important;
+}
+
+body {
+background: #fff !important;
+color: #000 !important;
+padding-bottom: 0 !important;
+}
+
+.container {
+max-width: 100% !important;
+margin: 0 !important;
+padding: 0 !important;
+}
+
+.service-card,
+.contact-card,
+.leadership-card,
+.quick-contact-card,
+.section-panel {
+box-shadow: none !important;
+border: 1px solid #ccc !important;
+}
+
+a {
+color: #000 !important;
+text-decoration: underline !important;
+}
+}
+
+/* Mobile footer links slightly larger for tap targets */
+@media (max-width: 480px) {
+footer a {
+padding: 0.15rem 0.2rem;
+}
+}
+
+/* Better readability on small screens */
+@media (max-width: 480px) {
+.container p,
+.container li {
+max-width: 36rem;
+}
+}
+
+/* Button/link polish */
+a:focus-visible,
+.btn:focus-visible,
+.site-nav a:focus-visible {
+outline: 3px solid rgba(31, 58, 95, 0.35);
+outline-offset: 3px;
+border-radius: 6px;
+}
+
+/* Subtle page load animation */
+body {
+animation: pageFade 0.18s ease-in;
+}
+
+@keyframes pageFade {
+from { opacity: 0.92; }
+to   { opacity: 1; }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+- {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+  }
+  }
+
+/* Consistent heading spacing */
+.container h2 {
+margin-top: 0.25rem;
+margin-bottom: 0.75rem;
+line-height: 1.2;
+}
+
+.container h3 {
+margin-top: 1.25rem;
+margin-bottom: 0.5rem;
+line-height: 1.25;
+}
+
+.container ul {
+margin-top: 0.4rem;
+}
+
+/* Subtle card edge highlight */
+.service-card,
+.contact-card,
+.leadership-card,
+.quick-contact-card {
+background: linear-gradient(#ffffff, #ffffff) padding-box,
+linear-gradient(180deg, rgba(31,58,95,0.10), rgba(0,0,0,0.05)) border-box;
+border: 1px solid transparent;
+}
