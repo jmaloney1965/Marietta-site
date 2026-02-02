@@ -193,7 +193,7 @@ padding: clamp(5rem, 7vw, 8rem) 1rem clamp(3.5rem, 5vw, 5.5rem);
 text-align: center;
 
 /* Hero background image */
-background-image: url(“images/hero-bg.jpg”);
+background-image: url(“images/chalkboard.jpg”);
 background-size: cover;
 background-position: bottom center;
 background-repeat: no-repeat;
