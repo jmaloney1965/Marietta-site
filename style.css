@@ -66,7 +66,7 @@ header,
   flex-shrink: 0;
   display: flex;
   justify-content: center;  /* centers the image */
-  width: 100%;              /* critical on mobile column layout */
+  width: auto;              /* allow nav and logo to share space on desktop */
 }
 
 .site-logo img{
@@ -141,7 +141,7 @@ nav a:hover,
     width: 92vw;              /* BIG, fills screen width */
     max-width: 520px;         /* keeps it from going insane */
     height: auto;             /* keep aspect ratio */
-    max-height: 220pex;        /* cap height so header stays short */
+    max-height: 220px;        /* cap height so header stays short */
     object-fit: contain;
     display: block;
   }

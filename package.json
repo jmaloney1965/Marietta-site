@@ -1,0 +1,9 @@
+{
+  "name": "marietta-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "preview": "npx http-server . -p 8000",
+    "deploy:gh-pages": "npx gh-pages -d ."
+  }
+}
