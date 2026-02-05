@@ -314,11 +314,49 @@ nav a:hover,
   text-decoration: none;
   color: inherit;
   display: block;
+
+  /* Step 2: make it feel clickable */
+  cursor: pointer;
+  position: relative;
+  border-radius: 12px; /* matches card rounding so focus ring looks clean */
 }
 
 .card-link:focus,
 .card-link:hover {
   outline: none;
+}
+
+/* Step 2: visible "this is a link" indicator */
+.card-link::after {
+  content: "›";
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 1.6rem;
+  line-height: 1;
+  opacity: 0.55;
+  transform: translateX(0);
+  transition: opacity 0.2s, transform 0.2s;
+  pointer-events: none;
+}
+
+.card-link:hover::after,
+.card-link:focus-visible::after {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+/* Step 2: hover/focus should trigger even if user hovers whitespace in the link */
+.card-link:hover .service-card,
+.card-link:focus-visible .service-card {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.16);
+}
+
+/* Step 2: stronger keyboard focus ring on the whole tile */
+.card-link:focus-visible {
+  outline: 3px solid rgba(31, 58, 95, 0.35);
+  outline-offset: 4px;
 }
 
 /* ===============================
@@ -350,6 +388,22 @@ nav a:hover,
   width: 50px;
   height: 50px;
   margin-bottom: 0.8rem;
+}
+
+/* Optional Step 3: if you add a small CTA line in HTML:
+   <span class="card-cta">Learn more →</span>
+*/
+.card-cta{
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #1f3a5f;
+  opacity: 0.95;
+}
+
+.card-link:hover .card-cta,
+.card-link:focus-visible .card-cta{
+  text-decoration: underline;
 }
 
 /* ===============================
@@ -599,6 +653,12 @@ footer a:hover { text-decoration: underline; }
   .service-card,
   .contact-card {
     padding: 1.1rem;
+  }
+
+  /* keep the chevron positioned nicely on smaller tiles */
+  .card-link::after{
+    top: 12px;
+    right: 12px;
   }
 }
 
