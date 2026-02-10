@@ -214,6 +214,22 @@
 
 <button id="backToTop" title="Back to Top">&#8679;</button>
 
+<script>
+  const backToTopBtn = document.getElementById("backToTop");
+
+  window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
 <script src="site.js?v=20260117"></script>
 </body>
 </html>
