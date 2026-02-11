@@ -77,12 +77,11 @@ header,
   object-fit: contain;
 }
 
-.site-logo-img {
-  /* Default: no filter */
-  filter: none;
-  transition: filter 0.3s ease;
+/* IMPORTANT: prevent accidental hue/brightness filters on the logo */
+.site-logo img,
+.site-logo-img{
+  filter: none !important;
 }
-
 
 /* Title (used on pages that still use text title instead of logo) */
 header h1,
