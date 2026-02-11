@@ -79,6 +79,7 @@ header,
 
 .site-logo-img {
   /* Default: no filter */
+  filter: none;
   transition: filter 0.3s ease;
 }
 
