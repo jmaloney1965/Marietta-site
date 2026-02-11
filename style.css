@@ -25,25 +25,17 @@ body {
 
 header,
 .site-header {
-  background: linear-gradient(
-    to bottom,
-    #1E63B6 0%,   /* lighter top */
-    #144E9B 55%,
-    #0D3D82 100%  /* still deep at bottom */
-  );
+background: #ffffff; /* was blue gradient */
+color: #1f3a5f; /* dark text */
+padding: 1rem;
+text-align: center;
 
-  color: #ffffff;
-  padding: 1rem;
-  text-align: center;
+position: sticky;
+top: 0;
+z-index: 100;
 
-  position: sticky;
-  top: 0;
-  z-index: 100;
-
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-
-  /* subtle divider */
-  border-bottom: 1px solid rgba(255,255,255,0.15);
+box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+border-bottom: 1px solid rgba(0,0,0,0.10); /* subtle divider */
 }
 
 /* Header Wrap: logo + nav */
@@ -102,7 +94,7 @@ nav,
 
 nav a,
 .site-nav a {
-  color: #fff;
+  color: #1f3a5f;
   text-decoration: none;
   font-weight: bold;
   margin: 0;
