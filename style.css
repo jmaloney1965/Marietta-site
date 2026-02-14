@@ -556,7 +556,7 @@ footer a {
 
 footer a:hover { text-decoration: underline; }
 
-/* Site tagline footer - simple, clean footer at bottom */
+/* Site tagline footer - accent bar inside footer */
 .site-tagline-footer {
   background: #1E63B6;
   color: #ffffff;
@@ -565,7 +565,7 @@ footer a:hover { text-decoration: underline; }
   font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 0.01em;
-  margin-top: 0;
+  margin: 1rem -1rem -1rem; /* stretch to edges of parent footer padding */
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
