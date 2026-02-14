@@ -107,6 +107,11 @@ nav a:hover,
   text-decoration: underline;
 }
 
+/* Active page indicator */
+.site-nav a.nav-active {
+  color: #B8860B;
+}
+
 @media (max-width: 900px) {
   .site-logo img {
     height: 140px;
