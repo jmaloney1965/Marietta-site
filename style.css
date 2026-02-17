@@ -25,8 +25,8 @@ body {
 
 header,
 .site-header {
-background: #C8D1DC; /* Darker Cool Slate */
-color: #1f3a5f; /* dark text */
+background: linear-gradient(135deg, #2e5a8a 0%, #3d6fa5 40%, #4a80b8 100%);
+color: #ffffff;
 padding: 1rem;
 text-align: center;
 
@@ -94,7 +94,7 @@ nav,
 
 nav a,
 .site-nav a {
-  color: #1f3a5f;
+  color: #ffffff;
   text-decoration: none;
   font-weight: bold;
   margin: 0;
@@ -109,7 +109,7 @@ nav a:hover,
 
 /* Active page indicator */
 .site-nav a.nav-active {
-  color: #B8860B;
+  color: #E8B830;
 }
 
 @media (max-width: 900px) {
