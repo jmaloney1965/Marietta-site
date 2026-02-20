@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#1f3a5f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Circuit board / device -->
+  <rect x="16" y="34" width="32" height="22" rx="3" fill="none"/>
+  <line x1="22" y1="40" x2="28" y2="40"/>
+  <line x1="22" y1="44" x2="26" y2="44"/>
+  <line x1="36" y1="40" x2="42" y2="40"/>
+  <line x1="38" y1="44" x2="42" y2="44"/>
+  <rect x="28" y="38" width="8" height="8" rx="1" fill="none"/>
+  <!-- Antenna element rising from device -->
+  <line x1="32" y1="34" x2="32" y2="14"/>
+  <!-- RF waves -->
+  <path d="M24 18 Q28 14 32 14 Q36 14 40 18" fill="none"/>
+  <path d="M20 22 Q26 14 32 14 Q38 14 44 22" fill="none" opacity="0.6"/>
+  <path d="M16 26 Q24 14 32 14 Q40 14 48 26" fill="none" opacity="0.3"/>
+  <!-- Matching network dots -->
+  <circle cx="30" cy="50" r="1.5" fill="#1f3a5f" stroke="none"/>
+  <circle cx="34" cy="50" r="1.5" fill="#1f3a5f" stroke="none"/>
+  <line x1="30" y1="50" x2="34" y2="50"/>
+</svg>
