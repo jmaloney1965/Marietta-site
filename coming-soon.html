@@ -4,43 +4,787 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#C8D1DC" />
-  <title>Fragmented Blade Antennas — Coming Soon | Marietta Research Solutions</title>
+  <title>Fragmented Blade Antennas | Marietta Research Solutions</title>
 
   <link rel="canonical" href="https://www.mariettaresearchsolutions.com/coming-soon.html" />
   <link rel="stylesheet" href="style.css?v=20260504" />
   <link rel="manifest" href="manifest.json" />
-  <!-- Favicons -->
+
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-  <meta name="description" content="Coming soon: AI-designed fragmented blade antennas for 2.4–7.5 GHz. WiFi 6E, UWB, Sub-6 5G. Multiple sizes, substrates, and bandwidth options from Marietta Research Solutions." />
+  <meta name="description" content="Fragmented Blade Antennas — a turnkey product line of planar blade antennas covering 2.4–7.5 GHz, distributed as production-ready Gerber files. Five sub-bands × two substrates (FR4, Rogers 4350B). Free 915 MHz reference design." />
   <meta name="robots" content="index,follow" />
 
-  <!-- Open Graph -->
   <meta property="og:site_name" content="Marietta Research Solutions" />
-  <meta property="og:title" content="Fragmented Blade Antennas — Coming Soon" />
-  <meta property="og:description" content="AI-designed fragmented blade antennas for 2.4–7.5 GHz. WiFi 6E, UWB, Sub-6 5G coverage in compact blade form factors." />
+  <meta property="og:title" content="Fragmented Blade Antennas | Marietta Research Solutions" />
+  <meta property="og:description" content="Coming soon: a turnkey line of planar fragmented blade antennas, 2.4–7.5 GHz, distributed as production-ready Gerber files." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.mariettaresearchsolutions.com/coming-soon.html" />
-  <meta property="og:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260217" />
+  <meta property="og:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260504" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Fragmented Blade Antennas — Coming Soon" />
-  <meta name="twitter:description" content="AI-designed fragmented blade antennas for 2.4–7.5 GHz. WiFi 6E, UWB, Sub-6 5G coverage in compact blade form factors." />
-  <meta name="twitter:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260217" />
+  <meta name="twitter:title" content="Fragmented Blade Antennas | Marietta Research Solutions" />
+  <meta name="twitter:description" content="Coming soon: a turnkey line of planar fragmented blade antennas, 2.4–7.5 GHz, distributed as production-ready Gerber files." />
+  <meta name="twitter:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260504" />
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFKE4XNDT7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-TFKE4XNDT7');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFKE4XNDT7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TFKE4XNDT7');
+  </script>
 
+  <style>
+    /* ===== Page-scoped styles for blade-antennas.html ===== */
+
+    /* Hero */
+    .blade-hero {
+      position: relative;
+      padding: clamp(3rem, 4.5vw, 4.5rem) 1rem clamp(2rem, 3vw, 3rem);
+      background-image: url('chalkboard.png');
+      background-size: cover;
+      background-position: center;
+      margin: 0 -1000px 2rem; /* bleed past container */
+      padding-left: 1000px;
+      padding-right: 1000px;
+    }
+    .blade-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.58);
+    }
+    .blade-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .blade-hero-eyebrow {
+      color: #E8B830;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .blade-hero h1 {
+      color: #fff;
+      margin: 0;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.05;
+      text-wrap: balance;
+    }
+    .blade-hero-subhead {
+      color: #fff;
+      opacity: 0.92;
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-top: 0.5rem;
+    }
+    .blade-hero-lede {
+      color: rgba(255,255,255,0.88);
+      max-width: 680px;
+      margin: 1rem auto 0;
+      line-height: 1.5;
+      font-size: 1.05rem;
+    }
+
+    /* Spec strip */
+    .blade-spec-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.8rem;
+      margin-top: 0;
+    }
+    .blade-spec {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 10px;
+      padding: 0.95rem 1.1rem;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+    }
+    .blade-spec-k {
+      font-size: 0.72rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+    .blade-spec-v {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1f3a5f;
+      margin-top: 0.25rem;
+      line-height: 1.2;
+    }
+    .blade-spec-sub {
+      color: #999;
+      font-size: 0.78rem;
+      margin-top: 0.15rem;
+    }
+
+    /* Section headings */
+    .blade-h3 {
+      color: #1f3a5f;
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin: 2.25rem 0 0.5rem;
+    }
+
+    /* Band grid */
+    .blade-band-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+    .blade-band-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-top: 3px solid #E8B830;
+      border-radius: 8px;
+      padding: 0.9rem 0.8rem 1rem;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+      text-align: center;
+    }
+    .blade-band-id {
+      font-size: 0.7rem;
+      color: #999;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+    .blade-band-range {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1f3a5f;
+      margin: 0.3rem 0;
+    }
+    .blade-band-unit {
+      font-size: 0.7rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+    }
+    .blade-band-apps {
+      font-size: 0.78rem;
+      color: #333;
+      margin-top: 0.5rem;
+      line-height: 1.35;
+    }
+
+    /* Substrate row */
+    .blade-substrate-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+    .blade-substrate {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 10px;
+      padding: 1rem 1.15rem;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    .blade-substrate-tag {
+      width: 46px;
+      height: 46px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+    }
+    .blade-substrate-tag.fr4 { background: #1f3a5f; }
+    .blade-substrate-tag.rogers { background: #8B5A3C; }
+    .blade-substrate-name {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #1f3a5f;
+    }
+    .blade-substrate-tagline {
+      font-size: 0.8rem;
+      color: #E8B830;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .blade-substrate-desc {
+      font-size: 0.9rem;
+      color: #333;
+      line-height: 1.5;
+      margin-top: 0.35rem;
+    }
+
+    /* Two-column "what you get" */
+    .blade-deliverables {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+    .blade-deliverable-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      margin-top: 0.9rem;
+    }
+    .blade-deliverable {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-left: 3px solid #1f3a5f;
+      border-radius: 6px;
+      padding: 0.7rem 0.85rem;
+    }
+    .blade-deliverable-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #1f3a5f;
+    }
+    .blade-deliverable-desc {
+      font-size: 0.82rem;
+      color: #666;
+      margin-top: 0.15rem;
+      line-height: 1.4;
+    }
+
+    /* Aperture preview cards */
+    .blade-aperture-stack {
+      display: grid;
+      gap: 0.85rem;
+    }
+    .blade-aperture {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 8px;
+      padding: 0.9rem;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+    }
+    .blade-aperture-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.5rem;
+    }
+    .blade-aperture-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .blade-aperture-eyebrow.illustrative { color: #E8B830; }
+    .blade-aperture-eyebrow.redacted { color: #1f3a5f; }
+    .blade-aperture-meta {
+      font-size: 0.7rem;
+      color: #999;
+    }
+    .blade-aperture-figure {
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+      background: #f5f7fa;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .blade-aperture-figure img {
+      width: 100%;
+      display: block;
+    }
+    .blade-aperture-figure.is-redacted img {
+      filter: blur(10px) saturate(0.75) contrast(0.85);
+      transform: scale(1.03);
+    }
+    .blade-aperture-lock {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(31,58,95,0.92);
+      color: #fff;
+      padding: 0.6rem 1rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+    }
+    .blade-aperture-lock-icon {
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+    .blade-aperture-lock-label {
+      font-size: 0.72rem;
+      color: #E8B830;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 0.3rem;
+    }
+    .blade-aperture-lock-sub {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.75);
+      margin-top: 0.15rem;
+    }
+    .blade-aperture-tick {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      right: 8px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.68rem;
+      color: #1f3a5f;
+      font-weight: 700;
+      background: rgba(255,255,255,0.88);
+      padding: 0.2rem 0.45rem;
+      border-radius: 4px;
+    }
+    .blade-aperture-caption {
+      font-size: 0.72rem;
+      color: #666;
+      margin-top: 0.5rem;
+      line-height: 1.4;
+      font-style: italic;
+    }
+
+    /* Transparency callout */
+    .blade-transparency {
+      margin-top: 1.2rem;
+      background: rgba(31,58,95,0.05);
+      border: 1px dashed rgba(31,58,95,0.25);
+      border-left: 3px solid #1f3a5f;
+      border-radius: 6px;
+      padding: 0.85rem 1.1rem;
+      font-size: 0.88rem;
+      color: #333;
+      line-height: 1.5;
+    }
+    .blade-transparency strong {
+      color: #1f3a5f;
+    }
+
+    /* Drop-into-PCB */
+    .blade-pcb-wrap {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+      margin-top: 1rem;
+    }
+    .blade-pcb-wrap svg {
+      width: 100%;
+      display: block;
+      border-radius: 8px;
+    }
+    .blade-mini-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+    .blade-mini-feature {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.7rem;
+      align-items: start;
+    }
+    .blade-mini-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #E8B830;
+      color: #5a4510;
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .blade-mini-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #1f3a5f;
+    }
+    .blade-mini-desc {
+      font-size: 0.82rem;
+      color: #333;
+      margin-top: 0.2rem;
+      line-height: 1.4;
+    }
+
+    /* Custom designs callout */
+    .blade-custom {
+      margin-top: 2.25rem;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 1.25rem;
+      align-items: center;
+    }
+    .blade-custom-icon {
+      font-size: 2rem;
+    }
+    .blade-custom h4 {
+      color: #1f3a5f;
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+    .blade-custom p {
+      color: #333;
+      margin: 0.35rem 0 0;
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+    .blade-custom-btn {
+      display: inline-block;
+      padding: 0.7rem 1.1rem;
+      border-radius: 6px;
+      background: #1f3a5f;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .blade-custom-btn:hover { background: #2e5a8a; }
+
+    /* Free 915 MHz section */
+    .blade-free {
+      margin-top: 2.5rem;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+    }
+    .blade-free-left {
+      padding: 1.75rem 1.9rem;
+    }
+    .blade-free-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #E8B830;
+      color: #5a4510;
+      padding: 0.25rem 0.7rem;
+      border-radius: 99px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .blade-free h3 {
+      color: #1f3a5f;
+      margin: 0.6rem 0 0.4rem;
+      font-size: 1.7rem;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+    .blade-free-lede {
+      color: #333;
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+    .blade-mini-spec-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .blade-mini-spec {
+      background: #f5f7fa;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 6px;
+      padding: 0.55rem 0.7rem;
+    }
+    .blade-mini-spec-k {
+      font-size: 0.65rem;
+      color: #666;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .blade-mini-spec-v {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #1f3a5f;
+      margin-top: 0.1rem;
+    }
+    .blade-free-perfect {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.5;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      padding-top: 0.8rem;
+    }
+    .blade-free-perfect strong { color: #1f3a5f; }
+    .blade-free-form {
+      margin-top: 1rem;
+      display: grid;
+      gap: 0.6rem;
+    }
+    .blade-free-form input[type="email"] {
+      padding: 0.75rem 0.95rem;
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.15);
+      font-size: 1rem;
+      font-family: inherit;
+      color: #1f3a5f;
+      font-weight: 600;
+    }
+    .blade-free-checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: #555;
+      line-height: 1.4;
+      cursor: pointer;
+    }
+    .blade-free-checkbox input { margin-top: 2px; flex: 0 0 auto; }
+    .blade-free-btn {
+      padding: 0.85rem 1.2rem;
+      border-radius: 6px;
+      border: none;
+      background: #1f3a5f;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .blade-free-btn:hover { background: #2e5a8a; }
+    .blade-free-btn:disabled {
+      background: #c9d0d9;
+      cursor: not-allowed;
+    }
+    .blade-free-success {
+      margin-top: 1.1rem;
+      background: #1f3a5f;
+      color: #fff;
+      border-radius: 8px;
+      padding: 1.1rem 1.2rem;
+      display: none;
+    }
+    .blade-free-success-head {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #E8B830;
+      margin-bottom: 0.25rem;
+    }
+    .blade-free-success-body {
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+    .blade-free-right {
+      background: linear-gradient(135deg, #1f3a5f 0%, #2e5a8a 100%);
+      color: #fff;
+      padding: 1.75rem 1.9rem;
+      display: grid;
+      place-content: center;
+    }
+    .blade-free-package {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px;
+      padding: 1.1rem;
+    }
+    .blade-free-package-eyebrow {
+      color: #E8B830;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .blade-free-package-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.2);
+      border-radius: 4px;
+      padding: 0.5rem 0.7rem;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 0.85rem;
+      margin-top: 0.6rem;
+    }
+    .blade-free-package-name {
+      color: #E8B830;
+      font-weight: 700;
+    }
+    .blade-free-package-size {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.75rem;
+    }
+    .blade-free-package-tree {
+      margin: 0.8rem 0 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.8;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+    }
+    .blade-free-package-tree .dim {
+      color: rgba(255,255,255,0.5);
+    }
+    .blade-free-package-note {
+      margin-top: 1rem;
+      padding: 0.55rem 0.75rem;
+      background: rgba(232,184,48,0.15);
+      border: 1px solid rgba(232,184,48,0.35);
+      border-radius: 5px;
+      font-size: 0.78rem;
+      color: #F5D87A;
+      font-style: italic;
+    }
+
+    /* Notify form */
+    .blade-notify {
+      margin-top: 2.5rem;
+      background: linear-gradient(135deg, #1f3a5f 0%, #2e5a8a 100%);
+      color: #fff;
+      border-radius: 14px;
+      padding: 2rem 2.25rem;
+    }
+    .blade-notify-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .blade-notify-eyebrow {
+      color: #E8B830;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+    .blade-notify h3 {
+      color: #fff;
+      font-size: 1.5rem;
+      margin: 0.4rem 0 0.6rem;
+      font-weight: 700;
+    }
+    .blade-notify-lede {
+      color: rgba(255,255,255,0.88);
+      margin: 0;
+      line-height: 1.5;
+      font-size: 0.98rem;
+    }
+    .blade-notify-form {
+      display: grid;
+      gap: 0.8rem;
+    }
+    .blade-notify-form input[type="email"] {
+      padding: 0.8rem 1rem;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+      font-family: inherit;
+      color: #1f3a5f;
+      font-weight: 600;
+    }
+    .blade-notify-bands-label {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+    .blade-notify-bands {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+    .blade-notify-band {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 99px;
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 600;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .blade-notify-band input { display: none; }
+    .blade-notify-band.is-active {
+      background: #E8B830;
+      color: #5a4510;
+      border-color: #E8B830;
+    }
+    .blade-notify-btn {
+      padding: 0.85rem 1.2rem;
+      border-radius: 6px;
+      border: none;
+      background: #E8B830;
+      color: #1f3a5f;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .blade-notify-btn:hover { filter: brightness(1.08); }
+    .blade-notify-success {
+      display: none;
+      text-align: center;
+      padding: 0.5rem 0;
+    }
+    .blade-notify-success-check {
+      font-size: 3rem;
+      margin-bottom: 0.3rem;
+    }
+    .blade-notify-success h3 { margin: 0 0 0.5rem; }
+    .blade-notify-success p {
+      color: rgba(255,255,255,0.88);
+      margin: 0;
+      font-size: 1.05rem;
+    }
+    .blade-notify-success strong { color: #E8B830; }
+
+    /* Mobile collapse */
+    @media (max-width: 760px) {
+      .blade-spec-strip { grid-template-columns: 1fr 1fr; }
+      .blade-band-grid { grid-template-columns: 1fr 1fr; }
+      .blade-substrate-row { grid-template-columns: 1fr; }
+      .blade-deliverables { grid-template-columns: 1fr; }
+      .blade-deliverable-grid { grid-template-columns: 1fr; }
+      .blade-mini-features { grid-template-columns: 1fr; }
+      .blade-custom { grid-template-columns: 1fr; text-align: center; }
+      .blade-free { grid-template-columns: 1fr; }
+      .blade-notify-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body>
@@ -73,107 +817,468 @@
   </div>
 </header>
 
+<!-- Hero -->
+<section class="blade-hero">
+  <div class="blade-hero-inner">
+    <div class="blade-hero-eyebrow">Coming Soon · MRS Product Line</div>
+    <h1>Fragmented Blade Antennas</h1>
+    <div class="blade-hero-subhead">2.4 &ndash; 7.5&nbsp;GHz · Downloadable Gerber files</div>
+    <p class="blade-hero-lede">
+      A turnkey line of planar blade antennas, each engineered with the fragmented aperture
+      method and distributed as production-ready Gerber packages &mdash; microstrip-fed,
+      dipole-pattern radiators with return loss better than 15&nbsp;dB across band.
+    </p>
+  </div>
+</section>
+
 <main class="container">
 
-  <h2>Fragmented Blade Antennas</h2>
-  <p class="highlight" style="font-size:1.1em; color:#1f3a5f; font-weight:600; margin-bottom:0.5em;">Coming Soon</p>
-
-  <p>
-    Marietta Research Solutions is developing a line of high-performance fragmented aperture
-    blade antennas covering <strong>2.4&ndash;7.5&nbsp;GHz</strong> &mdash; spanning WiFi&nbsp;6E,
-    UWB, and Sub-6&nbsp;5G bands. Each design is generated using our proprietary AI optimization
-    pipeline and validated with full-wave FDTD electromagnetic simulation.
-  </p>
-
-  <hr class="divider" />
-
-  <h3>Technology</h3>
-  <p>
-    Fragmented aperture antennas replace conventional patch or dipole geometries with an
-    AI-optimized metallic fragment pattern on a planar substrate. This approach unlocks wideband
-    performance, compact form factors, and multi-band coverage that conventional designs
-    cannot achieve. Every antenna in the product line is drawn from a database of over
-    <strong>16&nbsp;million</strong> simulated designs.
-  </p>
-
-  <hr class="divider" />
-
-  <h3>Stock Designs</h3>
-  <p>
-    Pre-validated antenna designs available as <strong>instantly downloadable Gerber files</strong>
-    for a fixed fee. Place the design directly on your product PCB or fabricate as a
-    standalone antenna &mdash; ready to integrate immediately.
-  </p>
-
-  <div class="section-panel">
-    <div class="services-grid">
-
-      <div class="service-card">
-        <h3>Frequency Coverage</h3>
-        <p>
-          2.4&ndash;7.5&nbsp;GHz continuous or band-specific.<br />
-          WiFi 2.4/5/6E, Bluetooth, UWB (6&ndash;8&nbsp;GHz),
-          Sub-6&nbsp;5G (3.3&ndash;4.2&nbsp;GHz).
-        </p>
-      </div>
-
-      <div class="service-card">
-        <h3>Substrates</h3>
-        <p>
-          FR4 (low cost, high volume),<br />
-          Rogers (low loss, precision),<br />
-          Flex (conformal, wearable).
-        </p>
-      </div>
-
-      <div class="service-card">
-        <h3>Form Factors</h3>
-        <p>
-          PCB-integrated (no external antenna),<br />
-          standalone blade (SMA/U.FL),<br />
-          range of sizes from 15&times;15&nbsp;mm to 40&times;30&nbsp;mm.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <h3>AI-Optimized</h3>
-        <p>
-          Every design selected from 2<sup>24</sup>&nbsp;candidates
-          via neural network surrogate models trained on full-wave FDTD data.
-        </p>
-      </div>
-
+  <!-- At-a-glance specs -->
+  <section class="blade-spec-strip">
+    <div class="blade-spec">
+      <div class="blade-spec-k">Return Loss</div>
+      <div class="blade-spec-v">&gt; 15 dB</div>
+      <div class="blade-spec-sub">across band</div>
     </div>
-  </div>
+    <div class="blade-spec">
+      <div class="blade-spec-k">Radiation Pattern</div>
+      <div class="blade-spec-v">Dipole-like</div>
+      <div class="blade-spec-sub">linear polarization</div>
+    </div>
+    <div class="blade-spec">
+      <div class="blade-spec-k">Feed</div>
+      <div class="blade-spec-v">50 &Omega; Microstrip</div>
+      <div class="blade-spec-sub">edge-launch or coax</div>
+    </div>
+    <div class="blade-spec">
+      <div class="blade-spec-k">Substrates</div>
+      <div class="blade-spec-v">FR4 · Rogers 4350B</div>
+      <div class="blade-spec-sub">low-cost / high-perf</div>
+    </div>
+  </section>
 
-  <hr class="divider" />
+  <!-- Band lineup -->
+  <section>
+    <h3 class="blade-h3">Initial Band Lineup</h3>
+    <p>
+      Five sub-band designs launching simultaneously, each available in two substrate options.
+      Other bands &mdash; including custom UWB and narrow-band variants &mdash; are available as a custom
+      design engagement.
+    </p>
 
-  <h3>Custom Designs</h3>
-  <p>
-    Need a specific frequency band, substrate, or form factor not in our stock catalog?
-    We offer custom fragmented aperture antenna design using the same AI/FDTD pipeline.
-    From specification to validated Gerber files, typically delivered in
-    <strong>1&ndash;2&nbsp;weeks</strong>.
-  </p>
+    <div class="blade-band-grid">
+      <div class="blade-band-card">
+        <div class="blade-band-id">B1</div>
+        <div class="blade-band-range">2.4 &ndash; 2.7</div>
+        <div class="blade-band-unit">GHz</div>
+        <div class="blade-band-apps">ISM, Wi-Fi 2.4, BLE</div>
+      </div>
+      <div class="blade-band-card">
+        <div class="blade-band-id">B2</div>
+        <div class="blade-band-range">2.7 &ndash; 3.0</div>
+        <div class="blade-band-unit">GHz</div>
+        <div class="blade-band-apps">S-band radar lower</div>
+      </div>
+      <div class="blade-band-card">
+        <div class="blade-band-id">B3</div>
+        <div class="blade-band-range">3.0 &ndash; 3.4</div>
+        <div class="blade-band-unit">GHz</div>
+        <div class="blade-band-apps">CBRS, S-band mid</div>
+      </div>
+      <div class="blade-band-card">
+        <div class="blade-band-id">B4</div>
+        <div class="blade-band-range">3.4 &ndash; 4.2</div>
+        <div class="blade-band-unit">GHz</div>
+        <div class="blade-band-apps">n77/n78 5G, C-band</div>
+      </div>
+      <div class="blade-band-card">
+        <div class="blade-band-id">B5</div>
+        <div class="blade-band-range">4.2 &ndash; 7.5</div>
+        <div class="blade-band-unit">GHz</div>
+        <div class="blade-band-apps">Wi-Fi 6E/7, UNII</div>
+      </div>
+    </div>
 
-  <hr class="divider" />
+    <div class="blade-substrate-row">
+      <div class="blade-substrate">
+        <div class="blade-substrate-tag fr4">FR4</div>
+        <div>
+          <div class="blade-substrate-name">FR4</div>
+          <div class="blade-substrate-tagline">Low-cost applications</div>
+          <div class="blade-substrate-desc">
+            Standard FR4 laminate. Excellent for consumer devices, development boards, and
+            cost-sensitive deployments where moderate loss tangent is acceptable.
+          </div>
+        </div>
+      </div>
+      <div class="blade-substrate">
+        <div class="blade-substrate-tag rogers">Roge</div>
+        <div>
+          <div class="blade-substrate-name">Rogers 4350B</div>
+          <div class="blade-substrate-tagline">Performance-sensitive applications</div>
+          <div class="blade-substrate-desc">
+            Low-loss, tightly controlled &epsilon;<sub>r</sub>. Recommended for instrumentation,
+            defense, and the upper sub-bands (4.2&ndash;7.5&nbsp;GHz) where FR4 loss becomes the
+            limiting factor.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <h3>Interested?</h3>
-  <p>
-    Contact us to discuss your antenna requirements, request a stock design catalog,
-    or inquire about custom designs.
-  </p>
+  <!-- What you get -->
+  <section>
+    <h3 class="blade-h3">What You Get</h3>
+    <div class="blade-deliverables">
+      <div>
+        <p>
+          Every purchase delivers a production-ready design package &mdash; no re-simulation, no
+          tweaking, no layout work. Datasheets (including measured S<sub>11</sub> and radiation
+          patterns) are published <em>before</em> purchase, so you know exactly what you're buying.
+        </p>
+        <div class="blade-deliverable-grid">
+          <div class="blade-deliverable">
+            <div class="blade-deliverable-title">Gerber File Set</div>
+            <div class="blade-deliverable-desc">RS-274X Gerbers + Excellon drill</div>
+          </div>
+          <div class="blade-deliverable">
+            <div class="blade-deliverable-title">Datasheet PDF</div>
+            <div class="blade-deliverable-desc">Full specs, dimensions, recommended feed</div>
+          </div>
+          <div class="blade-deliverable">
+            <div class="blade-deliverable-title">S<sub>11</sub> Data</div>
+            <div class="blade-deliverable-desc">Simulated for every design; measured where a prototype has been built</div>
+          </div>
+          <div class="blade-deliverable">
+            <div class="blade-deliverable-title">Radiation Patterns</div>
+            <div class="blade-deliverable-desc">Simulated E- and H-plane cuts; measured where available</div>
+          </div>
+          <div class="blade-deliverable">
+            <div class="blade-deliverable-title">Mechanical Drawing</div>
+            <div class="blade-deliverable-desc">DXF + PDF outline for integration</div>
+          </div>
+          <div class="blade-deliverable">
+            <div class="blade-deliverable-title">Commercial License</div>
+            <div class="blade-deliverable-desc">Single product, single company, non-transferable</div>
+          </div>
+        </div>
+      </div>
 
-  <div class="cta-row">
-    <a class="btn" href="contact.html">Contact Us</a>
-    <a class="btn btn-outline capabilities-link" href="capabilities.pdf" target="_blank" rel="noopener">
-      Capabilities (PDF)
-    </a>
-  </div>
+      <div class="blade-aperture-stack">
+        <!-- Illustrative -->
+        <div class="blade-aperture">
+          <div class="blade-aperture-head">
+            <div class="blade-aperture-eyebrow illustrative">Illustrative Sample</div>
+            <div class="blade-aperture-meta">Typical fragment pattern</div>
+          </div>
+          <div class="blade-aperture-figure">
+            <img src="blade-pattern.svg" alt="Illustrative fragmented blade antenna — typical optimized pixel pattern, not the actual Gerber deliverable" />
+          </div>
+          <div class="blade-aperture-caption">
+            Typical fragmented blade &mdash; shown for illustration, not the actual Gerber file.
+            Every purchased design has a unique, band-tuned pixel pattern produced by the MRS
+            GA+FDTD solver.
+          </div>
+        </div>
+
+        <!-- Redacted -->
+        <div class="blade-aperture">
+          <div class="blade-aperture-head">
+            <div class="blade-aperture-eyebrow redacted">Preview &mdash; Pixels Redacted</div>
+            <div class="blade-aperture-meta">Confidential until purchase</div>
+          </div>
+          <div class="blade-aperture-figure is-redacted">
+            <img src="blade-pattern.svg" alt="Fragmented blade antenna — optimized pixel pattern obscured for preview" />
+            <div class="blade-aperture-lock">
+              <div class="blade-aperture-lock-icon">🔒</div>
+              <div class="blade-aperture-lock-label">Pixels Redacted</div>
+              <div class="blade-aperture-lock-sub">Revealed on purchase</div>
+            </div>
+            <div class="blade-aperture-tick">
+              <span>25.5 &times; 31.125 mm (sample)</span>
+              <span>FR4 / Rogers 4350B</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="blade-transparency">
+      <strong>Transparency on simulated vs. measured data.</strong>
+      Every MRS design is fully characterized in FDTD before release. We also prototype and
+      measure representative designs across the product line to validate the solver against
+      hardware &mdash; but we don't fabricate every band-and-substrate combination. Each datasheet
+      clearly marks whether plots are <em>simulated</em> or <em>measured</em>, and cites the
+      closest measured sibling design when simulation-only.
+    </div>
+  </section>
+
+  <!-- Free 915 MHz sample -->
+  <section class="blade-free">
+    <div class="blade-free-left">
+      <div class="blade-free-pill">★ Free · Try Before You Buy</div>
+      <h3>Free Sample Design &mdash; 915 MHz ISM</h3>
+      <p class="blade-free-lede">
+        A complete fragmented dipole for the 902&ndash;928&nbsp;MHz ISM band &mdash; the same
+        design format you'd get with a paid blade antenna, minus the cost. Fabricate it,
+        measure it, and confirm the datasheet matches the hardware before committing to the
+        paid lineup.
+      </p>
+
+      <div class="blade-mini-spec-row">
+        <div class="blade-mini-spec">
+          <div class="blade-mini-spec-k">Band</div>
+          <div class="blade-mini-spec-v">902&ndash;928 MHz</div>
+        </div>
+        <div class="blade-mini-spec">
+          <div class="blade-mini-spec-k">Substrate</div>
+          <div class="blade-mini-spec-v">FR4</div>
+        </div>
+        <div class="blade-mini-spec">
+          <div class="blade-mini-spec-k">Feed</div>
+          <div class="blade-mini-spec-v">50 &Omega; &mu;strip</div>
+        </div>
+      </div>
+
+      <div class="blade-free-perfect">
+        <strong>Perfect for:</strong>
+        LoRa / LoRaWAN, Meshtastic, Sigfox, Z-Wave, SCADA &amp; industrial telemetry, Sub-GHz
+        IoT gateways, and anyone evaluating fragmented aperture technology before committing
+        to a paid band.
+      </div>
+
+      <form class="blade-free-form" id="freeForm">
+        <input type="email" id="freeEmail" required placeholder="you@company.com" />
+        <label class="blade-free-checkbox">
+          <input type="checkbox" id="freeAgree" />
+          <span>
+            I understand this is a reference design released for evaluation. Free for
+            personal, educational, and commercial use; no warranty. Plots are simulated
+            with measured validation on a built prototype.
+          </span>
+        </label>
+        <button type="submit" class="blade-free-btn" id="freeBtn" disabled>
+          Download Free Design Package ↓
+        </button>
+      </form>
+
+      <div class="blade-free-success" id="freeSuccess">
+        <div class="blade-free-success-head">✓ Check your inbox</div>
+        <div class="blade-free-success-body">
+          We've sent the 915&nbsp;MHz ISM design package to
+          <strong style="color:#E8B830;" id="freeEmailOut"></strong>.
+          The .zip contains Gerbers, drill file, datasheet, DXF outline, and an FDTD
+          simulation report.
+        </div>
+      </div>
+    </div>
+
+    <div class="blade-free-right">
+      <div class="blade-free-package">
+        <div class="blade-free-package-eyebrow">What's in the Package</div>
+        <div class="blade-free-package-line">
+          <span class="blade-free-package-name">📦 MRS-FS-915.zip</span>
+          <span class="blade-free-package-size">~2.4 MB</span>
+        </div>
+        <ul class="blade-free-package-tree">
+          <li>├── gerber/ <span class="dim">RS-274X, Excellon drill</span></li>
+          <li>├── datasheet.pdf <span class="dim">specs, patterns, integration</span></li>
+          <li>├── s11.csv <span class="dim">simulated + measured (VNA)</span></li>
+          <li>├── outline.dxf <span class="dim">mechanical footprint</span></li>
+          <li>├── README.md <span class="dim">build &amp; evaluation notes</span></li>
+          <li>└── LICENSE.txt <span class="dim">evaluation license</span></li>
+        </ul>
+        <div class="blade-free-package-note">
+          Note: this 915&nbsp;MHz design is distributed <strong>unobscured</strong> &mdash; a
+          working sample you can fabricate, not a teaser.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Drop into your PCB -->
+  <section>
+    <h3 class="blade-h3">Drop Into Your PCB &mdash; One Product, No Royalties</h3>
+    <p>
+      The fragmented blade is <strong>self-contained</strong>. Drop it into the antenna corner
+      of your board, route a 50&nbsp;&Omega; microstrip to the feed pad, and you're done. No
+      tuning network, no ground-plane gymnastics, no per-unit royalties &mdash; one purchase
+      covers unlimited production of <strong>a single product</strong> at <strong>a single
+      company</strong>. The license is <strong>non-transferable</strong>; new products or new
+      licensees need a new license.
+    </p>
+
+    <div class="blade-pcb-wrap">
+      <svg viewBox="0 0 720 340" role="img" aria-label="Example customer PCB with the fragmented blade antenna placed at the board edge and RF chips routed around it">
+        <defs>
+          <pattern id="pcbGrid" width="12" height="12" patternUnits="userSpaceOnUse">
+            <path d="M 12 0 L 0 0 0 12" fill="none" stroke="rgba(255,255,255,.04)" stroke-width=".5"/>
+          </pattern>
+          <linearGradient id="pcbBg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#0d3b2e"/>
+            <stop offset="1" stop-color="#0a2d22"/>
+          </linearGradient>
+          <filter id="chipShadow"><feDropShadow dx="0" dy="1" stdDeviation="1" flood-opacity=".5"/></filter>
+        </defs>
+
+        <rect x="10" y="10" width="700" height="320" rx="8" fill="url(#pcbBg)" stroke="#E8B830" stroke-width="1.5"/>
+        <rect x="10" y="10" width="700" height="320" rx="8" fill="url(#pcbGrid)"/>
+
+        <text x="30" y="36" fill="#E8B830" font-size="11" font-weight="700" font-family="ui-monospace,Menlo,Consolas,monospace" letter-spacing="2">CUSTOMER PCB · 2V4 RF MODULE</text>
+        <text x="30" y="52" fill="rgba(232,184,48,.6)" font-size="9" font-family="ui-monospace,Menlo,Consolas,monospace">REV A · MRS-FB-2475 integrated</text>
+
+        <circle cx="20" cy="20" r="3" fill="none" stroke="rgba(232,184,48,.35)" stroke-width=".8"/>
+        <circle cx="692" cy="20" r="3" fill="none" stroke="rgba(232,184,48,.35)" stroke-width=".8"/>
+        <circle cx="20" cy="312" r="3" fill="none" stroke="rgba(232,184,48,.35)" stroke-width=".8"/>
+        <circle cx="692" cy="312" r="3" fill="none" stroke="rgba(232,184,48,.35)" stroke-width=".8"/>
+
+        <!-- Blade region -->
+        <rect x="540" y="75" width="140" height="200" rx="4" fill="rgba(232,184,48,.06)" stroke="rgba(232,184,48,.35)" stroke-dasharray="3 3"/>
+        <foreignObject x="548" y="85" width="124" height="170">
+          <div xmlns="http://www.w3.org/1999/xhtml" style="width:100%; height:100%; background:#f5f7fa; border-radius:3px; overflow:hidden;">
+            <img src="blade-pattern.svg" alt="" style="width:100%; height:100%; object-fit:cover;"/>
+          </div>
+        </foreignObject>
+        <text x="610" y="295" fill="#E8B830" font-size="10" font-weight="700" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">FRAGMENTED BLADE</text>
+        <text x="610" y="72" fill="rgba(232,184,48,.7)" font-size="8" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">ANT1 · 25.5 × 31.1 mm</text>
+
+        <!-- Feed pad -->
+        <circle cx="540" cy="175" r="4" fill="#E8B830" stroke="#fff" stroke-width="1"/>
+        <text x="533" y="163" fill="#E8B830" font-size="8" text-anchor="end" font-family="ui-monospace,Menlo,Consolas,monospace">50Ω</text>
+
+        <!-- Microstrip trace -->
+        <path d="M 290 175 L 540 175" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="5" stroke-linecap="round"/>
+        <path d="M 290 175 L 540 175" fill="none" stroke="#E8B830" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- Chips -->
+        <g filter="url(#chipShadow)">
+          <rect x="220" y="150" width="72" height="50" rx="3" fill="#1a1a1a" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
+          <circle cx="225" cy="155" r="1.5" fill="rgba(255,255,255,.35)"/>
+          <text x="256" y="178" fill="#fff" font-size="9" font-weight="700" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">TRX</text>
+          <text x="256" y="188" fill="rgba(255,255,255,.5)" font-size="7" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">CC1352</text>
+        </g>
+        <g filter="url(#chipShadow)">
+          <rect x="120" y="80" width="80" height="52" rx="3" fill="#1a1a1a" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
+          <circle cx="125" cy="85" r="1.5" fill="rgba(255,255,255,.35)"/>
+          <text x="160" y="108" fill="#fff" font-size="9" font-weight="700" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">MCU</text>
+          <text x="160" y="118" fill="rgba(255,255,255,.5)" font-size="7" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">STM32H7</text>
+        </g>
+        <g filter="url(#chipShadow)">
+          <rect x="120" y="200" width="80" height="52" rx="3" fill="#1a1a1a" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
+          <circle cx="125" cy="205" r="1.5" fill="rgba(255,255,255,.35)"/>
+          <text x="160" y="228" fill="#fff" font-size="9" font-weight="700" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">PMIC</text>
+          <text x="160" y="238" fill="rgba(255,255,255,.5)" font-size="7" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">TPS6594</text>
+        </g>
+        <g filter="url(#chipShadow)">
+          <rect x="230" y="70" width="44" height="30" rx="3" fill="#1a1a1a" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
+          <text x="252" y="87" fill="#fff" font-size="9" font-weight="700" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">XTAL</text>
+          <text x="252" y="97" fill="rgba(255,255,255,.5)" font-size="7" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">32M</text>
+        </g>
+        <g filter="url(#chipShadow)">
+          <rect x="40" y="140" width="60" height="30" rx="3" fill="#444" stroke="rgba(255,255,255,.1)" stroke-width=".5"/>
+          <text x="70" y="157" fill="#fff" font-size="9" font-weight="700" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">USB-C</text>
+          <text x="70" y="167" fill="rgba(255,255,255,.5)" font-size="7" text-anchor="middle" font-family="ui-monospace,Menlo,Consolas,monospace">J1</text>
+        </g>
+
+        <!-- Power traces -->
+        <path d="M 100 155 L 120 155" stroke="#c94141" stroke-width="1.2" fill="none"/>
+        <path d="M 160 132 L 160 150" stroke="#c94141" stroke-width="1.2" fill="none"/>
+        <path d="M 160 200 L 160 185" stroke="#c94141" stroke-width="1.2" fill="none"/>
+
+        <!-- Clock trace -->
+        <path d="M 252 100 L 252 150" stroke="#6cb5ff" stroke-width="1" fill="none"/>
+
+        <!-- Callout banner -->
+        <line x1="610" y1="60" x2="610" y2="35" stroke="rgba(232,184,48,.5)" stroke-width=".8"/>
+        <rect x="470" y="15" width="230" height="22" rx="11" fill="#E8B830"/>
+        <text x="585" y="30" fill="#1f3a5f" font-size="11" font-weight="700" text-anchor="middle" font-family="Arial,Helvetica,sans-serif">ONE DESIGN · UNLIMITED PRODUCTION</text>
+
+        <!-- Microstrip callout -->
+        <path d="M 410 175 Q 410 220 450 240" fill="none" stroke="rgba(255,255,255,.35)" stroke-width=".8" stroke-dasharray="2 2"/>
+        <rect x="370" y="243" width="180" height="40" rx="6" fill="rgba(255,255,255,.94)"/>
+        <text x="460" y="258" fill="#1f3a5f" font-size="10" font-weight="700" text-anchor="middle">Single 50 Ω microstrip</text>
+        <text x="460" y="272" fill="#666" font-size="9" text-anchor="middle">No matching network required</text>
+      </svg>
+    </div>
+
+    <div class="blade-mini-features">
+      <div class="blade-mini-feature">
+        <div class="blade-mini-num">1</div>
+        <div>
+          <div class="blade-mini-title">Place the blade</div>
+          <div class="blade-mini-desc">Drop the fragmented aperture at your board edge.</div>
+        </div>
+      </div>
+      <div class="blade-mini-feature">
+        <div class="blade-mini-num">2</div>
+        <div>
+          <div class="blade-mini-title">Route microstrip</div>
+          <div class="blade-mini-desc">Single 50&nbsp;&Omega; trace from transceiver to feed pad.</div>
+        </div>
+      </div>
+      <div class="blade-mini-feature">
+        <div class="blade-mini-num">3</div>
+        <div>
+          <div class="blade-mini-title">Ship at scale</div>
+          <div class="blade-mini-desc">No per-unit royalties for the licensed product.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom designs -->
+  <section class="blade-custom">
+    <div class="blade-custom-icon" aria-hidden="true">⚙︎</div>
+    <div>
+      <h4>Need a different band, substrate, or form factor?</h4>
+      <p>
+        Custom fragmented blade designs &mdash; including multi-band, wide-band, and conformal
+        variants &mdash; are available as a standard engineering engagement.
+      </p>
+    </div>
+    <a class="blade-custom-btn" href="contact.html">Inquire</a>
+  </section>
+
+  <!-- Notify form -->
+  <section class="blade-notify">
+    <div class="blade-notify-grid" id="notifyGrid">
+      <div>
+        <div class="blade-notify-eyebrow">Notify Me When Available</div>
+        <h3>Be first to download.</h3>
+        <p class="blade-notify-lede">
+          Drop your email and check which bands you care about. We'll notify you as each
+          fragmented blade antenna is released &mdash; no other marketing, no list sharing.
+        </p>
+      </div>
+      <form class="blade-notify-form" id="notifyForm">
+        <input type="email" id="notifyEmail" required placeholder="you@company.com" />
+        <div>
+          <div class="blade-notify-bands-label">Bands of interest</div>
+          <div class="blade-notify-bands">
+            <label class="blade-notify-band"><input type="checkbox" value="2.4–2.7" /><span>2.4&ndash;2.7&nbsp;GHz</span></label>
+            <label class="blade-notify-band"><input type="checkbox" value="2.7–3.0" /><span>2.7&ndash;3.0&nbsp;GHz</span></label>
+            <label class="blade-notify-band"><input type="checkbox" value="3.0–3.4" /><span>3.0&ndash;3.4&nbsp;GHz</span></label>
+            <label class="blade-notify-band"><input type="checkbox" value="3.4–4.2" /><span>3.4&ndash;4.2&nbsp;GHz</span></label>
+            <label class="blade-notify-band"><input type="checkbox" value="4.2–7.5" /><span>4.2&ndash;7.5&nbsp;GHz</span></label>
+          </div>
+        </div>
+        <button type="submit" class="blade-notify-btn">Notify Me</button>
+      </form>
+    </div>
+
+    <div class="blade-notify-success" id="notifySuccess">
+      <div class="blade-notify-success-check">✓</div>
+      <h3>You're on the list.</h3>
+      <p>
+        We'll email <strong id="notifyEmailOut"></strong> the moment the first
+        fragmented blade antennas are available for download.
+      </p>
+    </div>
+  </section>
 
 </main>
 
-<p class="last-updated">Last updated: April 2026</p>
+<p class="last-updated">Last updated: May 2026</p>
 
 <footer>
   <p>
@@ -191,7 +1296,8 @@
 <button id="backToTop" title="Back to Top">&#8679;</button>
 
 <script>
-  const backToTopBtn = document.getElementById("backToTop");
+  // Back-to-top
+  var backToTopBtn = document.getElementById("backToTop");
   window.onscroll = function() {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
       backToTopBtn.style.display = "block";
@@ -201,6 +1307,51 @@
   };
   backToTopBtn.addEventListener("click", function() {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Free 915 MHz form: enable button when both inputs valid
+  var freeEmail = document.getElementById('freeEmail');
+  var freeAgree = document.getElementById('freeAgree');
+  var freeBtn = document.getElementById('freeBtn');
+  var freeForm = document.getElementById('freeForm');
+  var freeSuccess = document.getElementById('freeSuccess');
+  var freeEmailOut = document.getElementById('freeEmailOut');
+
+  function updateFreeBtn() {
+    freeBtn.disabled = !(freeEmail.value && freeAgree.checked);
+  }
+  freeEmail.addEventListener('input', updateFreeBtn);
+  freeAgree.addEventListener('change', updateFreeBtn);
+
+  freeForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (!freeEmail.value || !freeAgree.checked) return;
+    freeEmailOut.textContent = freeEmail.value;
+    freeForm.style.display = 'none';
+    freeSuccess.style.display = 'block';
+  });
+
+  // Notify form: band toggle + submit
+  var notifyBands = document.querySelectorAll('.blade-notify-band');
+  notifyBands.forEach(function(label) {
+    var cb = label.querySelector('input');
+    cb.addEventListener('change', function() {
+      label.classList.toggle('is-active', cb.checked);
+    });
+  });
+
+  var notifyForm = document.getElementById('notifyForm');
+  var notifyEmail = document.getElementById('notifyEmail');
+  var notifyGrid = document.getElementById('notifyGrid');
+  var notifySuccess = document.getElementById('notifySuccess');
+  var notifyEmailOut = document.getElementById('notifyEmailOut');
+
+  notifyForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (!notifyEmail.value) return;
+    notifyEmailOut.textContent = notifyEmail.value;
+    notifyGrid.style.display = 'none';
+    notifySuccess.style.display = 'block';
   });
 </script>
 
