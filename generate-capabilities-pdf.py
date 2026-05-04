@@ -93,7 +93,7 @@ def footer(page):
         fontname="arialb", fontsize=SZ_FOOTER, color=C_GRAY)
     page.insert_text((225, 777), "404-795-7674 | www.mariettaresearchsolutions.com",
         fontname="arial", fontsize=SZ_FOOTER, color=C_GRAY)
-    page.insert_text((510, 777), "February 2026",
+    page.insert_text((510, 777), "April 2026",
         fontname="arial", fontsize=SZ_FOOTER, color=C_GRAY)
     # Footer separator line
     page.draw_rect(pymupdf.Rect(30, 764, 582, 764.7), color=None, fill=C_LINE)
@@ -218,22 +218,16 @@ print(f"Page 1: last content y = {y:.0f}")
 page = setup_page(doc)
 
 y = 85
-y = section_head(page, y, "Additional Professional Services")
+y = section_head(page, y, "Products \u2014 Coming Soon")
 
-y = bullet_item(page, y, "AI for Small Businesses & Law Firms",
-    "Practical AI workflow implementation. Intake organization, drafting support, research workflows, "
-    "and reusable templates. Deliverables include prompt libraries, SOPs, checklists, and staff training.")
+y = bullet_item(page, y, "Fragmented Aperture Blade Antennas",
+    "Pre-validated stock antenna designs covering 2.4\u20137.5 GHz (WiFi 6E, UWB, Sub-6 5G). "
+    "Available as instantly downloadable Gerber files for a fixed fee. Place directly on your "
+    "product PCB or fabricate as a standalone antenna.")
 
-y = bullet_item(page, y, "Paralegal Support & Document Preparation",
-    "Professional document preparation and administrative support. Form prep, records organization, "
-    "proofreading, and filing readiness. Non-legal support only.")
-
-y = bullet_item(page, y, "Prison Consulting & Reentry Support",
-    "Structured non-legal support for planning, documentation, and reentry organization. "
-    "Checklist-based timelines and practical reentry planning.")
-
-y = bullet_item(page, y, "Notary Public Services",
-    "Professional notarizations by appointment in Marietta, Georgia.")
+y = bullet_item(page, y, "Custom Antenna Design",
+    "Custom fragmented aperture antenna design for specific frequency bands, substrates, or form "
+    "factors. AI/FDTD optimized. Specification to validated Gerber files in 1\u20132 weeks.")
 
 y = sep_line(page, y)
 y = section_head(page, y, "Engagement Options")
@@ -282,9 +276,8 @@ y = sep_line(page, y)
 y = section_head(page, y, "Important Notes")
 
 notes = [
-    "No legal advice or legal representation is provided. Paralegal/document services are non-legal support only.",
-    "Notary services do not include legal interpretation, drafting, or advice.",
     "Engineering consulting does not include PE-stamped plans unless explicitly contracted with a licensed PE.",
+    "Stock antenna designs are provided as Gerber files. Integration support available separately.",
 ]
 
 for note in notes:
