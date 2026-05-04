@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#C8D1DC" />
+  <meta name="theme-color" content="#1f3a5f" />
   <title>Services | Marietta Research Solutions</title>
 
   <link rel="canonical" href="https://www.mariettaresearchsolutions.com/services.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&display=swap" />
   <link rel="stylesheet" href="style.css?v=20260504" />
   <link rel="manifest" href="manifest.json" />
 
@@ -15,20 +16,14 @@
   <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-  <meta name="description" content="Services from Marietta Research Solutions: computational electromagnetics, fragmented aperture antennas, blade antennas, antenna integration, AI-accelerated engineering, SBIR support, and patent drafting." />
+  <meta name="description" content="MRS services — antenna design, computational EM, fragmented aperture antennas, and AI/ML-enhanced engineering. Filter by what you need." />
   <meta name="robots" content="index,follow" />
 
-  <meta property="og:site_name" content="Marietta Research Solutions" />
   <meta property="og:title" content="Services | Marietta Research Solutions" />
-  <meta property="og:description" content="Computational electromagnetics, fragmented aperture &amp; blade antennas, AI-accelerated engineering, SBIR support, and patent drafting." />
+  <meta property="og:description" content="From a two-week matching-network study to multi-year phased-array development — pick the engagement that fits." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.mariettaresearchsolutions.com/services.html" />
   <meta property="og:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260504" />
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Services | Marietta Research Solutions" />
-  <meta name="twitter:description" content="Computational electromagnetics, fragmented aperture &amp; blade antennas, AI-accelerated engineering, SBIR support, and patent drafting."/>
-  <meta name="twitter:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260504" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFKE4XNDT7"></script>
   <script>
@@ -37,34 +32,6 @@
     gtag('js', new Date());
     gtag('config', 'G-TFKE4XNDT7');
   </script>
-
-  <style>
-    .svc-tier-label {
-      color: #1f3a5f;
-      border-bottom: 2px solid rgba(232, 184, 48, 0.5);
-      padding-bottom: 0.4rem;
-      margin: 2rem 0 1rem;
-      font-size: 1.25rem;
-    }
-    .svc-tier-label-sub {
-      font-size: 0.9rem;
-      color: #666;
-      font-weight: normal;
-      display: block;
-      margin-top: 0.2rem;
-    }
-    .svc-featured-pill {
-      display: inline-block;
-      background: rgba(232, 184, 48, 0.18);
-      color: #8a6f1c;
-      padding: 0.15rem 0.55rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      font-weight: bold;
-      margin-left: 0.5rem;
-      vertical-align: middle;
-    }
-  </style>
 </head>
 
 <body>
@@ -72,22 +39,17 @@
 <header class="site-header">
   <div class="header-wrap">
     <a href="index.html" class="site-logo" aria-label="Home">
-      <img
-        class="site-logo-img"
+      <img class="site-logo-img"
         src="mrs-logo-full-800-tight-gold_decontam.png?v=20260211k"
-        srcset="
-          mrs-logo-full-400-tight-gold_decontam.png 400w,
-          mrs-logo-full-600-tight-gold_decontam.png 600w,
-          mrs-logo-full-800-tight-gold_decontam.png 800w
-        "
+        srcset="mrs-logo-full-400-tight-gold_decontam.png 400w, mrs-logo-full-600-tight-gold_decontam.png 600w, mrs-logo-full-800-tight-gold_decontam.png 800w"
         sizes="(max-width: 600px) 92vw, 360px"
-        alt="Marietta Research Solutions"
-      />
+        alt="Marietta Research Solutions" />
     </a>
     <nav class="site-nav">
       <a href="about.html">About</a>
-      <a href="services.html" class="nav-active">Services</a>
+      <a href="services.html">Services</a>
       <a href="case-studies.html">Case Studies</a>
+      <a href="fragmented-aperture.html">Research</a>
       <a href="coming-soon.html">Products</a>
       <a href="faq.html">FAQ</a>
       <a href="software.html">Software</a>
@@ -96,126 +58,298 @@
   </div>
 </header>
 
+<!-- Page hero with embedded task filter -->
+<section class="hero" style="padding-bottom:2.25rem;">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Services</div>
+    <h1>I need to<span class="accent">…</span></h1>
+
+    <div class="task-filter" data-task-filter>
+      <button class="task-chip is-active" data-task="all">Everything</button>
+      <button class="task-chip" data-task="design">Design a new antenna</button>
+      <button class="task-chip" data-task="prototype">Prototype + measure</button>
+      <button class="task-chip" data-task="simulate">Simulate / model</button>
+      <button class="task-chip" data-task="optimize">Optimize what I have</button>
+    </div>
+
+    <p class="task-counter">
+      Showing <strong data-task-shown>—</strong> of <span data-task-total>—</span> capabilities.
+    </p>
+  </div>
+</section>
+
 <main class="container">
-  <h2>Services</h2>
 
-  <p>
-    Marietta Research Solutions provides advanced electromagnetic engineering consulting
-    and AI-accelerated antenna design. Our practice is led by Dr. James G. Maloney, with
-    proprietary simulation tools and 30+ years of defense and commercial R&amp;D experience.
-  </p>
+  <!-- Capabilities -->
+  <div class="grid grid-cards" data-task-grid>
 
-  <hr class="divider" />
-
-  <!-- ===== TIER 1: SPECIALTY ANTENNA OFFERINGS ===== -->
-  <h3 class="svc-tier-label">
-    Specialty Antenna Technology
-    <span class="svc-tier-label-sub">Patented and signature offerings</span>
-  </h3>
-
-  <p class="tap-hint">Tap a service tile to view details.</p>
-  <div class="section-panel">
-    <div class="services-grid">
-
-      <a class="card-link" href="fragmented-aperture.html">
-        <div class="service-card">
-          <img class="icon" src="images/icons/engineering.svg" alt="Fragmented Aperture Icon" />
-          <h3>Fragmented Aperture Antennas <span class="svc-featured-pill">Featured</span></h3>
-          <p>Patented broadband, conformal, multi-function antenna technology. Genetic algorithm + FDTD optimization. US Patents 6,323,809 and 11,228,102.</p>
-          <span class="card-cta">Learn more →</span>
+    <div class="capability-card is-featured" data-tasks="design">
+      <div class="cc-head">
+        <div>
+          <h3>Fragmented Aperture Antenna Design</h3>
+          <div class="cc-tagline">Custom antennas for impossible form factors.</div>
         </div>
-      </a>
-
-      <a class="card-link" href="coming-soon.html">
-        <div class="service-card">
-          <img class="icon" src="images/icons/antenna-integration.svg" alt="Blade Antenna Icon" />
-          <h3>Fragmented Blade Antennas</h3>
-          <p>Productized 2.4&ndash;7.5 GHz blade antenna line, distributed as downloadable Gerber files. Five sub-bands &times; two substrates. Free 915 MHz reference design.</p>
-          <span class="card-cta">See product line →</span>
+        <span class="badge badge-signature">Signature</span>
+      </div>
+      <p>
+        We design fragmented aperture antennas from concept through fabricated, measured hardware —
+        using faster FDTD code and improved optimization strategies than produced the original patent.
+      </p>
+      <div>
+        <div class="cc-deliv-label">Deliverables</div>
+        <div class="cc-deliv">
+          <span class="deliv-tag">📄 Technical report</span>
+          <span class="deliv-tag">🗎 Gerber files</span>
+          <span class="deliv-tag">⚛ Simulation models</span>
+          <span class="deliv-tag">📡 Measured prototype</span>
         </div>
-      </a>
+      </div>
+      <div class="cc-actions">
+        <a href="contact.html">Request Quote →</a>
+        <span class="cc-divider">·</span>
+        <a class="cc-secondary" href="fragmented-aperture.html">Read the research →</a>
+      </div>
+    </div>
 
+    <div class="capability-card" data-tasks="prototype design">
+      <div class="cc-head">
+        <div>
+          <h3>Antenna Matching Network Design</h3>
+          <div class="cc-tagline">Take an off-the-shelf chip + antenna and make it sing.</div>
+        </div>
+      </div>
+      <p>
+        Custom matching networks for IoT radios, sensors, and wireless modules. See our
+        CC1101 case study for a worked example — measured, fabricated, and delivered in weeks.
+      </p>
+      <div>
+        <div class="cc-deliv-label">Deliverables</div>
+        <div class="cc-deliv">
+          <span class="deliv-tag">📄 Technical report</span>
+          <span class="deliv-tag">🗎 Gerber / schematic</span>
+          <span class="deliv-tag">📡 Measured prototype</span>
+        </div>
+      </div>
+      <div class="cc-actions">
+        <a href="contact.html">Request Quote →</a>
+        <span class="cc-divider">·</span>
+        <a class="cc-secondary" href="case-studies.html">See CC1101 case study →</a>
+      </div>
+    </div>
+
+    <div class="capability-card is-featured" data-tasks="simulate">
+      <div class="cc-head">
+        <div>
+          <h3>Computational Electromagnetics (FDTD)</h3>
+          <div class="cc-tagline">Full-wave 3D simulation, without the commercial-solver bill.</div>
+        </div>
+        <span class="badge badge-signature">Signature</span>
+      </div>
+      <p>
+        Proprietary FDTD solver for antenna modeling, RCS analysis, and platform integration
+        studies. 30+ years of solver development behind every simulation.
+      </p>
+      <div>
+        <div class="cc-deliv-label">Deliverables</div>
+        <div class="cc-deliv">
+          <span class="deliv-tag">⚛ Simulation models</span>
+          <span class="deliv-tag">📄 Technical report</span>
+          <span class="deliv-tag">🖼 Presentation briefing</span>
+        </div>
+      </div>
+      <div class="cc-actions">
+        <a href="contact.html">Request Quote →</a>
+        <span class="cc-divider">·</span>
+        <a class="cc-secondary" href="engineering.html">How we simulate →</a>
+      </div>
+    </div>
+
+    <div class="capability-card" data-tasks="design optimize">
+      <div class="cc-head">
+        <div>
+          <h3>Antenna Design &amp; Optimization</h3>
+          <div class="cc-tagline">Broadband, dual-band, circularly polarized — whatever the spec sheet demands.</div>
+        </div>
+      </div>
+      <p>
+        From first-principles design through optimized hardware. Dipoles, patches, slots, helices,
+        blades, horns, reflectors — if it radiates, we can build it.
+      </p>
+      <div>
+        <div class="cc-deliv-label">Deliverables</div>
+        <div class="cc-deliv">
+          <span class="deliv-tag">📄 Technical report</span>
+          <span class="deliv-tag">🗎 Gerber files</span>
+          <span class="deliv-tag">⚛ Simulation models</span>
+          <span class="deliv-tag">📡 Measured prototype</span>
+        </div>
+      </div>
+      <div class="cc-actions"><a href="contact.html">Request Quote →</a></div>
+    </div>
+
+    <div class="capability-card" data-tasks="design optimize">
+      <div class="cc-head">
+        <div>
+          <h3>Small / Electrically Small Antennas</h3>
+          <div class="cc-tagline">Maximum performance in minimum volume.</div>
+        </div>
+      </div>
+      <p>
+        Approaching the Chu limit for wearables, implantables, IoT sensors, and cubesats.
+        Efficiency optimization under tight size, cost, and manufacturability constraints.
+      </p>
+      <div>
+        <div class="cc-deliv-label">Deliverables</div>
+        <div class="cc-deliv">
+          <span class="deliv-tag">📄 Technical report</span>
+          <span class="deliv-tag">🗎 Gerber files</span>
+          <span class="deliv-tag">📡 Measured prototype</span>
+        </div>
+      </div>
+      <div class="cc-actions"><a href="contact.html">Request Quote →</a></div>
+    </div>
+
+    <div class="capability-card" data-tasks="design simulate">
+      <div class="cc-head">
+        <div>
+          <h3>Phased Arrays &amp; Beamforming</h3>
+          <div class="cc-tagline">Steerable apertures from element design through array architecture.</div>
+        </div>
+      </div>
+      <p>
+        Element design, mutual coupling analysis, subarray tiling, and digital beamforming
+        networks. SATCOM, radar, and 5G/6G array development.
+      </p>
+      <div>
+        <div class="cc-deliv-label">Deliverables</div>
+        <div class="cc-deliv">
+          <span class="deliv-tag">📄 Technical report</span>
+          <span class="deliv-tag">⚛ Simulation models</span>
+          <span class="deliv-tag">🖼 Presentation briefing</span>
+        </div>
+      </div>
+      <div class="cc-actions"><a href="contact.html">Request Quote →</a></div>
+    </div>
+
+    <div class="capability-card is-coming" data-tasks="optimize simulate">
+      <div class="cc-head">
+        <div>
+          <h3>AI/ML-Enhanced EM Design</h3>
+          <div class="cc-tagline">Surrogate models that turn week-long sweeps into seconds.</div>
+        </div>
+        <span class="badge badge-coming">Coming soon</span>
+      </div>
+      <p>
+        Physics-informed ML, neural network surrogates for EM solvers, and ML-driven optimization.
+        Cut design-iteration time from weeks to hours.
+      </p>
+      <div>
+        <div class="cc-deliv-label">Deliverables</div>
+        <div class="cc-deliv">
+          <span class="deliv-tag">⚛ Simulation models</span>
+          <span class="deliv-tag">📑 White paper</span>
+        </div>
+      </div>
+      <div class="cc-actions">
+        <a href="contact.html">Request Quote →</a>
+        <span class="cc-divider">·</span>
+        <a class="cc-secondary" href="ai.html">Read more →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Engagement rail -->
+  <h2 class="svc-h2" style="margin-top:3rem;">Ready to engage?</h2>
+  <p class="svc-lede">Five ways to work with us. Mix and match — a free design today, a fixed-scope study next month, a license down the line.</p>
+
+  <div class="grid grid-cards">
+    <div class="engagement-tile is-accent">
+      <div class="et-icon">📡</div>
+      <div>
+        <div class="et-title">Antenna Selection, Placement &amp; Matching</div>
+        <div class="et-subtitle">End-to-end for IoT / product teams</div>
+      </div>
+      <p class="et-body">
+        We help you pick the right antenna, place it on your board, then come back to match
+        the final product. Three touchpoints, one engagement — fixed-fee options available.
+      </p>
+      <div class="et-footer">Fixed fee tiers</div>
+    </div>
+
+    <div class="engagement-tile">
+      <div class="et-icon">📋</div>
+      <div>
+        <div class="et-title">Fixed-Scope Study</div>
+        <div class="et-subtitle">Most common</div>
+      </div>
+      <p class="et-body">
+        Defined deliverable, fixed price, clear timeline. You get a technical report, measured
+        hardware, or simulation package. Best when the problem is well-defined.
+      </p>
+      <div class="et-footer">Typical: 4–12 weeks</div>
+    </div>
+
+    <div class="engagement-tile">
+      <div class="et-icon">⏱</div>
+      <div>
+        <div class="et-title">Hourly Consulting</div>
+        <div class="et-subtitle">For open-ended work</div>
+      </div>
+      <p class="et-body">
+        Time-and-materials engagement for design reviews, troubleshooting, and exploratory R&amp;D.
+        Weekly status updates; you control scope and cadence.
+      </p>
+      <div class="et-footer">Min. 10 hours</div>
+    </div>
+
+    <div class="engagement-tile">
+      <div class="et-icon">⚖</div>
+      <div>
+        <div class="et-title">IP Licensing</div>
+        <div class="et-subtitle">Existing designs</div>
+      </div>
+      <p class="et-body">
+        License patented fragmented aperture designs, proven antenna IP, or solver capabilities for
+        your product line. Flat fee or royalty structures available.
+      </p>
+      <div class="et-footer">Case-by-case</div>
+    </div>
+
+    <div class="engagement-tile">
+      <div class="et-icon">★</div>
+      <div>
+        <div class="et-title">Productized Antennas</div>
+        <div class="et-subtitle">Fastest path to silicon</div>
+      </div>
+      <p class="et-body">
+        Downloadable Gerber files for fragmented blade antennas (2.4–7.5 GHz). Free 915 MHz
+        reference design available — fabricate, measure, validate before you buy.
+      </p>
+      <div class="et-footer">Instant download</div>
     </div>
   </div>
 
-  <!-- ===== TIER 2: CORE CAPABILITIES ===== -->
-  <h3 class="svc-tier-label">
-    Core Engineering Capabilities
-    <span class="svc-tier-label-sub">Computational electromagnetics, integration, and AI</span>
-  </h3>
-
-  <div class="section-panel">
-    <div class="services-grid">
-
-      <a class="card-link" href="engineering.html">
-        <div class="service-card">
-          <img class="icon" src="images/icons/engineering.svg" alt="Engineering Icon" />
-          <h3>Computational Electromagnetics &amp; Antenna Design</h3>
-          <p>Advanced computational electromagnetics, antenna design, and RF systems consulting with proprietary simulation tools.</p>
-          <span class="card-cta">Learn more →</span>
-        </div>
-      </a>
-
-      <a class="card-link" href="antenna-integration.html">
-        <div class="service-card">
-          <img class="icon" src="images/icons/antenna-integration.svg" alt="Antenna Integration Icon" />
-          <h3>Antenna Integration Services</h3>
-          <p>Antenna selection, matching network design, simulation, and test plans for IoT, wireless, and embedded devices.</p>
-          <span class="card-cta">Learn more →</span>
-        </div>
-      </a>
-
-      <a class="card-link" href="ai.html">
-        <div class="service-card">
-          <img class="icon" src="images/icons/ai.svg" alt="AI Icon" />
-          <h3>AI/ML-Accelerated Engineering <span class="highlight">Coming 2026</span></h3>
-          <p>Machine learning-enhanced electromagnetic simulation and antenna optimization. ML surrogate models, neural network design, and physics-informed ML.</p>
-          <span class="card-cta">Learn more →</span>
-        </div>
-      </a>
-
+  <!-- Proof strip -->
+  <section class="proof-strip">
+    <div class="proof-grid">
+      <div class="proof-stat"><div class="proof-n">30+</div><div class="proof-label">Years of EM research</div></div>
+      <div class="proof-stat"><div class="proof-n">3</div><div class="proof-label">US Patents (Fragmented Aperture)</div></div>
+      <div class="proof-stat"><div class="proof-n">×2</div><div class="proof-label">IEEE Best Paper Awards</div></div>
+      <div class="proof-stat"><div class="proof-n">50+</div><div class="proof-label">Peer-reviewed publications</div></div>
     </div>
-  </div>
+  </section>
 
-  <!-- ===== TIER 3: PROPOSAL & IP SUPPORT ===== -->
-  <h3 class="svc-tier-label">
-    Proposal &amp; IP Support
-    <span class="svc-tier-label-sub">Adjacent services for inventors and small businesses</span>
-  </h3>
-
-  <div class="section-panel">
-    <div class="services-grid">
-
-      <a class="card-link" href="sbir.html">
-        <div class="service-card">
-          <img class="icon" src="images/icons/sbir.svg" alt="SBIR Icon" />
-          <h3>SBIR Grant Writing Support</h3>
-          <p>Proposal organization and technical writing support for SBIR/STTR grants.</p>
-          <span class="card-cta">Learn more →</span>
-        </div>
-      </a>
-
-      <a class="card-link" href="patents.html">
-        <div class="service-card">
-          <img class="icon" src="images/icons/patent.svg" alt="Patent Icon" />
-          <h3>Patent Drafting Support</h3>
-          <p>Technical drafting support and invention documentation for patent preparation.</p>
-          <span class="card-cta">Learn more →</span>
-        </div>
-      </a>
-
-    </div>
-  </div>
-
-  <hr class="divider" />
-
-  <div class="cta-row">
-    <a class="btn" href="contact.html">Request Consultation</a>
-    <a class="btn btn-outline" href="case-studies.html">View Case Studies</a>
-    <a class="btn btn-outline capabilities-link" href="capabilities.pdf" target="_blank" rel="noopener">
-      Capabilities (PDF)
-    </a>
-  </div>
+  <!-- Final CTA -->
+  <section class="cta-box">
+    <div class="cta-eyebrow">Not sure where to start?</div>
+    <h3>Let's scope it together.</h3>
+    <p>
+      30-minute call, no charge. Bring your spec sheet; we'll tell you whether we can help
+      and what it would cost.
+    </p>
+    <a class="btn btn-gold" href="contact.html">Book a Scoping Call →</a>
+  </section>
 
 </main>
 
@@ -224,33 +358,23 @@
 <footer>
   <p>
     © 2026 Marietta Research Solutions<br />
-    1640 Powers Ferry Rd SE<br />
-    Bldg 11, Suite 200<br />
+    1640 Powers Ferry Rd SE, Bldg 11, Suite 200<br />
     Marietta, GA 30067<br />
     <a href="tel:+14047957674">404-795-7674</a><br />
     |
-    <a href="dr-maloney.html">Dr. Maloney</a> | <a href="contact.html">Request-Consult</a> | <a class="capabilities-link" id="capabilitiesLink" href="capabilities.pdf" target="_blank" rel="noopener">Capabilities (PDF)</a> |
+    <a href="dr-maloney.html">Dr. Maloney</a> |
+    <a href="contact.html">Request Consult</a> |
+    <a href="capabilities.pdf" target="_blank" rel="noopener">Capabilities (PDF)</a> |
     <a href="privacy.html">Privacy</a>
   </p>
+  <div class="site-tagline-footer">
+    <p>Strategic Consulting at the Intersection of Engineering &amp; Intelligence.</p>
+  </div>
 </footer>
 
-<button id="backToTop" title="Back to Top">&#8679;</button>
-
-<script>
-  var backToTopBtn = document.getElementById("backToTop");
-  window.onscroll = function() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      backToTopBtn.style.display = "block";
-    } else {
-      backToTopBtn.style.display = "none";
-    }
-  };
-  backToTopBtn.addEventListener("click", function() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-</script>
+<button id="backToTop" title="Back to top" aria-label="Back to top">⇧</button>
 
 <script src="site.js?v=20260504"></script>
-<script src="jargon-translator.js?v=20260504" defer></script>
+<script src="jargon-translator.js" defer></script>
 </body>
 </html>

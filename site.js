@@ -1,157 +1,138 @@
-/* site.js — shared behavior across pages
-   - Back to top button
-   - Mobile CTA bar
-   - GA4 tracking: form submit, capabilities PDF, phone/email clicks
-   - GA4 tracking: openTDA Viewer downloads (per platform)  [NEW]
-   - GA4 tracking: outbound link clicks                      [NEW]
-*/
+/* ============================================================
+   Marietta Research Solutions — site.js
+   v=20260504
+   Provides:
+   - Active nav highlighting
+   - Back-to-top button
+   - FAQ accordion (data-faq-item)
+   - Services task filter (data-task-filter / data-task-card)
+   - Soft form submit overlay
+   ============================================================ */
 
 (function () {
-  // -------------------------------------------------------------------
-  // Back to top
-  // -------------------------------------------------------------------
-  const backToTopBtn = document.getElementById("backToTop");
-  if (backToTopBtn) {
-    window.addEventListener("scroll", () => {
-      backToTopBtn.style.display =
-        (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) ? "block" : "none";
-    });
+  'use strict';
 
-    backToTopBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+  document.addEventListener('DOMContentLoaded', init);
+
+  function init() {
+    activeNav();
+    backToTop();
+    initFAQ();
+    initTaskFilter();
+    initFormOverlay();
   }
 
-  // -------------------------------------------------------------------
-  // Mobile CTA show/hide
-  // -------------------------------------------------------------------
-  const ctaBar = document.querySelector(".mobile-cta");
-  function toggleCTA() {
-    if (!ctaBar) return;
-
-    if (window.scrollY > 140 && window.innerWidth <= 700) {
-      ctaBar.style.display = "block";
-      document.body.classList.add("mobile-cta-on");
-    } else {
-      ctaBar.style.display = "none";
-      document.body.classList.remove("mobile-cta-on");
+  /* ---------- Active nav ---------- */
+  function activeNav() {
+    var path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    if (!path) path = 'index.html';
+    var links = document.querySelectorAll('.site-nav a');
+    for (var i = 0; i < links.length; i++) {
+      var href = (links[i].getAttribute('href') || '').toLowerCase();
+      if (href === path) links[i].classList.add('nav-active');
     }
   }
 
-  window.addEventListener("scroll", toggleCTA);
-  window.addEventListener("resize", toggleCTA);
-  toggleCTA();
-
-  // -------------------------------------------------------------------
-  // GA4 helper — reliable send via beacon
-  // -------------------------------------------------------------------
-  function trackEvent(name, params) {
-    if (typeof gtag !== "function") return;
-    gtag("event", name, Object.assign(
-      { transport_type: "beacon" },
-      params || {}
-    ));
-  }
-
-  // Backwards-compatible 3-arg shim used by older code paths
-  function trackLegacy(name, label, category) {
-    trackEvent(name, {
-      event_category: category || "lead",
-      event_label: label || ""
+  /* ---------- Back-to-top ---------- */
+  function backToTop() {
+    var btn = document.getElementById('backToTop');
+    if (!btn) return;
+    function onScroll() {
+      btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+    onScroll();
   }
 
-  // -------------------------------------------------------------------
-  // Contact form submit tracking (GA4)
-  // -------------------------------------------------------------------
-  const contactForm = document.getElementById("contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", () => {
-      // Capture which "Service of Interest" the lead picked, for funnel analysis
-      const service = contactForm.querySelector('[name="service"]');
-      trackEvent("contact_form_submit", {
-        event_category: "lead",
-        event_label: window.location.pathname || "contact.html",
-        service_of_interest: service ? service.value : "(unknown)"
+  /* ---------- FAQ accordion ----------
+     Markup pattern:
+     <div class="faq-item" data-faq-item>
+       <button class="faq-q" type="button" aria-expanded="false">
+         <span>Question text</span>
+         <span class="faq-toggle" aria-hidden="true">+</span>
+       </button>
+       <div class="faq-a"><p>Answer.</p></div>
+     </div>
+  */
+  function initFAQ() {
+    var items = document.querySelectorAll('[data-faq-item]');
+    items.forEach(function (item) {
+      var q = item.querySelector('.faq-q');
+      if (!q) return;
+      q.setAttribute('aria-expanded', 'false');
+      q.addEventListener('click', function () {
+        var open = item.classList.toggle('is-open');
+        q.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
     });
   }
 
-  // -------------------------------------------------------------------
-  // Capabilities PDF click tracking (GA4)
-  // -------------------------------------------------------------------
-  document.querySelectorAll(".capabilities-link").forEach(link => {
-    link.addEventListener("click", () => {
-      trackLegacy("capabilities_pdf_click", link.getAttribute("href") || "capabilities.pdf", "engagement");
-    });
-  });
+  /* ---------- Services task filter ----------
+     Markup pattern:
+     <div data-task-filter>
+       <button class="task-chip is-active" data-task="all">Everything</button>
+       <button class="task-chip" data-task="design">Design a new antenna</button>
+       ...
+     </div>
+     <div data-task-grid>
+       <div class="capability-card" data-tasks="design simulate">...</div>
+       ...
+     </div>
+     <span data-task-shown></span> of <span data-task-total></span>
+  */
+  function initTaskFilter() {
+    var filter = document.querySelector('[data-task-filter]');
+    if (!filter) return;
+    var grid = document.querySelector('[data-task-grid]');
+    if (!grid) return;
+    var chips = filter.querySelectorAll('[data-task]');
+    var cards = grid.querySelectorAll('[data-tasks]');
+    var shown = document.querySelector('[data-task-shown]');
+    var total = document.querySelector('[data-task-total]');
+    if (total) total.textContent = String(cards.length);
 
-  // -------------------------------------------------------------------
-  // Email click tracking (GA4)
-  // -------------------------------------------------------------------
-  document.querySelectorAll(".track-email-info").forEach(link => {
-    link.addEventListener("click", () => {
-      trackLegacy("email_info_click", link.getAttribute("href") || "mailto:info", "lead");
-    });
-  });
+    function apply(taskId) {
+      var n = 0;
+      cards.forEach(function (card) {
+        var tasks = (card.getAttribute('data-tasks') || '').split(/\s+/);
+        var match = (taskId === 'all') || tasks.indexOf(taskId) >= 0;
+        card.style.display = match ? '' : 'none';
+        if (match) n++;
+      });
+      if (shown) shown.textContent = String(n);
+      chips.forEach(function (c) {
+        c.classList.toggle('is-active', c.getAttribute('data-task') === taskId);
+      });
+    }
 
-  document.querySelectorAll(".track-email-susan").forEach(link => {
-    link.addEventListener("click", () => {
-      trackLegacy("email_susan_click", link.getAttribute("href") || "mailto:susan", "lead");
-    });
-  });
-
-  // -------------------------------------------------------------------
-  // openTDA Viewer download tracking (GA4)
-  // -------------------------------------------------------------------
-  // Any link with class="track-download" gets tracked. The data-platform
-  // attribute identifies which build (macos-arm, macos-intel, windows, deb,
-  // appimage). data-version optional (defaults to v0.3.1).
-  document.querySelectorAll("a.track-download").forEach(link => {
-    link.addEventListener("click", () => {
-      trackEvent("software_download", {
-        event_category: "conversion",
-        event_label: link.getAttribute("data-platform") || "unknown",
-        software_name: link.getAttribute("data-software") || "openTDA Viewer",
-        software_version: link.getAttribute("data-version") || "v0.3.1",
-        platform: link.getAttribute("data-platform") || "unknown",
-        link_url: link.getAttribute("href") || ""
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        apply(chip.getAttribute('data-task'));
       });
     });
-  });
 
-  // -------------------------------------------------------------------
-  // Outbound link tracking (GA4)
-  // -------------------------------------------------------------------
-  // Any <a> with target="_blank" pointing off-domain gets tracked.
-  // Excludes mailto:, tel:, and the capabilities PDF (handled separately).
-  const HOSTNAME = window.location.hostname;
-  document.querySelectorAll('a[target="_blank"]').forEach(link => {
-    const href = link.getAttribute("href") || "";
-    if (!href || href.startsWith("mailto:") || href.startsWith("tel:")) return;
-    if (link.classList.contains("capabilities-link")) return;
-    if (link.classList.contains("track-download")) return; // already tracked above
+    var initial = filter.querySelector('.is-active');
+    apply((initial && initial.getAttribute('data-task')) || 'all');
+  }
 
-    let outboundHost = "";
-    try { outboundHost = new URL(href, window.location.href).hostname; } catch (_) { return; }
-    if (!outboundHost || outboundHost === HOSTNAME) return;
-
-    link.addEventListener("click", () => {
-      trackEvent("outbound_click", {
-        event_category: "engagement",
-        event_label: href,
-        outbound_host: outboundHost
+  /* ---------- Form submit overlay ----------
+     Adds .is-sending to button + shows overlay if present
+  */
+  function initFormOverlay() {
+    var forms = document.querySelectorAll('form[data-overlay]');
+    var overlay = document.querySelector('.form-overlay');
+    forms.forEach(function (f) {
+      f.addEventListener('submit', function () {
+        var btn = f.querySelector('button[type="submit"]');
+        if (btn) {
+          btn.classList.add('is-sending');
+          btn.disabled = true;
+        }
+        if (overlay) overlay.style.display = 'flex';
       });
     });
-  });
-
-  // -------------------------------------------------------------------
-  // Phone tap tracking (GA4) — mobile users tapping tel: links
-  // -------------------------------------------------------------------
-  document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-    link.addEventListener("click", () => {
-      trackLegacy("phone_click", link.getAttribute("href") || "", "lead");
-    });
-  });
-
+  }
 })();

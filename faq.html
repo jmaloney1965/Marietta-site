@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#C8D1DC" />
+  <meta name="theme-color" content="#1f3a5f" />
   <title>FAQ | Marietta Research Solutions</title>
 
   <link rel="canonical" href="https://www.mariettaresearchsolutions.com/faq.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&display=swap" />
   <link rel="stylesheet" href="style.css?v=20260504" />
   <link rel="manifest" href="manifest.json" />
 
@@ -15,20 +16,14 @@
   <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-  <meta name="description" content="Frequently asked questions for Marietta Research Solutions: antenna engineering process, deliverables, NDA &amp; ITAR, services, and disclaimers." />
+  <meta name="description" content="Frequently asked questions about MRS engagements — engagement model, deliverables, timelines, IP terms, and how to start." />
   <meta name="robots" content="index,follow" />
 
-  <meta property="og:site_name" content="Marietta Research Solutions" />
   <meta property="og:title" content="FAQ | Marietta Research Solutions" />
-  <meta property="og:description" content="Frequently asked questions: engineering process, deliverables, NDA, services, and disclaimers." />
+  <meta property="og:description" content="Frequently asked questions about MRS engagements." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.mariettaresearchsolutions.com/faq.html" />
   <meta property="og:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260504" />
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="FAQ | Marietta Research Solutions" />
-  <meta name="twitter:description" content="Frequently asked questions for Marietta Research Solutions."/>
-  <meta name="twitter:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260504" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFKE4XNDT7"></script>
   <script>
@@ -37,58 +32,6 @@
     gtag('js', new Date());
     gtag('config', 'G-TFKE4XNDT7');
   </script>
-
-  <style>
-    .faq-toc {
-      background: #fff;
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 10px;
-      padding: 1rem 1.25rem;
-      margin: 1rem 0 2rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-    .faq-toc h4 {
-      margin: 0 0 0.5rem;
-      color: #1f3a5f;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .faq-toc-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .faq-toc-list a {
-      display: inline-block;
-      background: rgba(31, 58, 95, 0.06);
-      color: #1f3a5f;
-      padding: 0.4rem 0.85rem;
-      border-radius: 999px;
-      font-size: 0.88rem;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .faq-toc-list a:hover { background: rgba(31, 58, 95, 0.14); }
-
-    .faq-section-header {
-      color: #1f3a5f;
-      border-bottom: 2px solid rgba(232, 184, 48, 0.5);
-      padding-bottom: 0.4rem;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-    }
-
-    .faq-q {
-      color: #1f3a5f;
-      font-size: 1.05rem;
-      margin: 1.25rem 0 0.4rem;
-    }
-  </style>
 </head>
 
 <body>
@@ -96,228 +39,277 @@
 <header class="site-header">
   <div class="header-wrap">
     <a href="index.html" class="site-logo" aria-label="Home">
-      <img class="site-logo-img" src="mrs-logo-full-400-tight-gold.png?v=20260211k" alt="Marietta Research Solutions" />
+      <img class="site-logo-img"
+        src="mrs-logo-full-800-tight-gold_decontam.png?v=20260211k"
+        srcset="mrs-logo-full-400-tight-gold_decontam.png 400w, mrs-logo-full-600-tight-gold_decontam.png 600w, mrs-logo-full-800-tight-gold_decontam.png 800w"
+        sizes="(max-width: 600px) 92vw, 360px"
+        alt="Marietta Research Solutions" />
     </a>
     <nav class="site-nav">
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="case-studies.html">Case Studies</a>
+      <a href="fragmented-aperture.html">Research</a>
       <a href="coming-soon.html">Products</a>
-      <a href="faq.html" class="nav-active">FAQ</a>
+      <a href="faq.html">FAQ</a>
       <a href="software.html">Software</a>
       <a href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
 
-<div class="container">
-  <h2>Frequently Asked Questions</h2>
-  <p>
-    Below are answers to common questions about how we work, what we offer, and important limitations.
-    If you don't see your question here, please reach out via the <a href="contact.html">contact form</a>.
-  </p>
-
-  <div class="faq-toc">
-    <h4>Jump to a Section</h4>
-    <ul class="faq-toc-list">
-      <li><a href="#general">General</a></li>
-      <li><a href="#engineering">Antenna &amp; Engineering</a></li>
-      <li><a href="#process">Process &amp; Deliverables</a></li>
-      <li><a href="#legal">Legal, Confidentiality &amp; ITAR</a></li>
-    </ul>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">FAQ</div>
+    <h1>How we work, <span class="accent">in plain language.</span></h1>
+    <p class="lede">
+      Engagement model, deliverables, timelines, IP terms, and how to start. Highlight any term in
+      the answers below for a plain-English explanation.
+    </p>
   </div>
+</section>
 
-  <!-- ===== GENERAL ===== -->
-  <h3 id="general" class="faq-section-header">General</h3>
+<main class="container">
 
-  <h4 class="faq-q">What types of clients do you work with?</h4>
-  <p>
-    We support defense primes, hardware startups, established product companies, inventors, and individuals who need
-    professional engineering consulting, antenna design, electromagnetic simulation, AI workflow support, patent drafting
-    support, and SBIR proposal support.
-  </p>
+  <!-- Engagement -->
+  <section class="faq-section">
+    <h3>Engagement &amp; pricing</h3>
 
-  <hr class="divider" />
+    <div class="faq-item" data-faq-item>
+      <button class="faq-q" type="button">
+        <span>How do we start working together?</span>
+        <span class="faq-toggle" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">
+        <p>
+          Send us a spec sheet, block diagram, or short description via the
+          <a href="contact.html">contact form</a>. We respond within one business day with either a
+          30-minute scoping call (free, no obligation) or a "this isn't a fit, here's who you should
+          talk to" referral.
+        </p>
+      </div>
+    </div>
 
-  <h4 class="faq-q">Where are you located?</h4>
-  <p>
-    1640 Powers Ferry Rd SE, Bldg 11, Suite 200, Marietta, GA 30067 (by appointment). Most engagements
-    are delivered remotely; we travel for kickoffs, design reviews, and test campaigns when warranted.
-  </p>
+    <div class="faq-item" data-faq-item>
+      <button class="faq-q" type="button">
+        <span>What does a typical engagement cost?</span>
+        <span class="faq-toggle" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">
+        <p>
+          Most engagements fall into one of three buckets: a <strong>fixed-scope study</strong>
+          (4–12 weeks, defined deliverable, fixed price), <strong>hourly consulting</strong>
+          (10-hour minimum, weekly status), or a <strong>multi-phase development program</strong>
+          (concept → simulation → fabricated, measured hardware). We quote each on a case-by-case
+          basis after the scoping call.
+        </p>
+      </div>
+    </div>
 
-  <hr class="divider" />
+    <div class="faq-item" data-faq-item>
+      <button class="faq-q" type="button">
+        <span>Do you take SBIR / Phase II / federal contracts?</span>
+        <span class="faq-toggle" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">
+        <p>
+          Yes. MRS is structured to participate in SBIR/STTR efforts and to subcontract on prime
+          contracts. NAICS codes available on request; CAGE code in process. We can serve as
+          subcontractor or technical partner.
+        </p>
+      </div>
+    </div>
 
-  <h4 class="faq-q">How quickly do you respond to inquiries?</h4>
-  <p>
-    We typically respond within 1–2 business days with a scoped follow-up.
-  </p>
+    <div class="faq-item" data-faq-item>
+      <button class="faq-q" type="button">
+        <span>Who actually does the work?</span>
+        <span class="faq-toggle" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">
+        <p>
+          The principal engineer — Dr. Maloney. Every engagement. We're a two-person practice
+          backed by a curated contractor bench; we pull in fabrication, measurement, or
+          ML specialists by name when the work calls for it. You will not be passed off to
+          a junior engineer.
+        </p>
+      </div>
+    </div>
+  </section>
 
-  <!-- ===== ENGINEERING ===== -->
-  <h3 id="engineering" class="faq-section-header">Antenna &amp; Engineering Questions</h3>
+  <!-- Deliverables -->
+  <section class="faq-section">
+    <h3>Deliverables &amp; IP</h3>
 
-  <h4 class="faq-q">What antenna types do you design?</h4>
-  <p>
-    Fragmented aperture antennas, blade antennas, phased arrays, electrically small antennas, broadband and wideband
-    designs, conformal antennas, matching networks, and platform-integrated systems. We work UHF through millimeter
-    wave (roughly 100 MHz – 100 GHz). See our pages on
-    <a href="fragmented-aperture.html">Fragmented Aperture</a>,
-    <a href="blade-antennas.html">Blade Antennas</a>, and
-    <a href="antenna-integration.html">Antenna Integration</a>.
-  </p>
+    <div class="faq-item" data-faq-item>
+      <button class="faq-q" type="button">
+        <span>What deliverables do you produce?</span>
+        <span class="faq-toggle" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">
+        <p>
+          Depending on the engagement: technical reports, FDTD simulation models, schematics and
+          Gerber files, fabricated and measured prototypes, presentation briefings, or licensable
+          IP packages. Most engagements include at least a written technical report.
+        </p>
+      </div>
+    </div>
 
-  <hr class="divider" />
+    <div class="faq-item" data-faq-item>
+      <button class="faq-q" type="button">
+        <span>Who owns the IP?</span>
+        <span class="faq-toggle" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">
+        <p>
+          For client-funded design work, the client owns the resulting IP. For licensed IP
+          (e.g. a fragmented aperture design from our existing portfolio), terms are flat-fee or
+          royalty depending on the application. Background IP — our solver, fragmented aperture
+          methodology, and pre-existing designs — remains MRS-owned.
+        </p>
+      </div>
+    </div>
 
-  <h4 class="faq-q">What simulation tools do you use?</h4>
-  <p>
-    Our primary tool is a <strong>proprietary FDTD solver</strong> developed in-house over 25+ years and used by
-    multiple defense primes. We also use commercial tools (HFSS, CST, FEKO) when client workflow requires it,
-    and supplement with custom genetic-algorithm optimization, matching-network synthesis tools, and post-processing
-    pipelines we've written.
-  </p>
+    <div class="faq-item" data-faq-item>
+      <button class="faq-q" type="button">
+        <span>Can you sign an NDA?</span>
+        <span class="faq-toggle" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">
+        <p>
+          Yes — we routinely sign mutual NDAs before scoping calls when the client's problem
+          involves sensitive information. We also have our own short-form NDA available on request.
+        </p>
+      </div>
+    </div>
+  </section>
 
-  <hr class="divider" />
+  <!-- Technical -->
+  <section class="faq-section">
+    <h3>Technical capabilities</h3>
 
-  <h4 class="faq-q">Can you handle ITAR-controlled or classified work?</h4>
-  <p>
-    Yes for ITAR/EAR-controlled unclassified work — please confirm export status before any technical exchange.
-    Classified work depends on facility and personnel clearance status; reach out to discuss specifics.
-  </p>
+    <div class="faq-item" data-faq-item>
+      <button class="faq-q" type="button">
+        <span>What frequency ranges do you cover?</span>
+        <span class="faq-toggle" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">
+        <p>
+          UHF through millimeter-wave — roughly 100 MHz to 100 GHz. Sweet spot is 1–18 GHz for
+          measured-hardware programs; we've delivered designs as low as 30 MHz and as high as 94 GHz.
+        </p>
+      </div>
+    </div>
 
-  <hr class="divider" />
+    <div class="faq-item" data-faq-item>
+      <button class="faq-q" type="button">
+        <span>What simulation tools do you use?</span>
+        <span class="faq-toggle" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">
+        <p>
+          Primarily our own <strong>proprietary FDTD solver</strong> — 30+ years of in-house
+          development. We have access to commercial solvers when a client deliverable requires
+          a specific package; for our own R&amp;D work, the proprietary code is faster and more
+          flexible.
+        </p>
+      </div>
+    </div>
 
-  <h4 class="faq-q">Do you build hardware, or only deliver designs?</h4>
-  <p>
-    We deliver designs, simulation reports, and integration packages. We do not manufacture antennas.
-    We're vendor-neutral — recommendations are driven by what's best for your program.
-  </p>
+    <div class="faq-item" data-faq-item>
+      <button class="faq-q" type="button">
+        <span>Can you fabricate and measure hardware?</span>
+        <span class="faq-toggle" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">
+        <p>
+          Yes. Our contractor network covers PCB fabrication, machining, additive manufacturing,
+          and anechoic-chamber / near-field measurement. We've delivered measured hardware on
+          dozens of fragmented-aperture and matching-network engagements.
+        </p>
+      </div>
+    </div>
 
-  <hr class="divider" />
+    <div class="faq-item" data-faq-item>
+      <button class="faq-q" type="button">
+        <span>Do you do AI/ML work?</span>
+        <span class="faq-toggle" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">
+        <p>
+          Yes — physics-informed ML, neural network surrogates for EM solvers, and ML-driven
+          optimization. This capability is currently in active build-out; reach out if you have
+          a specific program in mind.
+        </p>
+      </div>
+    </div>
+  </section>
 
-  <h4 class="faq-q">Can you support test campaigns and prototype bring-up?</h4>
-  <p>
-    Yes — we provide written test plans, review measurement data, advise on tuning, and join range or
-    chamber test campaigns when needed.
-  </p>
+  <!-- Products -->
+  <section class="faq-section">
+    <h3>Products &amp; downloads</h3>
 
-  <!-- ===== PROCESS ===== -->
-  <h3 id="process" class="faq-section-header">Process &amp; Deliverables</h3>
+    <div class="faq-item" data-faq-item>
+      <button class="faq-q" type="button">
+        <span>How do the downloadable Gerber files work?</span>
+        <span class="faq-toggle" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">
+        <p>
+          Pay once, download a complete Gerber package for a fragmented blade antenna at the chosen
+          frequency band. Send it to your fabricator. Use it under our standard product license
+          (commercial use included). The free 915 MHz reference design is identical in format —
+          fabricate and measure it before you buy.
+        </p>
+      </div>
+    </div>
 
-  <h4 class="faq-q">How does the consultation process work?</h4>
-  <p>
-    A brief intro call to understand your goals and required deliverables. We agree on scope, timeline,
-    and what you'll provide. Work is delivered in clear drafts with refinement opportunities. Most
-    engagements are <strong>fixed-scope, fixed-fee</strong>; we use hourly billing only when scope can't be predicted.
-  </p>
+    <div class="faq-item" data-faq-item>
+      <button class="faq-q" type="button">
+        <span>What if I need a band you don't currently sell?</span>
+        <span class="faq-toggle" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a">
+        <p>
+          Tell us. Custom-band fragmented aperture designs are one of our core services — and a
+          new productized band is always under consideration. Custom design lead time is typically
+          6–10 weeks.
+        </p>
+      </div>
+    </div>
+  </section>
 
-  <hr class="divider" />
+  <!-- CTA -->
+  <section class="cta-box">
+    <div class="cta-eyebrow">Didn't find your question?</div>
+    <h3>Just ask.</h3>
+    <p>30-minute scoping call, no charge. Or send us a one-line description and we'll get back to you within one business day.</p>
+    <a class="btn btn-gold" href="contact.html">Contact MRS →</a>
+  </section>
 
-  <h4 class="faq-q">What does a typical engagement look like — timeline and cost?</h4>
-  <p>
-    Antenna design engagements typically run 4–12 weeks depending on complexity, with milestones at
-    requirements lock, simulation review, and final delivery. Feasibility studies are 2–4 weeks. Cost
-    depends entirely on scope — we provide a written proposal after the intro call so there are no surprises.
-  </p>
-
-  <hr class="divider" />
-
-  <h4 class="faq-q">What deliverables do I receive?</h4>
-  <p>
-    Standard deliverables include: written design report, simulation results (S-parameters, patterns,
-    efficiency), manufacturable design package (geometry, materials, feed structure), integration
-    drawings, and a measurement plan for prototype validation. The exact package is defined at scope agreement.
-  </p>
-
-  <hr class="divider" />
-
-  <h4 class="faq-q">Can you guarantee outcomes (court results, funding, approvals)?</h4>
-  <p>
-    No. We help you prepare, organize, and present information clearly, but we cannot guarantee outcomes
-    that depend on third parties, agencies, courts, or employers. We can guarantee that our engineering
-    work meets the specifications agreed at scope.
-  </p>
-
-  <hr class="divider" />
-
-  <h4 class="faq-q">Are you a patent attorney or patent agent?</h4>
-  <p>
-    No. Patent services are technical drafting and documentation support intended to help you prepare
-    materials for review by a registered patent attorney or patent agent.
-  </p>
-
-  <!-- ===== LEGAL ===== -->
-  <h3 id="legal" class="faq-section-header">Legal, Confidentiality &amp; ITAR</h3>
-
-  <h4 class="faq-q">What about confidentiality?</h4>
-  <p>
-    Please don't send sensitive personal or proprietary data through the public website form. We treat
-    all client designs as confidential and routinely operate under NDA. We can provide a mutual NDA
-    template, or work under yours.
-  </p>
-
-  <hr class="divider" />
-
-  <h4 class="faq-q">Will you sign our NDA?</h4>
-  <p>
-    Yes — most standard mutual NDAs are signed without modification. We may suggest minor edits for
-    one-way agreements that conflict with our standard practice (publication of generic methods, etc.).
-  </p>
-
-  <hr class="divider" />
-
-  <h4 class="faq-q">Who owns the IP from a consulting engagement?</h4>
-  <p>
-    Default: the client owns deliverables created specifically under the engagement. Pre-existing IP
-    (our FDTD solver, patented technologies like Fragmented Aperture, our optimization tooling) remains
-    ours. Custom IP terms — including assignments and licenses — are negotiable. This is always written
-    into the engagement letter.
-  </p>
-
-  <hr class="divider" />
-
-  <h4 class="faq-q">Do you provide PE-stamped drawings?</h4>
-  <p>
-    No. We do not provide professional engineer (PE) stamped plans or drawings unless explicitly contracted
-    with a licensed PE as required by law.
-  </p>
-
-  <div class="cta-row" style="margin-top: 2rem;">
-    <a class="btn" href="contact.html">Request-Consult</a>
-    <a class="btn btn-outline" href="services.html">View Services</a>
-  </div>
-</div>
+</main>
 
 <p class="last-updated">Last updated: May 2026</p>
 
 <footer>
   <p>
     © 2026 Marietta Research Solutions<br />
-    1640 Powers Ferry Rd SE<br />
-    Bldg 11, Suite 200<br />
+    1640 Powers Ferry Rd SE, Bldg 11, Suite 200<br />
     Marietta, GA 30067<br />
     <a href="tel:+14047957674">404-795-7674</a><br />
     |
-    <a href="dr-maloney.html">Dr. Maloney</a> | <a href="contact.html">Request-Consult</a> | <a class="capabilities-link" href="capabilities.pdf" target="_blank" rel="noopener">Capabilities (PDF)</a> |
+    <a href="dr-maloney.html">Dr. Maloney</a> |
+    <a href="contact.html">Request Consult</a> |
+    <a href="capabilities.pdf" target="_blank" rel="noopener">Capabilities (PDF)</a> |
     <a href="privacy.html">Privacy</a>
   </p>
+  <div class="site-tagline-footer">
+    <p>Strategic Consulting at the Intersection of Engineering &amp; Intelligence.</p>
+  </div>
 </footer>
 
-<button id="backToTop" title="Back to Top">&#8679;</button>
-
-<script>
-  var backToTopBtn = document.getElementById("backToTop");
-  window.onscroll = function() {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      backToTopBtn.style.display = "block";
-    } else {
-      backToTopBtn.style.display = "none";
-    }
-  };
-  backToTopBtn.addEventListener("click", function() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-</script>
+<button id="backToTop" title="Back to top" aria-label="Back to top">⇧</button>
 
 <script src="site.js?v=20260504"></script>
-<script src="jargon-translator.js?v=20260504"></script>
+<script src="jargon-translator.js" defer></script>
 </body>
 </html>

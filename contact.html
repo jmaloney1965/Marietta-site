@@ -3,38 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#C8D1DC" />
-  <title>Request Consultation | Marietta Research Solutions</title>
+  <meta name="theme-color" content="#1f3a5f" />
+  <title>Contact | Marietta Research Solutions</title>
 
   <link rel="canonical" href="https://www.mariettaresearchsolutions.com/contact.html" />
-  <link rel="preconnect" href="https://formspree.io">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&display=swap" />
   <link rel="stylesheet" href="style.css?v=20260504" />
   <link rel="manifest" href="manifest.json" />
 
-  <!-- Favicons -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-  <meta name="description" content="Contact Marietta Research Solutions for computational electromagnetics, antenna design, AI-accelerated engineering, patent drafting, and SBIR support." />
+  <meta name="description" content="Contact Marietta Research Solutions — request a consultation, scope an engagement, or ask a question. 30-minute scoping calls are free." />
   <meta name="robots" content="index,follow" />
 
-<!-- Open Graph -->
-  <meta property="og:site_name" content="Marietta Research Solutions" />
-  <meta property="og:title" content="Request Consultation | Marietta Research Solutions" />
-  <meta property="og:description" content="Contact Marietta Research Solutions for computational electromagnetics, antenna design, and professional consulting services." />
+  <meta property="og:title" content="Contact | Marietta Research Solutions" />
+  <meta property="og:description" content="Request a consultation. 30-minute scoping calls are free." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.mariettaresearchsolutions.com/contact.html" />
-  <meta property="og:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260217" />
+  <meta property="og:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260504" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Request Consultation | Marietta Research Solutions" />
-  <meta name="twitter:description" content="Contact Marietta Research Solutions for computational electromagnetics, antenna design, and professional consulting services." />
-  <meta name="twitter:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260217" />
-
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFKE4XNDT7"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -49,198 +39,185 @@
 <header class="site-header">
   <div class="header-wrap">
     <a href="index.html" class="site-logo" aria-label="Home">
-      <img
-        class="site-logo-img"
+      <img class="site-logo-img"
         src="mrs-logo-full-800-tight-gold_decontam.png?v=20260211k"
-        srcset="
-          mrs-logo-full-400-tight-gold_decontam.png 400w,
-          mrs-logo-full-600-tight-gold_decontam.png 600w,
-          mrs-logo-full-800-tight-gold_decontam.png 800w
-        "
+        srcset="mrs-logo-full-400-tight-gold_decontam.png 400w, mrs-logo-full-600-tight-gold_decontam.png 600w, mrs-logo-full-800-tight-gold_decontam.png 800w"
         sizes="(max-width: 600px) 92vw, 360px"
-        alt="Marietta Research Solutions"
-      />
+        alt="Marietta Research Solutions" />
     </a>
-
     <nav class="site-nav">
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="case-studies.html">Case Studies</a>
+      <a href="fragmented-aperture.html">Research</a>
       <a href="coming-soon.html">Products</a>
       <a href="faq.html">FAQ</a>
       <a href="software.html">Software</a>
-      <a href="contact.html" class="nav-active">Contact</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
 
-<div class="container">
-  <h2>Request Consultation</h2>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Contact</div>
+    <h1>Tell us about your problem. <span class="accent">We'll tell you what's possible.</span></h1>
+    <p class="lede">
+      30-minute scoping call, no charge. We respond within one business day.
+    </p>
+  </div>
+</section>
 
-  <p>
-    Use the form below to request a consultation or ask a question.
-    We typically respond within 1–2 business days.
-  </p>
+<main class="container">
 
-  <div class="contact-grid">
-
-    <!-- Form Card -->
-    <div class="contact-card">
-      <h2>Request Form</h2>
-
-      <!-- Spinner overlay (hidden by default; shown during submit) -->
-      <div id="formOverlay" class="form-overlay" aria-hidden="true" style="display:none;">
-        <div class="spinner" role="status" aria-label="Sending message"></div>
-        <div class="spinner-text">Sending…</div>
+  <!-- Quick contact strip -->
+  <div class="quick-contact-card">
+    <h4>Prefer to skip the form?</h4>
+    <div class="quick-contact-grid">
+      <div>
+        <strong>Phone</strong><br />
+        <a href="tel:+14047957674">404-795-7674</a>
       </div>
+      <div>
+        <strong>Mail</strong><br />
+        1640 Powers Ferry Rd SE<br />
+        Bldg 11, Suite 200<br />
+        Marietta, GA 30067
+      </div>
+    </div>
+  </div>
 
-      <form id="contactForm" action="https://formspree.io/f/xykkyvoz" method="POST">
-        <input type="hidden" name="_subject" value="New inquiry from MariettaResearchSolutions.com" />
-        <input type="hidden" name="_next" value="https://www.mariettaresearchsolutions.com/thanks.html" />
-        <input type="hidden" name="_format" value="plain" />
+  <!-- Form -->
+  <form class="cf-form" action="https://formspree.io/f/manjlpkj" method="POST" data-overlay>
 
-        <!-- Honeypot spam protection -->
-        <label class="hp-field" for="company">Company</label>
-        <input class="hp-field" id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+    <!-- Section 1 -->
+    <div class="cf-section-head">
+      <span class="cf-section-num">1</span>
+      <h2>Who are you?</h2>
+      <div class="cf-section-sub">Just the basics — so we know who's writing.</div>
+    </div>
 
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" autocomplete="name" required />
+    <div class="cf-grid">
+      <div>
+        <label class="cf-label" for="name">Name</label>
+        <input class="cf-input" type="text" id="name" name="name" required />
+      </div>
+      <div>
+        <label class="cf-label" for="email">Email</label>
+        <input class="cf-input" type="email" id="email" name="email" required />
+      </div>
+    </div>
 
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" autocomplete="email" required />
+    <div class="cf-grid" style="margin-top:1rem;">
+      <div>
+        <label class="cf-label" for="company">Company / organization</label>
+        <input class="cf-input" type="text" id="company" name="company" />
+      </div>
+      <div>
+        <label class="cf-label" for="role">Your role</label>
+        <input class="cf-input" type="text" id="role" name="role" placeholder="e.g. RF Engineer, Program Manager" />
+      </div>
+    </div>
 
-        <label for="phone">Phone (optional)</label>
-        <input id="phone" name="phone" type="tel" autocomplete="tel" />
+    <!-- Section 2 -->
+    <div class="cf-section-head has-divider">
+      <span class="cf-section-num">2</span>
+      <h2>What do you need?</h2>
+      <div class="cf-section-sub">Pick the closest fit; we'll dial in on the scoping call.</div>
+    </div>
 
-        <label for="contact_method">Preferred Contact Method</label>
-        <select id="contact_method" name="preferred_contact_method" required>
-          <option value="" selected disabled>Select one</option>
-          <option value="Email">Email</option>
-          <option value="Phone">Phone</option>
-          <option value="Either">Either</option>
+    <div class="cf-row">
+      <label class="cf-label" for="engagement">Type of engagement</label>
+      <select class="cf-input" id="engagement" name="engagement">
+        <option value="">— Select —</option>
+        <option>Antenna design (custom)</option>
+        <option>Matching network / IoT module integration</option>
+        <option>Fragmented aperture antenna</option>
+        <option>Phased array / beamforming</option>
+        <option>Computational EM / FDTD simulation</option>
+        <option>AI/ML-enhanced EM design</option>
+        <option>IP licensing</option>
+        <option>Productized antenna (Gerber download)</option>
+        <option>Other / not sure yet</option>
+      </select>
+    </div>
+
+    <div class="cf-grid" style="margin-top:1rem;">
+      <div>
+        <label class="cf-label" for="frequency">Frequency band (if known)</label>
+        <input class="cf-input" type="text" id="frequency" name="frequency" placeholder="e.g. 902–928 MHz, 2.4 GHz, X-band" />
+      </div>
+      <div>
+        <label class="cf-label" for="timeline">Timeline</label>
+        <select class="cf-input" id="timeline" name="timeline">
+          <option value="">— Select —</option>
+          <option>Exploratory / no fixed deadline</option>
+          <option>Within 1 month</option>
+          <option>Within 1 quarter</option>
+          <option>Within 6 months</option>
+          <option>SBIR / federal milestone-driven</option>
         </select>
+      </div>
+    </div>
 
-        <label for="service">Service of Interest</label>
-        <select id="service" name="service" required>
-          <option value="" selected disabled>Select one</option>
-          <option>Computational Electromagnetics & Antenna Design</option>
-          <option>AI-Accelerated Engineering</option>
-          <option>SBIR Grant Writing Support</option>
-          <option>Patent Drafting Support</option>
-          <option>Other</option>
-        </select>
+    <!-- Section 3 -->
+    <div class="cf-section-head has-divider">
+      <span class="cf-section-num">3</span>
+      <h2>The details</h2>
+      <div class="cf-section-sub">As much or as little as you want — we'll ask follow-up questions on the call.</div>
+    </div>
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="6" required
-          placeholder="Briefly describe what you need and your preferred timeline."></textarea>
+    <div class="cf-row">
+      <label class="cf-label" for="message">Describe the problem</label>
+      <textarea class="cf-input" id="message" name="message" rows="6" placeholder="e.g. We have a TI CC1101 module on a small PCB. Return loss is poor across the ISM band — we need a matching network design and a revised board layout, fabricated and measured."></textarea>
+      <div class="cf-help">If you have a spec sheet, schematic, or block diagram, mention it here — we'll request it after we connect.</div>
+    </div>
 
-        <p class="fineprint">
-          <strong>Document sharing:</strong> Please do not send sensitive personal data
-          through this form. If documents are needed, we will reply with a secure method to share files.
-        </p>
-
-        <div class="checkbox-row">
-          <input id="disclaimer" name="disclaimer_acknowledged" type="checkbox" required />
-          <label for="disclaimer">
-            I understand Marietta Research Solutions provides engineering consulting services only.
-          </label>
-        </div>
-
-        <!-- ONE submit button -->
-        <button id="contactSubmitBtn" type="submit">
-          <span class="btn-text">Send</span>
-          <span class="btn-spinner" aria-hidden="true"></span>
-        </button>
-      </form>
-
-      <p class="fineprint">
-        By submitting this form, you consent to be contacted regarding your inquiry.
+    <div class="cf-submit-row">
+      <button class="cf-submit" type="submit">Request Consultation →</button>
+      <p class="cf-fineprint">
+        We respond within one business day. Scoping calls are 30 minutes, no charge, no obligation.
+        Mutual NDAs available on request.
       </p>
     </div>
 
+  </form>
+
+  <!-- Escape hatch -->
+  <div class="cf-escape" style="margin-top:1.25rem;">
+    <span><strong>Just want to read first?</strong></span>
+    <span>
+      <a href="services.html">Services</a> ·
+      <a href="case-studies.html">Case Studies</a> ·
+      <a href="fragmented-aperture.html">Research</a> ·
+      <a href="faq.html">FAQ</a>
+    </span>
   </div>
 
-  <hr class="divider" />
+</main>
 
-  <h2>Important Notes</h2>
-  <ul class="notes">
-    <li><strong>Confidentiality.</strong> Please avoid sending sensitive personal data in messages. Ask for a secure method to share documents if needed.</li>
-  </ul>
-</div>
-
-<p class="last-updated">Last updated: February 2026</p>
+<p class="last-updated">Last updated: May 2026</p>
 
 <footer>
   <p>
     © 2026 Marietta Research Solutions<br />
-    1640 Powers Ferry Rd SE<br />
-    Bldg 11, Suite 200<br />
+    1640 Powers Ferry Rd SE, Bldg 11, Suite 200<br />
     Marietta, GA 30067<br />
     <a href="tel:+14047957674">404-795-7674</a><br />
-    
     |
-    <a href="dr-maloney.html">Dr. Maloney</a> | <a href="contact.html">Request-Consult</a> | <a class="capabilities-link" href="capabilities.pdf" target="_blank" rel="noopener">Capabilities (PDF)</a> |
-    <a href="privacy.html">Privacy</a><br />
-    
+    <a href="dr-maloney.html">Dr. Maloney</a> |
+    <a href="contact.html">Request Consult</a> |
+    <a href="capabilities.pdf" target="_blank" rel="noopener">Capabilities (PDF)</a> |
+    <a href="privacy.html">Privacy</a>
   </p>
+  <div class="site-tagline-footer">
+    <p>Strategic Consulting at the Intersection of Engineering &amp; Intelligence.</p>
+  </div>
 </footer>
 
-<!-- Back to Top Button -->
-<button id="backToTop" title="Back to Top">&#8679;</button>
-
-<script>
-  // Formspree submit via AJAX + redirect (free plan friendly)
-  (function () {
-    const form = document.getElementById("contactForm");
-    const submitBtn = document.getElementById("contactSubmitBtn");
-    const overlay = document.getElementById("formOverlay");
-
-    if (!form || !submitBtn || !overlay) return;
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      overlay.style.display = "flex";
-      submitBtn.disabled = true;
-      submitBtn.classList.add("is-sending");
-
-      try {
-        const formData = new FormData(form);
-
-        const res = await fetch(form.action, {
-          method: "POST",
-          body: formData,
-          headers: { "Accept": "application/json" }
-        });
-
-        if (res.ok) {
-          window.location.href = "thanks.html";
-          return;
-        }
-
-        overlay.style.display = "none";
-        submitBtn.disabled = false;
-        submitBtn.classList.remove("is-sending");
-        alert("Sorry—something went wrong submitting the form. Please try again or email us directly.");
-      } catch (err) {
-        overlay.style.display = "none";
-        submitBtn.disabled = false;
-        submitBtn.classList.remove("is-sending");
-        alert("Network error. Please try again or email us directly.");
-      }
-    });
-
-    // Safari back/forward cache safety
-    window.addEventListener("pageshow", () => {
-      overlay.style.display = "none";
-      submitBtn.disabled = false;
-      submitBtn.classList.remove("is-sending");
-    });
-  })();
-</script>
+<button id="backToTop" title="Back to top" aria-label="Back to top">⇧</button>
 
 <script src="site.js?v=20260504"></script>
-
-    <script src="jargon-translator.js" defer></script>
+<script src="jargon-translator.js" defer></script>
 </body>
 </html>
