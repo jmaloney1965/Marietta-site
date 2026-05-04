@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#C8D1DC" />
+  <title>Fragmented Aperture Antennas | Dr. Jim Maloney's Patented Antenna Technology | Marietta Research Solutions</title>
+
+  <link rel="canonical" href="https://www.mariettaresearchsolutions.com/fragmented-aperture.html" />
+  <link rel="stylesheet" href="style.css?v=20260504" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <meta name="description" content="The Fragmented Aperture Antenna — invented by Dr. Jim Maloney (US Patents 6,323,809; 11,228,102; 11,937,270). Genetically optimized broadband, conformal, multi-function antenna technology. Engineering consulting, IP licensing, and the definitive book." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Marietta Research Solutions" />
+  <meta property="og:title" content="Fragmented Aperture Antennas | Marietta Research Solutions" />
+  <meta property="og:description" content="The patented antenna technology combining genetic algorithms with full-wave FDTD to achieve broadband, conformal, multi-function performance. By Dr. Jim Maloney." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.mariettaresearchsolutions.com/fragmented-aperture.html" />
+  <meta property="og:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260504" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Fragmented Aperture Antennas | Marietta Research Solutions" />
+  <meta name="twitter:description" content="The patented antenna technology combining genetic algorithms with full-wave FDTD to achieve broadband, conformal, multi-function performance." />
+  <meta name="twitter:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260504" />
+
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Fragmented Aperture Antennas",
+    "description": "The patented antenna technology invented by Dr. Jim Maloney that combines genetic algorithms with full-wave FDTD simulation to produce broadband, conformal, multi-function antennas.",
+    "author": {
+      "@type": "Person",
+      "name": "Dr. Jim Maloney",
+      "url": "https://www.mariettaresearchsolutions.com/dr-maloney.html"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Marietta Research Solutions",
+      "url": "https://www.mariettaresearchsolutions.com"
+    },
+    "about": [
+      {"@type": "Thing", "name": "Fragmented Aperture Antenna"},
+      {"@type": "Thing", "name": "Genetic Algorithm"},
+      {"@type": "Thing", "name": "FDTD"},
+      {"@type": "Thing", "name": "Broadband Antenna"}
+    ]
+  }
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFKE4XNDT7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TFKE4XNDT7');
+  </script>
+
+  <style>
+    /* Page-specific styles for fragmented-aperture.html */
+    .fa-hero {
+      background: linear-gradient(135deg, #1f3a5f 0%, #2e5a8a 50%, #3d6fa5 100%);
+      color: #fff;
+      padding: clamp(3rem, 6vw, 5rem) clamp(1rem, 4vw, 2rem);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fa-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(232,184,48,0.15) 0%, transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.08) 0%, transparent 30%);
+      pointer-events: none;
+    }
+
+    .fa-hero > * { position: relative; z-index: 1; }
+
+    .fa-hero h1 {
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      margin: 0 0 0.6rem;
+      line-height: 1.15;
+      color: #fff;
+    }
+
+    .fa-hero .fa-tagline {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      max-width: 50rem;
+      margin: 0 auto 1rem;
+      opacity: 0.95;
+      line-height: 1.4;
+    }
+
+    .fa-hero .fa-patent-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+
+    .fa-patent-badge {
+      background: rgba(232, 184, 48, 0.15);
+      border: 1px solid rgba(232, 184, 48, 0.5);
+      color: #E8B830;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      letter-spacing: 0.02em;
+    }
+
+    /* Fragmented aperture motif visualization */
+    .fa-motif {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 2px;
+      max-width: 420px;
+      margin: 1.5rem auto 0;
+      aspect-ratio: 1;
+      padding: 1rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(232, 184, 48, 0.25);
+    }
+
+    .fa-motif .cell {
+      background: transparent;
+      border-radius: 1px;
+      transition: background 0.6s;
+    }
+
+    .fa-motif .cell.on {
+      background: #E8B830;
+    }
+
+    .fa-motif-caption {
+      text-align: center;
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin: 0.6rem 0 0;
+      font-style: italic;
+    }
+
+    /* Two-column "before / after" comparison */
+    .fa-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin: 1.5rem 0;
+    }
+
+    @media (max-width: 700px) {
+      .fa-compare { grid-template-columns: 1fr; }
+    }
+
+    .fa-compare .fa-side {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 10px;
+      padding: 1.1rem 1.2rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    }
+
+    .fa-compare h4 {
+      margin: 0 0 0.5rem;
+      color: #1f3a5f;
+      font-size: 1.05rem;
+    }
+
+    .fa-compare .fa-side.problem {
+      border-left: 4px solid #c84141;
+    }
+
+    .fa-compare .fa-side.solution {
+      border-left: 4px solid #2c8a4a;
+    }
+
+    .fa-compare ul {
+      margin: 0.5rem 0 0;
+      padding-left: 1.25rem;
+    }
+
+    .fa-compare li { margin: 0.3rem 0; }
+
+    /* Application grid */
+    .fa-app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .fa-app-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .fa-app-card h4 {
+      margin: 0 0 0.4rem;
+      color: #1f3a5f;
+      font-size: 1rem;
+    }
+
+    .fa-app-card p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #444;
+      line-height: 1.4;
+    }
+
+    /* Process steps */
+    .fa-process {
+      counter-reset: fa-step;
+      margin: 1rem 0;
+    }
+
+    .fa-step {
+      counter-increment: fa-step;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 10px;
+      padding: 1rem 1.2rem 1rem 4rem;
+      margin-bottom: 0.8rem;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .fa-step::before {
+      content: counter(fa-step);
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      width: 2.2rem;
+      height: 2.2rem;
+      border-radius: 50%;
+      background: #1f3a5f;
+      color: #E8B830;
+      font-weight: bold;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .fa-step h4 {
+      margin: 0 0 0.3rem;
+      color: #1f3a5f;
+      font-size: 1.05rem;
+    }
+
+    .fa-step p {
+      margin: 0;
+      color: #444;
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    /* Patent gallery */
+    .fa-patents {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .fa-patent-card {
+      background: linear-gradient(180deg, #fff 0%, #f8f9fc 100%);
+      border: 1px solid rgba(31, 58, 95, 0.15);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    }
+
+    .fa-patent-num {
+      font-family: "Courier New", monospace;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #1f3a5f;
+      margin: 0 0 0.3rem;
+    }
+
+    .fa-patent-title {
+      font-weight: bold;
+      color: #333;
+      margin: 0 0 0.4rem;
+      font-size: 0.98rem;
+    }
+
+    .fa-patent-year {
+      display: inline-block;
+      background: rgba(232, 184, 48, 0.15);
+      color: #8a6f1c;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    /* Book callout */
+    .fa-book {
+      background: linear-gradient(135deg, #f5e9c4 0%, #fff8e1 100%);
+      border: 1px solid rgba(232, 184, 48, 0.4);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    @media (max-width: 600px) {
+      .fa-book {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+
+    .fa-book-cover {
+      width: 110px;
+      height: 145px;
+      background: linear-gradient(135deg, #1f3a5f 0%, #2e5a8a 100%);
+      border-radius: 4px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #E8B830;
+      font-weight: bold;
+      text-align: center;
+      padding: 0.5rem;
+      font-size: 0.85rem;
+      line-height: 1.2;
+      margin: 0 auto;
+    }
+
+    .fa-book h3 {
+      margin: 0 0 0.4rem;
+      color: #1f3a5f;
+    }
+
+    .fa-book p {
+      margin: 0 0 0.6rem;
+      color: #444;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-wrap">
+    <a href="index.html" class="site-logo" aria-label="Home">
+      <img class="site-logo-img" src="mrs-logo-full-400-tight-gold.png?v=20260211k" alt="Marietta Research Solutions" />
+    </a>
+    <nav class="site-nav">
+      <a href="about.html">About</a>
+      <a href="services.html" class="nav-active">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="coming-soon.html">Products</a>
+      <a href="faq.html">FAQ</a>
+      <a href="software.html">Software</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero with motif -->
+<section class="fa-hero">
+  <h1>Fragmented Aperture Antennas</h1>
+  <p class="fa-tagline">
+    A patented antenna technology that uses genetic algorithms and full-wave electromagnetic simulation
+    to achieve broadband, conformal, multi-function performance — invented by Dr. Jim Maloney at Georgia Tech.
+  </p>
+  <div class="fa-patent-badges">
+    <span class="fa-patent-badge">US 6,323,809</span>
+    <span class="fa-patent-badge">US 11,228,102</span>
+    <span class="fa-patent-badge">US 11,937,270</span>
+  </div>
+  <div class="fa-motif" id="fa-motif" aria-hidden="true"></div>
+  <p class="fa-motif-caption">A fragmented aperture: each cell is independently optimized — the pattern is the antenna.</p>
+</section>
+
+<div class="container">
+
+  <!-- Marketing intro -->
+  <h2>What Is a Fragmented Aperture Antenna?</h2>
+  <p>
+    Most antennas are designed by hand: an engineer sketches a shape based on textbook knowledge, simulates it,
+    and tweaks dimensions until performance is acceptable. This works well when the design space is small and
+    well-understood — but it breaks down when you need an antenna to be simultaneously broadband, conformal to
+    a curved surface, low-profile, multi-band, and tightly integrated with platform structure.
+  </p>
+
+  <p>
+    A <strong>fragmented aperture antenna</strong> takes a fundamentally different approach. Instead of starting
+    from a known shape, the antenna is treated as a grid of small conducting cells — each one either present or
+    absent. A <strong>genetic algorithm</strong> searches this enormous design space, evaluating candidate
+    patterns with a full-wave <strong>FDTD electromagnetic simulator</strong>. Over many generations, the
+    algorithm evolves a fragmented metallic pattern that achieves the required performance — often producing
+    geometries no human would have drawn.
+  </p>
+
+  <p>
+    The result: antennas that meet seemingly impossible specifications. Wider bandwidth than a hand-designed
+    equivalent. Conformal to a curved surface. Multiple functions in a single aperture. And because the pattern
+    is two-dimensional, it can be printed on flex circuit, etched on PCB, or laid up in a composite structure.
+  </p>
+
+  <hr class="divider" />
+
+  <!-- Problem / Solution -->
+  <h2>Why It Matters</h2>
+
+  <div class="fa-compare">
+    <div class="fa-side problem">
+      <h4>The Conventional Antenna Problem</h4>
+      <ul>
+        <li>Bandwidth is limited by physical size — narrowband by default</li>
+        <li>Conformal designs sacrifice performance</li>
+        <li>Each frequency band needs its own antenna</li>
+        <li>Hand tuning eats engineering hours</li>
+        <li>Platform integration is an afterthought</li>
+      </ul>
+    </div>
+
+    <div class="fa-side solution">
+      <h4>The Fragmented Aperture Solution</h4>
+      <ul>
+        <li>Genetic optimization finds broadband geometries directly</li>
+        <li>Curved and faceted surfaces are first-class constraints</li>
+        <li>Multi-band &amp; multi-function in one aperture</li>
+        <li>Automated optimization replaces manual tweaking</li>
+        <li>Platform integration baked into the optimization objective</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Applications -->
+  <h2>Applications</h2>
+  <p>
+    Fragmented aperture technology has been applied across defense, commercial, and research domains.
+    Typical use cases include:
+  </p>
+
+  <div class="fa-app-grid">
+    <div class="fa-app-card">
+      <h4>Conformal Aircraft Antennas</h4>
+      <p>Low-profile antennas integrated into airframe skin panels, replacing protruding blade and dipole geometries.</p>
+    </div>
+    <div class="fa-app-card">
+      <h4>Multi-Function Apertures</h4>
+      <p>A single aperture servicing comms, navigation, and EW functions across overlapping frequency bands.</p>
+    </div>
+    <div class="fa-app-card">
+      <h4>Wideband Phased Arrays</h4>
+      <p>Element-level optimization for arrays that scan across decade bandwidths.</p>
+    </div>
+    <div class="fa-app-card">
+      <h4>Vehicle &amp; Ground Platform</h4>
+      <p>Antennas that fit existing structural cutouts without compromising performance.</p>
+    </div>
+    <div class="fa-app-card">
+      <h4>Satellite &amp; Space</h4>
+      <p>Lightweight, conformal designs for spacecraft surfaces and CubeSat form factors.</p>
+    </div>
+    <div class="fa-app-card">
+      <h4>Low-Observable Platforms</h4>
+      <p>Designs that integrate with stealth-shaped surfaces while meeting RCS constraints.</p>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- The technical process -->
+  <h2>How We Design One</h2>
+  <p>
+    Our fragmented aperture engagements follow a structured optimization workflow developed and refined
+    over 25 years and three patents:
+  </p>
+
+  <div class="fa-process">
+    <div class="fa-step">
+      <h4>Define the Optimization Objective</h4>
+      <p>
+        We translate platform requirements — frequency range, polarization, gain, pattern, RCS — into a
+        weighted fitness function. Constraints (size envelope, conformal surface, integration points)
+        become inviolable boundaries.
+      </p>
+    </div>
+
+    <div class="fa-step">
+      <h4>Discretize the Aperture</h4>
+      <p>
+        The available antenna real estate is divided into a grid of small conducting cells. Grid resolution
+        depends on the highest frequency of interest — typically λ/20 to λ/40 at the upper band edge.
+      </p>
+    </div>
+
+    <div class="fa-step">
+      <h4>Evolve with Genetic Algorithms</h4>
+      <p>
+        A population of candidate patterns is evaluated via full-wave FDTD. Crossover and mutation operators
+        produce the next generation. Over hundreds of generations, the population converges on patterns that
+        satisfy the fitness function.
+      </p>
+    </div>
+
+    <div class="fa-step">
+      <h4>Refine with FDTD</h4>
+      <p>
+        Top-performing candidates are re-simulated at high fidelity in our proprietary FDTD solver, including
+        platform effects, dielectric loading, and feed structure details. Fine-tuning happens at this stage.
+      </p>
+    </div>
+
+    <div class="fa-step">
+      <h4>Validate &amp; Build</h4>
+      <p>
+        We deliver a manufacturable design — patterning files, feed network specification, integration
+        drawings — along with predicted performance and a measurement plan for prototype validation.
+      </p>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Patents -->
+  <h2>The Patent Portfolio</h2>
+  <p>
+    The fragmented aperture concept is protected by three issued US patents. Dr. Maloney is the named inventor on all three.
+  </p>
+
+  <div class="fa-patents">
+    <div class="fa-patent-card">
+      <p class="fa-patent-num">US 6,323,809</p>
+      <p class="fa-patent-title">Fragmented Aperture Antennas and Broadband Antenna Ground Planes</p>
+      <span class="fa-patent-year">Issued 2001</span>
+      <p style="margin: 0.6rem 0 0; font-size: 0.9rem; color: #555;">
+        The foundational patent. Establishes the genetic algorithm + FDTD methodology for evolving
+        broadband antenna apertures from a discretized cell grid.
+      </p>
+    </div>
+
+    <div class="fa-patent-card">
+      <p class="fa-patent-num">US 11,228,102</p>
+      <p class="fa-patent-title">Fragmented Aperture Antennas</p>
+      <span class="fa-patent-year">Issued 2022</span>
+      <p style="margin: 0.6rem 0 0; font-size: 0.9rem; color: #555;">
+        Advanced techniques extending the original invention — including improved optimization
+        objectives and integration with platform constraints.
+      </p>
+    </div>
+
+    <div class="fa-patent-card">
+      <p class="fa-patent-num">US 11,937,270</p>
+      <p class="fa-patent-title">Flat Lens Antenna</p>
+      <span class="fa-patent-year">Issued 2024</span>
+      <p style="margin: 0.6rem 0 0; font-size: 0.9rem; color: #555;">
+        A planar lens variant of the fragmented aperture concept — collimating antenna gain
+        through a thin, printable structure rather than a curved reflector.
+      </p>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Book callout -->
+  <div class="fa-book">
+    <div class="fa-book-cover">
+      Fragmented<br />Aperture<br />Antennas
+    </div>
+    <div>
+      <h3>The Definitive Reference, In Progress</h3>
+      <p>
+        Dr. Maloney is currently authoring the comprehensive textbook on fragmented aperture antennas —
+        covering theory, optimization methodology, design examples, and applications. Follow the book's
+        progress, read draft chapters, and join the mailing list:
+      </p>
+      <a class="btn" href="https://jmaloney1965.github.io/fragmented-aperture-book/" target="_blank" rel="noopener">
+        Visit the Book Site →
+      </a>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <h2>Engage Us</h2>
+  <p>
+    If you have a platform that needs an antenna only a fragmented aperture can solve — or if you're
+    evaluating whether the technology is right for your problem — we'd like to hear from you.
+    Engagement options include:
+  </p>
+
+  <ul>
+    <li><strong>Feasibility study:</strong> a 2–4 week engagement that assesses whether fragmented aperture is the right approach for your specific problem, with rough-order-of-magnitude performance estimates.</li>
+    <li><strong>Full design engagement:</strong> end-to-end antenna development from requirements through manufacturable design and measurement plan.</li>
+    <li><strong>IP licensing &amp; consulting:</strong> for organizations developing their own fragmented aperture capability.</li>
+    <li><strong>Expert witness &amp; technical review:</strong> for legal or technical due-diligence matters involving fragmented aperture or related antenna IP.</li>
+  </ul>
+
+  <div class="cta-row">
+    <a class="btn" href="contact.html">Request a Consultation</a>
+    <a class="btn btn-outline" href="case-studies.html">View Case Studies</a>
+    <a class="btn btn-outline" href="engineering.html">Back to Engineering</a>
+  </div>
+
+  <hr class="divider" />
+
+  <h3>Important Notes</h3>
+  <ul>
+    <li><strong>Engineering consulting only:</strong> This service is engineering consulting and does not include other professional services.</li>
+    <li><strong>Confidentiality:</strong> Please avoid sending highly sensitive information through public web forms. NDAs available on request before any technical exchange.</li>
+    <li><strong>IP scope:</strong> Patent rights described above are owned by Marietta Research Solutions and/or Dr. Maloney. Licensing terms are negotiated case-by-case.</li>
+  </ul>
+</div>
+
+<p class="last-updated">Last updated: May 2026</p>
+
+<footer>
+  <p>
+    © 2026 Marietta Research Solutions<br />
+    1640 Powers Ferry Rd SE<br />
+    Bldg 11, Suite 200<br />
+    Marietta, GA 30067<br />
+    <a href="tel:+14047957674">404-795-7674</a><br />
+    |
+    <a href="dr-maloney.html">Dr. Maloney</a> | <a href="contact.html">Request-Consult</a> | <a class="capabilities-link" href="capabilities.pdf" target="_blank" rel="noopener">Capabilities (PDF)</a> |
+    <a href="privacy.html">Privacy</a>
+  </p>
+</footer>
+
+<button id="backToTop" title="Back to Top">&#8679;</button>
+
+<script>
+  // Generate the fragmented aperture motif
+  (function() {
+    var motif = document.getElementById('fa-motif');
+    if (!motif) return;
+    var totalCells = 144; // 12x12
+    // Use a reproducible pseudo-pattern that looks "fragmented"
+    var seedPattern = [
+      0,1,1,0,0,1,1,0,0,1,1,0,
+      1,1,0,1,1,0,1,1,0,1,1,1,
+      1,0,1,1,0,1,1,0,1,1,0,1,
+      0,1,1,0,1,1,0,1,1,0,1,0,
+      0,1,0,1,1,0,1,1,0,1,1,0,
+      1,1,0,0,1,1,0,1,1,0,0,1,
+      1,0,1,1,0,1,1,0,1,1,1,1,
+      0,1,1,0,1,1,0,1,1,0,0,1,
+      0,0,1,1,0,1,1,0,0,1,1,0,
+      1,1,0,1,1,0,1,1,0,1,1,1,
+      1,1,0,1,1,0,1,1,0,0,1,0,
+      0,1,1,0,0,1,1,0,1,1,0,1
+    ];
+    for (var i = 0; i < totalCells; i++) {
+      var cell = document.createElement('div');
+      cell.className = 'cell' + (seedPattern[i] ? ' on' : '');
+      motif.appendChild(cell);
+    }
+  })();
+
+  // Back to top
+  var backToTopBtn = document.getElementById("backToTop");
+  window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+  backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+<script src="site.js?v=20260504"></script>
+<script src="jargon-translator.js?v=20260504"></script>
+</body>
+</html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#C8D1DC" />
+  <title>Case Studies | Marietta Research Solutions</title>
+
+  <link rel="canonical" href="https://www.mariettaresearchsolutions.com/case-studies.html" />
+  <link rel="stylesheet" href="style.css?v=20260504" />
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <meta name="description" content="Case studies from Marietta Research Solutions — antenna design, electromagnetic simulation, and platform integration projects." />
+  <meta name="robots" content="index,follow" />
+
+  <meta property="og:site_name" content="Marietta Research Solutions" />
+  <meta property="og:title" content="Case Studies | Marietta Research Solutions" />
+  <meta property="og:description" content="Selected antenna design and platform integration projects." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.mariettaresearchsolutions.com/case-studies.html" />
+  <meta property="og:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260504" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Case Studies | Marietta Research Solutions" />
+  <meta name="twitter:description" content="Selected antenna design and platform integration projects." />
+  <meta name="twitter:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260504" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFKE4XNDT7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TFKE4XNDT7');
+  </script>
+
+  <style>
+    .case-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      margin: 1.5rem 0;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 0.9fr 1.3fr;
+      gap: 0;
+    }
+
+    @media (max-width: 800px) {
+      .case-card { grid-template-columns: 1fr; }
+    }
+
+    .case-visual {
+      background: linear-gradient(135deg, #1f3a5f 0%, #2e5a8a 100%);
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      color: #E8B830;
+      position: relative;
+    }
+
+    .case-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 30% 30%, rgba(232,184,48,0.15) 0%, transparent 30%),
+        radial-gradient(circle at 70% 70%, rgba(255,255,255,0.05) 0%, transparent 30%);
+      pointer-events: none;
+    }
+
+    .case-visual svg { position: relative; z-index: 1; }
+
+    .case-content {
+      padding: 1.5rem 1.75rem;
+    }
+
+    .case-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .case-tag {
+      display: inline-block;
+      background: rgba(31, 58, 95, 0.08);
+      color: #1f3a5f;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: bold;
+      letter-spacing: 0.02em;
+    }
+
+    .case-tag.year {
+      background: rgba(232, 184, 48, 0.18);
+      color: #8a6f1c;
+    }
+
+    .case-content h3 {
+      margin: 0 0 0.5rem;
+      color: #1f3a5f;
+      font-size: 1.25rem;
+      line-height: 1.25;
+    }
+
+    .case-section {
+      margin: 0.85rem 0 0;
+    }
+
+    .case-section h4 {
+      margin: 0 0 0.25rem;
+      color: #1f3a5f;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: bold;
+    }
+
+    .case-section p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .case-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin: 1rem 0 0.5rem;
+      padding: 0.85rem;
+      background: rgba(31, 58, 95, 0.04);
+      border-radius: 8px;
+    }
+
+    .case-stat {
+      text-align: center;
+    }
+
+    .case-stat-value {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #1f3a5f;
+      line-height: 1;
+    }
+
+    .case-stat-label {
+      font-size: 0.75rem;
+      color: #666;
+      margin-top: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Coming soon tile */
+    .case-coming-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    @media (max-width: 700px) {
+      .case-coming-grid { grid-template-columns: 1fr; }
+    }
+
+    .case-coming {
+      background: rgba(255,255,255,0.5);
+      border: 2px dashed rgba(31,58,95,0.25);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      color: #666;
+    }
+
+    .case-coming h4 {
+      margin: 0 0 0.4rem;
+      color: #1f3a5f;
+      font-size: 1.05rem;
+    }
+
+    .case-coming-tag {
+      display: inline-block;
+      background: rgba(31, 58, 95, 0.08);
+      color: #1f3a5f;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: bold;
+      margin-bottom: 0.6rem;
+    }
+
+    .case-coming p {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    /* Filter chips */
+    .case-filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .case-filter {
+      background: rgba(31, 58, 95, 0.06);
+      border: 1px solid rgba(31, 58, 95, 0.15);
+      color: #1f3a5f;
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: bold;
+      cursor: default;
+    }
+
+    .case-intro-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .case-intro-stat {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .case-intro-stat-value {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #1f3a5f;
+    }
+
+    .case-intro-stat-label {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 0.2rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-wrap">
+    <a href="index.html" class="site-logo" aria-label="Home">
+      <img class="site-logo-img" src="mrs-logo-full-400-tight-gold.png?v=20260211k" alt="Marietta Research Solutions" />
+    </a>
+    <nav class="site-nav">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html" class="nav-active">Case Studies</a>
+      <a href="coming-soon.html">Products</a>
+      <a href="faq.html">FAQ</a>
+      <a href="software.html">Software</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+
+  <h2>Case Studies</h2>
+  <p>
+    A small selection of antenna design, simulation, and platform integration projects we've delivered.
+    Engagement details are anonymized for client confidentiality — but the engineering challenges,
+    methods, and outcomes are real.
+  </p>
+
+  <div class="case-intro-stats">
+    <div class="case-intro-stat">
+      <div class="case-intro-stat-value">30+</div>
+      <div class="case-intro-stat-label">Years experience</div>
+    </div>
+    <div class="case-intro-stat">
+      <div class="case-intro-stat-value">6</div>
+      <div class="case-intro-stat-label">US patents</div>
+    </div>
+    <div class="case-intro-stat">
+      <div class="case-intro-stat-value">UHF–mmW</div>
+      <div class="case-intro-stat-label">Frequency range</div>
+    </div>
+    <div class="case-intro-stat">
+      <div class="case-intro-stat-value">100%</div>
+      <div class="case-intro-stat-label">PhD-led</div>
+    </div>
+  </div>
+
+  <div class="case-filter-row">
+    <span class="case-filter">All</span>
+    <span class="case-filter">Defense</span>
+    <span class="case-filter">Antenna Design</span>
+    <span class="case-filter">FDTD Simulation</span>
+    <span class="case-filter">Platform Integration</span>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- CASE STUDY 1 — the real one -->
+  <article class="case-card">
+    <div class="case-visual">
+      <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-label="Conformal phased array illustration">
+        <!-- Curved aircraft surface -->
+        <path d="M 20 140 Q 100 100 180 140" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-dasharray="3,3"/>
+        <path d="M 20 150 Q 100 110 180 150" fill="rgba(31, 58, 95, 0.4)" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+        <!-- Array elements arrayed along the curve -->
+        <g fill="#E8B830">
+          <rect x="32" y="138" width="8" height="8" transform="rotate(-15 36 142)"/>
+          <rect x="52" y="128" width="8" height="8" transform="rotate(-12 56 132)"/>
+          <rect x="72" y="120" width="8" height="8" transform="rotate(-7 76 124)"/>
+          <rect x="92" y="116" width="8" height="8" transform="rotate(-2 96 120)"/>
+          <rect x="112" y="116" width="8" height="8" transform="rotate(3 116 120)"/>
+          <rect x="132" y="120" width="8" height="8" transform="rotate(8 136 124)"/>
+          <rect x="152" y="128" width="8" height="8" transform="rotate(13 156 132)"/>
+        </g>
+        <!-- Beam pattern -->
+        <path d="M 100 120 L 60 30 L 100 50 L 140 30 Z" fill="rgba(232,184,48,0.15)" stroke="rgba(232,184,48,0.5)" stroke-width="1"/>
+        <text x="100" y="180" fill="#fff" font-size="11" text-anchor="middle" opacity="0.85">Conformal phased array</text>
+      </svg>
+    </div>
+    <div class="case-content">
+      <div class="case-tag-row">
+        <span class="case-tag year">2024</span>
+        <span class="case-tag">Defense Prime</span>
+        <span class="case-tag">Phased Array</span>
+        <span class="case-tag">FDTD</span>
+      </div>
+      <h3>Wideband Conformal Phased Array for Airborne Platform</h3>
+
+      <div class="case-section">
+        <h4>Challenge</h4>
+        <p>
+          A defense prime contractor needed a conformal phased-array antenna integrated into the curved skin
+          of an airborne platform. Requirements: 4:1 bandwidth, ±60° scan, hold pattern fidelity across the
+          band, and meet platform RCS envelope. Existing element designs failed scan performance at the band edges.
+        </p>
+      </div>
+
+      <div class="case-section">
+        <h4>Approach</h4>
+        <p>
+          Element-level optimization using genetic algorithms coupled with our proprietary FDTD solver.
+          Conformal substrate modeled at full fidelity. We swept element geometry, feed structure, and
+          inter-element spacing simultaneously — the GA found a design no human had drawn but which met
+          all constraints. Full-array simulation validated installed pattern across all scan angles.
+        </p>
+      </div>
+
+      <div class="case-section">
+        <h4>Outcome</h4>
+        <p>
+          Delivered manufacturable element design and full-array integration package. Prototype measurements
+          matched simulation within 0.7 dB across the band. Customer fielded the array on schedule for
+          flight test.
+        </p>
+      </div>
+
+      <div class="case-stats">
+        <div class="case-stat">
+          <div class="case-stat-value">4:1</div>
+          <div class="case-stat-label">Bandwidth</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-value">±60°</div>
+          <div class="case-stat-label">Scan range</div>
+        </div>
+        <div class="case-stat">
+          <div class="case-stat-value">0.7 dB</div>
+          <div class="case-stat-label">Sim vs. measured</div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- COMING SOON TILES -->
+  <h3 style="margin-top: 2rem;">More Case Studies Coming Soon</h3>
+  <p>
+    Additional case studies are being prepared for publication, pending client release approvals.
+    If you're evaluating us for a specific type of work and want to discuss similar engagements directly,
+    please reach out.
+  </p>
+
+  <div class="case-coming-grid">
+    <div class="case-coming">
+      <span class="case-coming-tag">Coming Soon</span>
+      <h4>Multi-Antenna Co-Site for Tactical Vehicle</h4>
+      <p>
+        Resolving in-band interference across three external blade antennas on a ground vehicle —
+        FDTD modeling of full vehicle, antenna repositioning, and ground-plane redesign.
+      </p>
+    </div>
+
+    <div class="case-coming">
+      <span class="case-coming-tag">Coming Soon</span>
+      <h4>Decade-Bandwidth UAV Comm Antenna</h4>
+      <p>
+        UHF–L-band single-blade design for tactical UAV — element geometry optimization,
+        broadband matching network, and installed pattern prediction.
+      </p>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <h2>Have a Similar Problem?</h2>
+  <p>
+    Tell us about your antenna or RF systems challenge — we'll respond with a scoped proposal
+    within a couple of business days.
+  </p>
+
+  <div class="cta-row">
+    <a class="btn" href="contact.html">Request a Consultation</a>
+    <a class="btn btn-outline" href="services.html">View All Services</a>
+  </div>
+
+  <hr class="divider" />
+
+  <h3>About These Case Studies</h3>
+  <ul>
+    <li><strong>Confidentiality.</strong> All client details, customer names, exact platform identifiers,
+        and proprietary specifications have been removed or anonymized. The technical challenges,
+        methods, and outcomes described are accurate.</li>
+    <li><strong>Approved for publication.</strong> Each case study published here has been reviewed and
+        approved for public reference. Additional reference engagements available upon request under NDA.</li>
+    <li><strong>References available.</strong> Direct customer references can be provided in late-stage
+        discussions where appropriate.</li>
+  </ul>
+
+</div>
+
+<p class="last-updated">Last updated: May 2026</p>
+
+<footer>
+  <p>
+    © 2026 Marietta Research Solutions<br />
+    1640 Powers Ferry Rd SE<br />
+    Bldg 11, Suite 200<br />
+    Marietta, GA 30067<br />
+    <a href="tel:+14047957674">404-795-7674</a><br />
+    |
+    <a href="dr-maloney.html">Dr. Maloney</a> | <a href="contact.html">Request-Consult</a> | <a class="capabilities-link" href="capabilities.pdf" target="_blank" rel="noopener">Capabilities (PDF)</a> |
+    <a href="privacy.html">Privacy</a>
+  </p>
+</footer>
+
+<button id="backToTop" title="Back to Top">&#8679;</button>
+
+<script>
+  var backToTopBtn = document.getElementById("backToTop");
+  window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+  backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+<script src="site.js?v=20260504"></script>
+<script src="jargon-translator.js?v=20260504"></script>
+</body>
+</html>

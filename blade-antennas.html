@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#C8D1DC" />
+  <title>Blade Antennas | Aircraft &amp; Vehicle Antenna Design | Marietta Research Solutions</title>
+
+  <link rel="canonical" href="https://www.mariettaresearchsolutions.com/blade-antennas.html" />
+  <link rel="stylesheet" href="style.css?v=20260504" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <meta name="description" content="Blade antenna design for aircraft, vehicles, and platforms — broadband UHF/VHF designs, mechanical integration, EMI/EMC analysis, and full-wave installed performance prediction. PhD-level expertise with proprietary FDTD tools." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Marietta Research Solutions" />
+  <meta property="og:title" content="Blade Antennas | Marietta Research Solutions" />
+  <meta property="og:description" content="Blade antenna design and integration for aircraft and vehicles — broadband UHF/VHF, full-wave installed performance, mechanical and EMI/EMC analysis." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.mariettaresearchsolutions.com/blade-antennas.html" />
+  <meta property="og:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260504" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Blade Antennas | Marietta Research Solutions" />
+  <meta name="twitter:description" content="Blade antenna design and integration for aircraft and vehicles." />
+  <meta name="twitter:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260504" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFKE4XNDT7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TFKE4XNDT7');
+  </script>
+
+  <style>
+    /* Page-specific styles */
+    .blade-hero {
+      background: linear-gradient(135deg, #2e5a8a 0%, #3d6fa5 50%, #4a80b8 100%);
+      color: #fff;
+      padding: clamp(2.5rem, 5vw, 4rem) clamp(1rem, 4vw, 2rem);
+      position: relative;
+    }
+
+    .blade-hero-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      .blade-hero-wrap { grid-template-columns: 1fr; }
+    }
+
+    .blade-hero h1 {
+      font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+      margin: 0 0 0.6rem;
+      color: #fff;
+      line-height: 1.15;
+    }
+
+    .blade-hero p {
+      font-size: clamp(1rem, 1.8vw, 1.1rem);
+      margin: 0 0 1rem;
+      opacity: 0.95;
+      line-height: 1.45;
+    }
+
+    /* Blade antenna SVG illustration */
+    .blade-illustration {
+      max-width: 320px;
+      margin: 0 auto;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3));
+    }
+
+    /* Spec table */
+    .blade-specs {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      margin: 1rem 0;
+    }
+
+    .blade-specs th,
+    .blade-specs td {
+      padding: 0.7rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      font-size: 0.95rem;
+    }
+
+    .blade-specs th {
+      background: rgba(31,58,95,0.05);
+      color: #1f3a5f;
+      font-weight: bold;
+      width: 35%;
+    }
+
+    .blade-specs tr:last-child td,
+    .blade-specs tr:last-child th {
+      border-bottom: none;
+    }
+
+    /* Capability cards */
+    .blade-cap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .blade-cap-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-left: 3px solid #1f3a5f;
+      border-radius: 6px;
+      padding: 1rem 1.2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .blade-cap-card h4 {
+      margin: 0 0 0.4rem;
+      color: #1f3a5f;
+      font-size: 1rem;
+    }
+
+    .blade-cap-card p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #444;
+      line-height: 1.45;
+    }
+
+    /* Mini case studies */
+    .blade-mini-case {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 10px;
+      padding: 1.25rem 1.4rem;
+      margin: 1rem 0;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    @media (max-width: 600px) {
+      .blade-mini-case {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .blade-mini-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #1f3a5f 0%, #2e5a8a 100%);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #E8B830;
+    }
+
+    .blade-mini-case h4 {
+      margin: 0 0 0.3rem;
+      color: #1f3a5f;
+      font-size: 1.05rem;
+    }
+
+    .blade-mini-tag {
+      display: inline-block;
+      background: rgba(232, 184, 48, 0.15);
+      color: #8a6f1c;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .blade-mini-case p {
+      margin: 0.4rem 0;
+      font-size: 0.92rem;
+      color: #444;
+      line-height: 1.45;
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-wrap">
+    <a href="index.html" class="site-logo" aria-label="Home">
+      <img class="site-logo-img" src="mrs-logo-full-400-tight-gold.png?v=20260211k" alt="Marietta Research Solutions" />
+    </a>
+    <nav class="site-nav">
+      <a href="about.html">About</a>
+      <a href="services.html" class="nav-active">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="coming-soon.html">Products</a>
+      <a href="faq.html">FAQ</a>
+      <a href="software.html">Software</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="blade-hero">
+  <div class="blade-hero-wrap">
+    <div>
+      <h1>Blade Antennas</h1>
+      <p>
+        Broadband, low-profile blade antenna design and platform integration for aircraft, vehicles,
+        and ground systems — from UHF through L-band, optimized for installed performance, not just isolated specs.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="contact.html" style="background: #E8B830; color: #1f3a5f;">Request Consultation</a>
+        <a class="btn btn-outline" href="#capabilities" style="border-color: #fff; color: #fff;">See Capabilities</a>
+      </div>
+    </div>
+    <div>
+      <svg class="blade-illustration" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" aria-label="Blade antenna illustration">
+        <!-- Aircraft fuselage cross-section (simplified) -->
+        <ellipse cx="100" cy="190" rx="85" ry="18" fill="#0d2540" opacity="0.85"/>
+        <line x1="15" y1="190" x2="185" y2="190" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-dasharray="3,3"/>
+        <!-- Blade antenna body -->
+        <path d="M 80 180 L 80 60 Q 80 40 100 35 Q 120 40 120 60 L 120 180 Z"
+              fill="#E8B830" stroke="#fff" stroke-width="1.5"/>
+        <!-- Mounting flange -->
+        <rect x="72" y="178" width="56" height="6" fill="#1f3a5f" stroke="#fff" stroke-width="1"/>
+        <!-- Coax feed indicator -->
+        <line x1="100" y1="178" x2="100" y2="205" stroke="#fff" stroke-width="2"/>
+        <circle cx="100" cy="208" r="3" fill="#fff"/>
+        <!-- Radiation pattern hint -->
+        <ellipse cx="100" cy="100" rx="60" ry="40" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-dasharray="2,3"/>
+        <ellipse cx="100" cy="100" rx="40" ry="25" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1" stroke-dasharray="2,3"/>
+        <!-- Labels -->
+        <text x="100" y="25" fill="#fff" font-size="9" text-anchor="middle" opacity="0.85">Radiating element</text>
+        <text x="100" y="218" fill="#fff" font-size="9" text-anchor="middle" opacity="0.85">Feed point + flange</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+  <!-- Intro -->
+  <h2>What Are Blade Antennas?</h2>
+  <p>
+    Blade antennas — sometimes called sword, fin, or shark-fin antennas — are the streamlined,
+    aerodynamic antennas you've seen on the spine of every commercial and military aircraft. The form factor
+    looks simple: a thin, vertical blade mounted on the fuselage. The engineering is anything but.
+  </p>
+  <p>
+    A blade antenna has to deliver broadband performance (often spanning UHF through L-band in a single radiator),
+    survive aerodynamic loads at altitude, integrate cleanly with the airframe ground plane, and meet stringent
+    EMI/EMC and lightning-strike requirements. Get any one of those wrong and the platform either doesn't
+    communicate properly, fails certification, or comes back from flight test with cracked composite.
+  </p>
+  <p>
+    We design blade antennas — and the matching networks, feed structures, and platform integration models
+    that go with them — using full-wave electromagnetic simulation backed by 30+ years of antenna engineering
+    experience.
+  </p>
+
+  <hr class="divider" />
+
+  <!-- Typical specs table -->
+  <h2>Typical Blade Antenna Specs</h2>
+  <p>
+    Every program has unique requirements, but here's the envelope we typically work within:
+  </p>
+
+  <table class="blade-specs">
+    <tr>
+      <th>Frequency Range</th>
+      <td>UHF (225 MHz) through L-band (2.0 GHz) — single or dual blade</td>
+    </tr>
+    <tr>
+      <th>Bandwidth</th>
+      <td>Decade bandwidth in a single radiator achievable with proper feed network</td>
+    </tr>
+    <tr>
+      <th>VSWR</th>
+      <td>Typical 2:1 across primary band; 3:1 across full operational range</td>
+    </tr>
+    <tr>
+      <th>Polarization</th>
+      <td>Vertical (most common) or slant — pattern shaped by ground plane</td>
+    </tr>
+    <tr>
+      <th>Pattern</th>
+      <td>Omnidirectional in azimuth (with airframe shadowing); broadside elevation</td>
+    </tr>
+    <tr>
+      <th>Power Handling</th>
+      <td>Up to several hundred watts CW for tactical comms applications</td>
+    </tr>
+    <tr>
+      <th>Form Factor</th>
+      <td>Typical envelope: 6"–18" tall × 1"–4" thick at base; mounting flange to platform spec</td>
+    </tr>
+    <tr>
+      <th>Environmental</th>
+      <td>MIL-STD-810 vibration, thermal, humidity; lightning protection per platform requirement</td>
+    </tr>
+  </table>
+
+  <p style="font-size: 0.9rem; color: #666; font-style: italic; margin-top: 0.5rem;">
+    These are typical ranges — actual specs are driven by your platform, mission, and regulatory requirements.
+  </p>
+
+  <hr class="divider" />
+
+  <!-- Capabilities -->
+  <h2 id="capabilities">Capabilities</h2>
+  <p>What we deliver on a typical blade antenna engagement:</p>
+
+  <div class="blade-cap-grid">
+    <div class="blade-cap-card">
+      <h4>Electromagnetic Design</h4>
+      <p>
+        Full-wave 3D simulation of the radiating element, feed network, and matching structure
+        using our proprietary FDTD solver.
+      </p>
+    </div>
+    <div class="blade-cap-card">
+      <h4>Installed Performance Prediction</h4>
+      <p>
+        Antenna analyzed in context of actual platform geometry — pattern distortion, gain, and
+        coupling effects predicted before flight test.
+      </p>
+    </div>
+    <div class="blade-cap-card">
+      <h4>Broadband Matching Networks</h4>
+      <p>
+        Custom impedance matching design to achieve decade bandwidth at acceptable VSWR.
+      </p>
+    </div>
+    <div class="blade-cap-card">
+      <h4>Co-Site Interference Analysis</h4>
+      <p>
+        Multi-antenna isolation studies for platforms with multiple blade and external antennas.
+      </p>
+    </div>
+    <div class="blade-cap-card">
+      <h4>Mechanical Integration</h4>
+      <p>
+        Mounting flange, internal feed routing, sealing, and structural attachment specs that
+        meet aerospace requirements.
+      </p>
+    </div>
+    <div class="blade-cap-card">
+      <h4>EMI/EMC &amp; Lightning</h4>
+      <p>
+        Coupling analysis to nearby electronics; lightning protection design and test plans.
+      </p>
+    </div>
+    <div class="blade-cap-card">
+      <h4>Test &amp; Validation Plans</h4>
+      <p>
+        Anechoic chamber test plans, range measurement procedures, and pass/fail criteria
+        for prototype acceptance.
+      </p>
+    </div>
+    <div class="blade-cap-card">
+      <h4>Documentation Package</h4>
+      <p>
+        Complete design package: drawings, simulation reports, test plans, and integration guidance
+        for your manufacturing partner.
+      </p>
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Mini case studies -->
+  <h2>Recent Work</h2>
+  <p>Sample engagements from our blade antenna practice (anonymized for confidentiality):</p>
+
+  <div class="blade-mini-case">
+    <div class="blade-mini-icon">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2L4 22h3l1.5-4h7L17 22h3L12 2zm-2.5 14L12 7l2.5 9h-5z"/>
+      </svg>
+    </div>
+    <div>
+      <span class="blade-mini-tag">UAV Platform · 2024</span>
+      <h4>Decade-Bandwidth Blade for Tactical UAV</h4>
+      <p>
+        <strong>Challenge:</strong> Single-blade antenna covering 225 MHz – 2.0 GHz for tactical UAV comms,
+        within a 12-inch height envelope and meeting VSWR &lt; 2.5:1 across the band.
+      </p>
+      <p>
+        <strong>What we did:</strong> Full-wave FDTD optimization of the radiating element geometry combined with
+        a multi-section matching network. Simulated installed performance on platform CAD model to predict
+        pattern distortion and coupling to existing antennas. Delivered manufacturable design package.
+      </p>
+      <p>
+        <strong>Outcome:</strong> Prototype measured within 0.5 dB of simulated gain across the band; VSWR target
+        met with margin. Customer proceeded to flight test on schedule.
+      </p>
+    </div>
+  </div>
+
+  <div class="blade-mini-case">
+    <div class="blade-mini-icon">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+      </svg>
+    </div>
+    <div>
+      <span class="blade-mini-tag">Ground Vehicle · 2023</span>
+      <h4>Multi-Antenna Co-Site Resolution for Tactical Vehicle</h4>
+      <p>
+        <strong>Challenge:</strong> Three-blade antenna farm on a tactical ground vehicle was failing co-site
+        isolation requirements — operator radios were experiencing in-band interference from adjacent transmitters.
+      </p>
+      <p>
+        <strong>What we did:</strong> Modeled the full vehicle in FDTD with all three blade antennas in place. Identified
+        coupling paths and pattern distortion contributions from vehicle structure. Recommended antenna repositioning,
+        ground-plane modifications, and one antenna redesign.
+      </p>
+      <p>
+        <strong>Outcome:</strong> Co-site isolation improved by 14 dB at the worst-case frequency. No further
+        operator complaints from field units after redesign deployed.
+      </p>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin: 1.5rem 0;">
+    <a class="btn btn-outline" href="case-studies.html">View All Case Studies →</a>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- Why us -->
+  <h2>Why Marietta Research Solutions</h2>
+  <ul>
+    <li><strong>30+ years of antenna engineering</strong> — Dr. Maloney has been designing antennas (including blade and integrated platform designs) since the early 1990s. Six US patents. Two IEEE Best Paper Awards.</li>
+    <li><strong>Proprietary FDTD solver</strong> — our full-wave solver was developed in-house and is used by multiple defense primes. We can simulate problems commercial tools struggle with.</li>
+    <li><strong>Installed performance focus</strong> — we don't just hand you simulation results for a free-space antenna. We model the antenna where it actually lives, including platform effects, fairings, and other antennas.</li>
+    <li><strong>Independent &amp; vendor-neutral</strong> — we don't manufacture antennas. Our recommendations are driven by what's best for your program, not what we have on the shelf.</li>
+    <li><strong>Fixed-scope engagements</strong> — clear deliverables, predictable cost. No open-ended hourly billing.</li>
+  </ul>
+
+  <hr class="divider" />
+
+  <h2>Let's Talk About Your Platform</h2>
+  <p>
+    Tell us about your blade antenna problem — frequency requirements, platform, integration challenges,
+    timeline. We'll respond with a scoped proposal within a couple of business days.
+  </p>
+
+  <div class="cta-row">
+    <a class="btn" href="contact.html">Request a Consultation</a>
+    <a class="btn btn-outline" href="services.html">Back to Services</a>
+  </div>
+
+  <hr class="divider" />
+
+  <h3>Important Notes</h3>
+  <ul>
+    <li><strong>Engineering consulting only.</strong> This is engineering consulting; we do not manufacture antennas or provide PE-stamped drawings unless explicitly contracted.</li>
+    <li><strong>Confidentiality.</strong> All client designs treated as confidential. NDA available before technical exchange. Avoid sending sensitive information through public web forms.</li>
+    <li><strong>ITAR / Export Control.</strong> We are familiar with ITAR-controlled work and operate accordingly. Confirm export status of your program in initial discussion.</li>
+  </ul>
+
+</div>
+
+<p class="last-updated">Last updated: May 2026</p>
+
+<footer>
+  <p>
+    © 2026 Marietta Research Solutions<br />
+    1640 Powers Ferry Rd SE<br />
+    Bldg 11, Suite 200<br />
+    Marietta, GA 30067<br />
+    <a href="tel:+14047957674">404-795-7674</a><br />
+    |
+    <a href="dr-maloney.html">Dr. Maloney</a> | <a href="contact.html">Request-Consult</a> | <a class="capabilities-link" href="capabilities.pdf" target="_blank" rel="noopener">Capabilities (PDF)</a> |
+    <a href="privacy.html">Privacy</a>
+  </p>
+</footer>
+
+<button id="backToTop" title="Back to Top">&#8679;</button>
+
+<script>
+  var backToTopBtn = document.getElementById("backToTop");
+  window.onscroll = function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+  backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+<script src="site.js?v=20260504"></script>
+<script src="jargon-translator.js?v=20260504"></script>
+</body>
+</html>

@@ -7,43 +7,64 @@
   <title>Services | Marietta Research Solutions</title>
 
   <link rel="canonical" href="https://www.mariettaresearchsolutions.com/services.html" />
-  <link rel="stylesheet" href="style.css?v=20260217" />
+  <link rel="stylesheet" href="style.css?v=20260504" />
   <link rel="manifest" href="manifest.json" />
 
-  <!-- Favicons -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
   <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-  <meta name="description" content="Services from Marietta Research Solutions: computational electromagnetics, antenna design, AI-accelerated engineering, SBIR support, and patent drafting." />
+  <meta name="description" content="Services from Marietta Research Solutions: computational electromagnetics, fragmented aperture antennas, blade antennas, antenna integration, AI-accelerated engineering, SBIR support, and patent drafting." />
   <meta name="robots" content="index,follow" />
-  
-  
-  <!-- Open Graph -->
+
   <meta property="og:site_name" content="Marietta Research Solutions" />
   <meta property="og:title" content="Services | Marietta Research Solutions" />
-  <meta property="og:description" content="Computational electromagnetics, antenna design, AI-accelerated engineering, SBIR support, and patent drafting." />
+  <meta property="og:description" content="Computational electromagnetics, fragmented aperture &amp; blade antennas, AI-accelerated engineering, SBIR support, and patent drafting." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.mariettaresearchsolutions.com/services.html" />
-  <meta property="og:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260217" />
+  <meta property="og:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260504" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Services | Marietta Research Solutions" />
-  <meta name="twitter:description" content="Computational electromagnetics, antenna design, AI-accelerated engineering, SBIR support, and patent drafting."/>
-  <meta name="twitter:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260217" />
+  <meta name="twitter:description" content="Computational electromagnetics, fragmented aperture &amp; blade antennas, AI-accelerated engineering, SBIR support, and patent drafting."/>
+  <meta name="twitter:image" content="https://www.mariettaresearchsolutions.com/og-image.png?v=20260504" />
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFKE4XNDT7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFKE4XNDT7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TFKE4XNDT7');
+  </script>
 
-  gtag('config', 'G-TFKE4XNDT7');
-</script>
-
+  <style>
+    .svc-tier-label {
+      color: #1f3a5f;
+      border-bottom: 2px solid rgba(232, 184, 48, 0.5);
+      padding-bottom: 0.4rem;
+      margin: 2rem 0 1rem;
+      font-size: 1.25rem;
+    }
+    .svc-tier-label-sub {
+      font-size: 0.9rem;
+      color: #666;
+      font-weight: normal;
+      display: block;
+      margin-top: 0.2rem;
+    }
+    .svc-featured-pill {
+      display: inline-block;
+      background: rgba(232, 184, 48, 0.18);
+      color: #8a6f1c;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+  </style>
 </head>
 
 <body>
@@ -66,6 +87,7 @@
     <nav class="site-nav">
       <a href="about.html">About</a>
       <a href="services.html" class="nav-active">Services</a>
+      <a href="case-studies.html">Case Studies</a>
       <a href="coming-soon.html">Products</a>
       <a href="faq.html">FAQ</a>
       <a href="software.html">Software</a>
@@ -85,7 +107,43 @@
 
   <hr class="divider" />
 
-<p class="tap-hint">Tap a service tile to view details.</p>
+  <!-- ===== TIER 1: SPECIALTY ANTENNA OFFERINGS ===== -->
+  <h3 class="svc-tier-label">
+    Specialty Antenna Technology
+    <span class="svc-tier-label-sub">Patented and signature offerings</span>
+  </h3>
+
+  <p class="tap-hint">Tap a service tile to view details.</p>
+  <div class="section-panel">
+    <div class="services-grid">
+
+      <a class="card-link" href="fragmented-aperture.html">
+        <div class="service-card">
+          <img class="icon" src="images/icons/engineering.svg" alt="Fragmented Aperture Icon" />
+          <h3>Fragmented Aperture Antennas <span class="svc-featured-pill">Featured</span></h3>
+          <p>Patented broadband, conformal, multi-function antenna technology. Genetic algorithm + FDTD optimization. US Patents 6,323,809; 11,228,102; 11,937,270.</p>
+          <span class="card-cta">Learn more →</span>
+        </div>
+      </a>
+
+      <a class="card-link" href="blade-antennas.html">
+        <div class="service-card">
+          <img class="icon" src="images/icons/antenna-integration.svg" alt="Blade Antenna Icon" />
+          <h3>Blade Antennas</h3>
+          <p>Broadband, low-profile blade antenna design and platform integration for aircraft, vehicles, and ground systems — UHF through L-band.</p>
+          <span class="card-cta">Learn more →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ===== TIER 2: CORE CAPABILITIES ===== -->
+  <h3 class="svc-tier-label">
+    Core Engineering Capabilities
+    <span class="svc-tier-label-sub">Computational electromagnetics, integration, and AI</span>
+  </h3>
+
   <div class="section-panel">
     <div class="services-grid">
 
@@ -116,6 +174,18 @@
         </div>
       </a>
 
+    </div>
+  </div>
+
+  <!-- ===== TIER 3: PROPOSAL & IP SUPPORT ===== -->
+  <h3 class="svc-tier-label">
+    Proposal &amp; IP Support
+    <span class="svc-tier-label-sub">Adjacent services for inventors and small businesses</span>
+  </h3>
+
+  <div class="section-panel">
+    <div class="services-grid">
+
       <a class="card-link" href="sbir.html">
         <div class="service-card">
           <img class="icon" src="images/icons/sbir.svg" alt="SBIR Icon" />
@@ -138,10 +208,10 @@
   </div>
 
   <hr class="divider" />
-  
-   <!-- Buttons moved here: bottom above Important Notes -->
+
   <div class="cta-row">
     <a class="btn" href="contact.html">Request Consultation</a>
+    <a class="btn btn-outline" href="case-studies.html">View Case Studies</a>
     <a class="btn btn-outline capabilities-link" href="capabilities.pdf" target="_blank" rel="noopener">
       Capabilities (PDF)
     </a>
@@ -149,7 +219,7 @@
 
 </main>
 
-<p class="last-updated">Last updated: February 2026</p>
+<p class="last-updated">Last updated: May 2026</p>
 
 <footer>
   <p>
@@ -158,19 +228,16 @@
     Bldg 11, Suite 200<br />
     Marietta, GA 30067<br />
     <a href="tel:+14047957674">404-795-7674</a><br />
-    
     |
-    <a class="capabilities-link" id="capabilitiesLink" href="capabilities.pdf" target="_blank" rel="noopener">Capabilities (PDF)</a> |
+    <a href="dr-maloney.html">Dr. Maloney</a> | <a href="contact.html">Request-Consult</a> | <a class="capabilities-link" id="capabilitiesLink" href="capabilities.pdf" target="_blank" rel="noopener">Capabilities (PDF)</a> |
     <a href="privacy.html">Privacy</a>
-
   </p>
 </footer>
 
 <button id="backToTop" title="Back to Top">&#8679;</button>
 
 <script>
-  const backToTopBtn = document.getElementById("backToTop");
-
+  var backToTopBtn = document.getElementById("backToTop");
   window.onscroll = function() {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
       backToTopBtn.style.display = "block";
@@ -178,13 +245,12 @@
       backToTopBtn.style.display = "none";
     }
   };
-
   backToTopBtn.addEventListener("click", function() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 </script>
 
-<script src="site.js?v=20260216"></script>
-    <script src="jargon-translator.js" defer></script>
+<script src="site.js?v=20260504"></script>
+<script src="jargon-translator.js?v=20260504" defer></script>
 </body>
 </html>
