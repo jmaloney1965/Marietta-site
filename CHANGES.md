@@ -2,6 +2,25 @@
 
 This bundle is a **drop-in replacement** for the public site. Files in this folder map 1:1 to the repo root.
 
+## What's new in this revision (May 7)
+
+- **Free reference design swapped from 915 MHz → 2.4–2.485 GHz blade.** The 915 MHz ISM band is a better fit for the upcoming fragmented-IFA IoT line; the blade format is properly demonstrated at 2.4 GHz. Updated everywhere it was referenced:
+  - `blade-antennas.html` — Free Sample section: heading, lede, mini-spec band, "Perfect for" list (Wi-Fi/BLE/Zigbee/Thread/Matter), package filename (`MRS-FS-2450.zip`), success-state copy, distribution note, CSS comment, and JS comment.
+  - `coming-soon.html` — same edits (this file mirrors blade-antennas).
+  - `services.html` — capability card body.
+  - `fragmented-aperture.html` — cross-link block.
+  - `faq.html` — licensing Q&A.
+
+## Previous revision (May 5)
+
+- **`case-study-widescan.html` (NEW)** — full detail page for the Wide-Scan PCB Fragmented Aperture Array case study. Sourced from:
+  - 2006 IDGA briefing (`2006 Sept IDGA _ for website.pptx`) — embedded measurement figures, FS1/FS2/FS3 layer patterns, scan-volume contour plots.
+  - 2011 IEEE APSURSI paper (`Maloney2011_WideScan_PCB_FragArray.pdf`) — narrative arc from 33:1 demonstrator → upper-octave fix → integrated-PCB X-band element.
+  Includes 6 measurement images plus 2 hand-redrawn SVG diagrams (Fig 3 traditional fab, Fig 4 PCB stack-up — original slide masters were EMF-vector and could not be embedded directly).
+- **`images/case-study-widescan/`** — curated PNGs (array on outdoor range, fragmented FS1/FS2/FS3 layers, realized-gain plot, R-card side view, V-pol & H-pol scan-volume contour plots, aperture detail, principals with array, board thumb).
+- **`case-studies.html`** — Wide-Scan PCB Fragmented Aperture Array card now links to the new detail page (was a stub link to services.html).
+- **`sitemap.xml`** — adds `/case-study-widescan.html`; bumps `lastmod` on case-studies.html.
+
 ## Summary of changes
 
 **Visual refresh — site-wide**

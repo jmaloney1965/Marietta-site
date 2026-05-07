@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1f3a5f" />
+  <title>Wide-Scan PCB Fragmented Aperture Array — Case Study | Marietta Research Solutions</title>
+
+  <link rel="canonical" href="https://www.mariettaresearchsolutions.com/case-study-widescan.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&display=swap" />
+  <link rel="stylesheet" href="style.css?v=20260505" />
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <meta name="description" content="From the 2004 33:1 fragmented-aperture demonstrator to a 2011 wide-scan, integrated-PCB X-band array. A worked case study from MRS principal Dr. Jim Maloney, including measured data and IEEE-published results." />
+  <meta name="robots" content="index,follow" />
+
+  <meta property="og:title" content="Wide-Scan PCB Fragmented Aperture Array — Case Study" />
+  <meta property="og:description" content="33:1 bandwidth, ±60° scan, and a route to integrated PCB fabrication. Measured + modeled, published IEEE APSURSI 2011." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.mariettaresearchsolutions.com/case-study-widescan.html" />
+  <meta property="og:image" content="https://www.mariettaresearchsolutions.com/images/case-study-widescan/array-on-outdoor-range.png" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFKE4XNDT7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TFKE4XNDT7');
+  </script>
+
+  <style>
+    /* ---- Page-local styles. Keep generic site styles in style.css ---- */
+    .csd-hero {
+      background: linear-gradient(135deg, #18304d 0%, #1f3a5f 50%, #2a4d7d 100%);
+      color: #fff;
+      padding: 3.2rem 1.25rem 2.6rem;
+    }
+    .csd-hero-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.4fr 1fr; gap: 2.2rem; align-items: center;
+    }
+    @media (max-width: 820px) {
+      .csd-hero-inner { grid-template-columns: 1fr; }
+    }
+    .csd-hero .eyebrow {
+      color: var(--mrs-gold, #E8B830);
+      font-size: .78rem; letter-spacing: .14em; text-transform: uppercase;
+      font-weight: 700; margin-bottom: .8rem;
+    }
+    .csd-hero h1 {
+      font-family: var(--mrs-display, 'Source Serif 4', serif);
+      font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+      line-height: 1.12; margin: 0 0 .9rem; color: #fff;
+    }
+    .csd-hero .lede {
+      font-size: 1.05rem; line-height: 1.55; color: rgba(255,255,255,.86);
+      max-width: 38em; margin: 0 0 1.2rem;
+    }
+    .csd-hero .pill-row {
+      display: flex; flex-wrap: wrap; gap: .4rem;
+    }
+    .csd-hero .pill {
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(232,184,48,.45);
+      color: #fff;
+      font-size: .72rem; letter-spacing: .08em; text-transform: uppercase;
+      padding: .35rem .7rem; border-radius: 999px;
+    }
+    .csd-hero figure {
+      margin: 0;
+      background: #fff;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 6px;
+      padding: .8rem .8rem .65rem;
+      box-shadow: 0 18px 38px rgba(0,0,0,.35);
+    }
+    .csd-hero figure img {
+      display: block; width: 100%; height: auto;
+      border-radius: 3px;
+    }
+    .csd-hero figcaption {
+      font-size: .72rem; color: #555; margin-top: .55rem; line-height: 1.45;
+    }
+
+    /* ---- Stat strip ---- */
+    .csd-stats {
+      background: #f3eedf;
+      border-top: 3px solid var(--mrs-gold, #E8B830);
+      border-bottom: 1px solid #e6dfc7;
+      padding: 1.6rem 1.25rem;
+    }
+    .csd-stats-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem;
+    }
+    @media (max-width: 720px) { .csd-stats-inner { grid-template-columns: repeat(2, 1fr); } }
+    .csd-stat .num {
+      font-family: var(--mrs-display, 'Source Serif 4', serif);
+      font-size: 1.9rem; line-height: 1; color: var(--mrs-navy, #1f3a5f);
+      font-weight: 700;
+    }
+    .csd-stat .num small { font-size: 1rem; color: #6c5e2c; margin-left: .15em; font-weight: 700; }
+    .csd-stat .lbl {
+      font-size: .76rem; letter-spacing: .08em; text-transform: uppercase;
+      color: #5a4f24; font-weight: 700; margin-top: .4rem;
+    }
+    .csd-stat .sub {
+      font-size: .82rem; color: #4a3f1c; margin-top: .15rem;
+    }
+
+    /* ---- Body layout: TOC rail + article ---- */
+    .csd-body {
+      max-width: 1100px; margin: 0 auto; padding: 2.4rem 1.25rem 3rem;
+      display: grid; grid-template-columns: 220px 1fr; gap: 2.2rem;
+    }
+    @media (max-width: 900px) { .csd-body { grid-template-columns: 1fr; } .csd-toc { position: static !important; } }
+    .csd-toc {
+      position: sticky; top: 1rem; align-self: start;
+      font-size: .85rem;
+    }
+    .csd-toc .toc-eyebrow {
+      font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
+      color: #6f6233; font-weight: 700; margin-bottom: .65rem;
+    }
+    .csd-toc ol {
+      list-style: none; padding: 0; margin: 0;
+      border-left: 2px solid var(--mrs-gold, #E8B830);
+    }
+    .csd-toc li { margin: 0; }
+    .csd-toc a {
+      display: block; padding: .42rem .8rem;
+      color: var(--mrs-ink, #2a2a2a); text-decoration: none;
+      border-left: 2px solid transparent; margin-left: -2px;
+    }
+    .csd-toc a:hover { color: var(--mrs-navy, #1f3a5f); border-left-color: var(--mrs-navy, #1f3a5f); background: #f8f5ea; }
+
+    /* ---- Article ---- */
+    .csd-article h2 {
+      font-family: var(--mrs-display, 'Source Serif 4', serif);
+      color: var(--mrs-navy, #1f3a5f);
+      font-size: 1.7rem; line-height: 1.18;
+      margin: 2.2rem 0 .25rem;
+      scroll-margin-top: 1rem;
+    }
+    .csd-article h2:first-of-type { margin-top: 0; }
+    .csd-article .h2-eyebrow {
+      font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+      color: #8a7a32; font-weight: 700; margin-bottom: .25rem;
+    }
+    .csd-article h3 {
+      font-family: var(--mrs-display, 'Source Serif 4', serif);
+      color: var(--mrs-navy, #1f3a5f);
+      font-size: 1.18rem; margin: 1.6rem 0 .4rem;
+    }
+    .csd-article p {
+      color: var(--mrs-ink, #2a2a2a);
+      font-size: 1rem; line-height: 1.65;
+      margin: 0 0 1rem; text-wrap: pretty;
+    }
+    .csd-article p.lede {
+      font-size: 1.08rem; line-height: 1.6; color: #3a3a3a;
+    }
+    .csd-article ul {
+      color: var(--mrs-ink, #2a2a2a);
+      font-size: 1rem; line-height: 1.65;
+      margin: 0 0 1.1rem; padding-left: 1.2rem;
+    }
+    .csd-article ul li { margin-bottom: .25rem; }
+    .csd-article a { color: var(--mrs-navy, #1f3a5f); }
+
+    /* Figure styling */
+    .csd-fig {
+      margin: 1.6rem 0;
+      background: #fff;
+      border: 1px solid var(--mrs-line-soft, #e7e3d3);
+      border-radius: 6px;
+      padding: 1rem 1rem .85rem;
+    }
+    .csd-fig img { display: block; width: 100%; height: auto; border-radius: 3px; }
+    .csd-fig figcaption {
+      margin-top: .6rem; font-size: .82rem; color: #555; line-height: 1.5;
+    }
+    .csd-fig figcaption strong { color: var(--mrs-navy, #1f3a5f); }
+    .csd-fig.two-up { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; padding: 1rem; }
+    .csd-fig.two-up > div { display: flex; flex-direction: column; }
+    .csd-fig.two-up img { flex: 1; }
+    .csd-fig.two-up .sub-cap {
+      font-size: .76rem; color: #555; margin-top: .35rem; text-align: center;
+    }
+    @media (max-width: 600px) { .csd-fig.two-up { grid-template-columns: 1fr; } }
+
+    /* Pull-quote / callout */
+    .csd-pull {
+      border-left: 4px solid var(--mrs-gold, #E8B830);
+      background: #f8f5ea;
+      padding: 1rem 1.2rem;
+      margin: 1.4rem 0;
+      font-family: var(--mrs-display, 'Source Serif 4', serif);
+      font-size: 1.08rem; line-height: 1.5; color: var(--mrs-navy, #1f3a5f);
+    }
+
+    /* Two-column problem/result block */
+    .csd-twocol {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+      margin: 1.2rem 0 1.4rem;
+    }
+    @media (max-width: 600px) { .csd-twocol { grid-template-columns: 1fr; } }
+    .csd-twocol .col {
+      background: #fff;
+      border: 1px solid var(--mrs-line-soft, #e7e3d3);
+      border-radius: 6px;
+      padding: .9rem 1rem;
+    }
+    .csd-twocol .col h4 {
+      margin: 0 0 .5rem;
+      font-family: var(--mrs-display, 'Source Serif 4', serif);
+      color: var(--mrs-navy, #1f3a5f);
+      font-size: .95rem;
+    }
+    .csd-twocol .col p { font-size: .92rem; margin: 0; }
+    .csd-twocol .col.problem { border-left: 4px solid #c54f3c; }
+    .csd-twocol .col.result  { border-left: 4px solid #2a7a4f; }
+
+    /* Diagram caption */
+    .csd-diagram {
+      background: #fff;
+      border: 1px solid var(--mrs-line-soft, #e7e3d3);
+      border-radius: 6px;
+      padding: 1rem;
+      margin: 1.4rem 0;
+    }
+    .csd-diagram svg { width: 100%; height: auto; display: block; }
+
+    /* Citation block */
+    .csd-cite {
+      background: #fffaee;
+      border: 1px solid #f0e6c2;
+      border-radius: 6px;
+      padding: .85rem 1rem;
+      margin: 1.6rem 0;
+      font-size: .88rem; line-height: 1.55;
+    }
+    .csd-cite .cite-eyebrow {
+      font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+      color: #8a7a32; font-weight: 700; margin-bottom: .25rem;
+    }
+    .csd-cite p { margin: 0; color: #3d3a2c; }
+    .csd-cite a { color: var(--mrs-navy, #1f3a5f); }
+
+    /* Closing CTA reuses .cta-box from style.css */
+    .csd-bottom-cta { margin-top: 2.4rem; }
+
+    /* Print */
+    @media print {
+      .site-header, .site-nav, footer, #backToTop, .csd-bottom-cta { display: none !important; }
+      .csd-hero { background: #1f3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .csd-toc { display: none; }
+      .csd-body { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-wrap">
+    <a href="index.html" class="site-logo" aria-label="Home">
+      <img class="site-logo-img"
+        src="mrs-logo-full-800-tight-gold_decontam.png?v=20260211k"
+        srcset="mrs-logo-full-400-tight-gold_decontam.png 400w, mrs-logo-full-600-tight-gold_decontam.png 600w, mrs-logo-full-800-tight-gold_decontam.png 800w"
+        sizes="(max-width: 600px) 92vw, 360px"
+        alt="Marietta Research Solutions" />
+    </a>
+    <nav class="site-nav">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html" class="active">Case Studies</a>
+      <a href="fragmented-aperture.html">Research</a>
+      <a href="coming-soon.html">Products</a>
+      <a href="faq.html">FAQ</a>
+      <a href="software.html">Software</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" style="max-width:1100px;margin:0 auto;padding:1rem 1.25rem .25rem;font-size:.85rem;">
+  <a href="case-studies.html" style="color:#666;text-decoration:none;">← All case studies</a>
+</nav>
+
+<!-- HERO -->
+<section class="csd-hero">
+  <div class="csd-hero-inner">
+    <div>
+      <div class="eyebrow">Case Study · Phased-Array Antennas</div>
+      <h1>Wide-scan, integrated-PCB&nbsp;fragmented&nbsp;aperture array</h1>
+      <p class="lede">
+        From a 2004 demonstrator with 33 : 1 instantaneous bandwidth to a 2011 X-band element
+        that holds beam quality past&nbsp;±60° and is fabricated as a laminated printed circuit board.
+        Measured, modeled, and IEEE-published.
+      </p>
+      <div class="pill-row">
+        <span class="pill">UWB · 0.3 – 10 GHz</span>
+        <span class="pill">±60° scan</span>
+        <span class="pill">PCB fabrication</span>
+        <span class="pill">IEEE APSURSI 2011</span>
+      </div>
+    </div>
+    <figure>
+      <img src="images/case-study-widescan/array-on-outdoor-range.png"
+           alt="The 33:1 bandwidth fragmented-aperture array antenna mounted on the outdoor measurement range." />
+      <figcaption>
+        The 33 : 1 bandwidth array on the outdoor measurement range, packaged in foam and tape
+        for low-frequency far-field characterization.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="csd-stats">
+  <div class="csd-stats-inner">
+    <div class="csd-stat">
+      <div class="num">33<small>:1</small></div>
+      <div class="lbl">Instantaneous BW</div>
+      <div class="sub">0.3 – 10 GHz, single aperture</div>
+    </div>
+    <div class="csd-stat">
+      <div class="num">±60<small>°</small></div>
+      <div class="lbl">Scan volume</div>
+      <div class="sub">Held across 8 – 12 GHz X-band</div>
+    </div>
+    <div class="csd-stat">
+      <div class="num">3<small> dB</small></div>
+      <div class="lbl">Within aperture limit</div>
+      <div class="sub">Measured realized gain vs. uniform-aperture upper bound</div>
+    </div>
+    <div class="csd-stat">
+      <div class="num">3<small> ranges</small></div>
+      <div class="lbl">Measurement facilities</div>
+      <div class="sub">Compact, anechoic, and outdoor — agreement &lt;1.5 dB</div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY -->
+<div class="csd-body">
+
+  <!-- TOC rail -->
+  <aside class="csd-toc" aria-label="In this case study">
+    <div class="toc-eyebrow">In this case study</div>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#background">Background — connected arrays</a></li>
+      <li><a href="#first-demo">2004: 33 : 1 demonstrator</a></li>
+      <li><a href="#measured">Measured vs. modeled</a></li>
+      <li><a href="#shortcomings">Two shortcomings</a></li>
+      <li><a href="#fab">PCB fabrication</a></li>
+      <li><a href="#scan">Improved scan-volume design</a></li>
+      <li><a href="#xband">X-band example element</a></li>
+      <li><a href="#takeaways">Takeaways for a client engagement</a></li>
+    </ol>
+  </aside>
+
+  <article class="csd-article">
+
+    <!-- 1. OVERVIEW -->
+    <div class="h2-eyebrow">§1 · Overview</div>
+    <h2 id="overview">A single antenna from 0.3 to 10 GHz — and what came next.</h2>
+    <p class="lede">
+      In 2004 our team at Georgia Tech Research Institute fabricated and measured a fragmented-aperture
+      phased array with 33 : 1 instantaneous bandwidth. It worked. Realized gain tracked the
+      uniform-aperture limit, three independent ranges agreed, and there were no scan blindnesses
+      across the design band.
+    </p>
+    <p>
+      Two things were not yet good enough: the upper octave lost scan volume, and the lossy backplane
+      that absorbed the back-radiation limited the array to receive-only or low-power transmit. By
+      2011 we had retired both of those issues — and had moved fabrication onto laminated printed
+      circuit boards. This page walks the worked example.
+    </p>
+    <div class="csd-pull">
+      "Connected is the key." Allowing — but not requiring — adjacent radiators to touch lets the
+      low-frequency limit scale with array size, not element spacing. The optimizer almost always
+      does the connecting on its own.
+    </div>
+
+    <!-- 2. BACKGROUND -->
+    <div class="h2-eyebrow">§2 · Background</div>
+    <h2 id="background">Why traditional design hits a low-frequency wall.</h2>
+    <p>
+      Classic phased-array design picks an element to meet the requirements (bandwidth, gain,
+      polarization), picks a lattice spacing to avoid grating lobes, and hopes the element is
+      smaller than the spacing so you have room to fit it. That hope is the low-frequency limit:
+      element size sets the cutoff, and you can't shrink the element without shrinking the spacing
+      and giving up grating-lobe headroom.
+    </p>
+    <p>
+      The fragmented-aperture / connected-array approach inverts the constraint. Instead of treating
+      neighboring elements as a coupling problem, the optimizer is allowed to connect them. The
+      low-frequency limit then scales with the size of the array, not the size of the element. The
+      genetic algorithm we use to design the unit cell almost always discovers connectivity on its
+      own when given the freedom to do so.
+    </p>
+
+    <figure class="csd-fig">
+      <img src="images/case-study-widescan/fragmented-layers-fs1-fs2-fs3.png"
+           alt="Three fragmented metal patterns: FS1 (driven layer), FS2 and FS3 (parasitic layers). Orange-and-green pixel grids showing the asymmetric, interconnected patterns the genetic algorithm produces." />
+      <figcaption>
+        <strong>The actual radiator.</strong> A typical fragmented aperture is a stack of metal patterns
+        on dielectric — here, a driven layer (FS1) and two parasitic layers (FS2, FS3). Orange = metal,
+        green = no metal. The genetic algorithm decides every pixel; humans do not lay these out by hand.
+      </figcaption>
+    </figure>
+
+    <!-- 3. FIRST DEMO -->
+    <div class="h2-eyebrow">§3 · 2004 demonstrator</div>
+    <h2 id="first-demo">A 33 : 1 array, three ranges, no scan blindness.</h2>
+    <p>
+      The 2004 demonstrator was an 8 × 8 finite array, designed for 0.3 – 10 GHz and validated at
+      three independent measurement facilities to triangulate the answer. The compact range covered
+      4 – 10 GHz, the anechoic chamber covered 0.5 – 10 GHz, and the outdoor far-field range covered
+      0.3 – 1 GHz — overlap on either side of every transition, so we could see if any one range
+      was lying.
+    </p>
+
+    <figure class="csd-fig">
+      <img src="images/case-study-widescan/realized-gain-vs-spec.png"
+           alt="Realized-gain-vs-frequency plot. Blue 'Gain' and green 'Realized Gain' curves both stay above the −3 dB spec line across 0.3 to 10 GHz. Annotations call out 'Ohmic Loss' between the two curves and 'Mismatch Loss' between Realized Gain and 0 dB." />
+      <figcaption>
+        <strong>Loss budget at a glance.</strong> Normalized realized gain (green) stays within 3 dB of
+        the uniform-aperture limit across the band. The gap between <em>Gain</em> (blue) and
+        <em>Realized Gain</em> (green) is ohmic loss in the lossy backplane that supports the
+        low-frequency cavity; the gap between Gain and 0 dB is mismatch loss.
+      </figcaption>
+    </figure>
+
+    <!-- 4. MEASURED -->
+    <div class="h2-eyebrow">§4 · Validation</div>
+    <h2 id="measured">Three ranges, one curve.</h2>
+    <p>
+      The publishable result: across the 0.3 – 10 GHz band, the FDTD numerical prediction and the
+      data from all three ranges fall on top of each other to within ~1 – 1.5 dB. There is no scan
+      blindness, the embedded-element pattern is clean, and the realized gain tracks the
+      uniform-aperture upper bound at better than 50 % efficiency across the band.
+    </p>
+    <ul>
+      <li>Compact range — 4 – 10 GHz</li>
+      <li>Anechoic chamber — 0.5 – 10 GHz</li>
+      <li>Outdoor far-field range — 0.3 – 1 GHz</li>
+    </ul>
+
+    <!-- 5. SHORTCOMINGS -->
+    <div class="h2-eyebrow">§5 · The honest section</div>
+    <h2 id="shortcomings">What was still wrong with it.</h2>
+    <div class="csd-twocol">
+      <div class="col problem">
+        <h4>Upper-octave scan narrowing</h4>
+        <p>
+          The intended ±60° scan volume held across most of the band, but in roughly the top
+          10 – 20 % of frequency the volume collapsed to about ±40°. Customer-facing problem:
+          the array works wide-band <em>or</em> wide-scan at the top of the band, not both.
+        </p>
+      </div>
+      <div class="col problem">
+        <h4>Lossy backplane → receive-only</h4>
+        <p>
+          Most of the loss in the realized-gain curve was the lossy backplane required to support
+          the cavity at low frequencies. That ohmic loss is fine for a receiver but disqualifies the
+          aperture for high-power transmit.
+        </p>
+      </div>
+    </div>
+
+    <figure class="csd-fig two-up">
+      <div>
+        <img src="images/case-study-widescan/scan-volume-vpol.png"
+             alt="Combined-ranges normalized embedded-element gain pattern, V-pol, plotted as frequency vs. scan angle." />
+        <div class="sub-cap">V-pol — combined ranges</div>
+      </div>
+      <div>
+        <img src="images/case-study-widescan/scan-volume-hpol.png"
+             alt="Combined H-pol normalized embedded-element gain, frequency vs. scan angle." />
+        <div class="sub-cap">H-pol — combined ranges</div>
+      </div>
+      <figcaption style="grid-column: 1 / -1; margin-top:.4rem;">
+        <strong>Where the scan volume narrows.</strong> Normalized so that the maximum across
+        any frequency cut is zero. Beam fills out to ±60° across most of the band, then pinches
+        to ~±40° between 8.5 and 10 GHz — the residual problem the 2011 redesign set out to fix.
+      </figcaption>
+    </figure>
+
+    <!-- 6. FAB -->
+    <div class="h2-eyebrow">§6 · Manufacturing</div>
+    <h2 id="fab">From machined towers + foam to a laminated PCB stack.</h2>
+    <p>
+      The traditional fragmented-aperture build was a labor-intensive sandwich: PCB fragmented
+      layers separated by foam spacers, suspended over a machined-aluminum ground plane by feed
+      towers. Lightweight (a 0.6 m × 0.6 m array assembly weighed ~4 kg), but unappealing for
+      mass production.
+    </p>
+
+    <div class="csd-diagram" aria-label="Side view diagram of the traditional fragmented-aperture stack-up">
+      <!-- Fig 3 redraw: machined ground plane + feed towers + foam-spaced PCB layers -->
+      <svg viewBox="0 0 700 250" role="img" aria-label="Side-view stack: machined ground plane, feed towers, foam spacers, three PCB fragmented layers, face sheet on top.">
+        <defs>
+          <pattern id="diagFoam" width="6" height="6" patternUnits="userSpaceOnUse">
+            <rect width="6" height="6" fill="#fffaee" />
+            <circle cx="2" cy="2" r=".7" fill="#d9c97a" />
+            <circle cx="5" cy="5" r=".7" fill="#d9c97a" />
+          </pattern>
+          <pattern id="diagPCB" width="10" height="6" patternUnits="userSpaceOnUse">
+            <rect width="10" height="6" fill="#3a6f3a" />
+            <rect x="0" y="2" width="6" height="2" fill="#5fa05f" />
+            <rect x="6" y="0" width="3" height="2" fill="#5fa05f" />
+          </pattern>
+        </defs>
+        <!-- Title -->
+        <text x="350" y="22" text-anchor="middle" font-family="Source Serif 4, serif" font-size="14" fill="#1f3a5f" font-weight="700">
+          Fig 3 — Traditional fabrication: machined GND + foam-spaced PCB layers
+        </text>
+        <!-- Ground plane (aluminum) -->
+        <rect x="60" y="200" width="580" height="22" fill="#9aa3ad" stroke="#5d6770" />
+        <text x="350" y="240" text-anchor="middle" font-size="11" fill="#444">Machined aluminum ground plane</text>
+        <!-- Feed towers -->
+        <rect x="120" y="120" width="14" height="80" fill="#7e8893" stroke="#5d6770" />
+        <rect x="566" y="120" width="14" height="80" fill="#7e8893" stroke="#5d6770" />
+        <text x="106" y="170" font-size="10" fill="#444" text-anchor="end">feed towers (machined Al, contain coax)</text>
+        <line x1="108" y1="166" x2="119" y2="160" stroke="#444" stroke-width=".7" />
+        <!-- Foam spacers between layers -->
+        <rect x="135" y="178" width="430" height="22" fill="url(#diagFoam)" stroke="#d9c97a" />
+        <rect x="135" y="148" width="430" height="14" fill="url(#diagFoam)" stroke="#d9c97a" />
+        <rect x="135" y="120" width="430" height="14" fill="url(#diagFoam)" stroke="#d9c97a" />
+        <!-- PCB fragmented layers (3 layers) -->
+        <rect x="135" y="162" width="430" height="6" fill="url(#diagPCB)" stroke="#2a4f2a" />
+        <rect x="135" y="134" width="430" height="6" fill="url(#diagPCB)" stroke="#2a4f2a" />
+        <rect x="135" y="106" width="430" height="6" fill="url(#diagPCB)" stroke="#2a4f2a" />
+        <!-- Face sheet -->
+        <rect x="120" y="92" width="460" height="6" fill="#dfe7f0" stroke="#9aa3ad" />
+        <text x="600" y="96" font-size="10" fill="#444">face sheet</text>
+        <!-- Labels -->
+        <text x="600" y="111" font-size="10" fill="#444">PCB layer (driven)</text>
+        <text x="600" y="139" font-size="10" fill="#444">PCB layer (parasitic)</text>
+        <text x="600" y="167" font-size="10" fill="#444">PCB layer (parasitic)</text>
+        <text x="600" y="194" font-size="10" fill="#444">foam spacers</text>
+        <!-- Coax inside tower -->
+        <line x1="127" y1="200" x2="127" y2="92" stroke="#1f3a5f" stroke-width="1.4" />
+        <line x1="573" y1="200" x2="573" y2="92" stroke="#1f3a5f" stroke-width="1.4" />
+        <!-- Air gap label -->
+        <text x="350" y="58" text-anchor="middle" font-size="10" fill="#666" font-style="italic">
+          (a 0.6 m × 0.6 m assembly weighs ~4 kg — labor-intensive to build)
+        </text>
+      </svg>
+    </div>
+
+    <p>
+      The 2011 paper introduced a simplified build: the entire antenna is laminated as a printed
+      circuit board. Plated vias near the centre of each unit cell carry the differential feed.
+      Surface-wave-suppression vias around the perimeter prevent the scan-blindness mode that
+      thick-substrate stack-ups otherwise enable. Feed networks become layers in the same panel.
+    </p>
+
+    <div class="csd-diagram" aria-label="PCB fabrication diagram showing the integrated stack-up with plated feed vias and surface-wave suppression vias.">
+      <!-- Fig 4 redraw: laminated PCB stack + center feed vias + perimeter SWS vias -->
+      <svg viewBox="0 0 700 230" role="img" aria-label="Laminated PCB stack-up with plated feed vias near unit-cell center and surface-wave suppression vias around the perimeter.">
+        <text x="350" y="22" text-anchor="middle" font-family="Source Serif 4, serif" font-size="14" fill="#1f3a5f" font-weight="700">
+          Fig 4 — Integrated PCB fabrication: laminated stack + plated vias
+        </text>
+        <!-- Laminated layers -->
+        <g>
+          <rect x="80" y="50" width="540" height="14" fill="#3a6f3a" stroke="#2a4f2a" />
+          <rect x="80" y="64" width="540" height="14" fill="#d9d2b6" stroke="#a89f78" />
+          <rect x="80" y="78" width="540" height="14" fill="#3a6f3a" stroke="#2a4f2a" />
+          <rect x="80" y="92" width="540" height="14" fill="#d9d2b6" stroke="#a89f78" />
+          <rect x="80" y="106" width="540" height="14" fill="#3a6f3a" stroke="#2a4f2a" />
+          <rect x="80" y="120" width="540" height="14" fill="#d9d2b6" stroke="#a89f78" />
+          <rect x="80" y="134" width="540" height="14" fill="#3a6f3a" stroke="#2a4f2a" />
+          <rect x="80" y="148" width="540" height="14" fill="#d9d2b6" stroke="#a89f78" />
+          <rect x="80" y="162" width="540" height="10" fill="#7e8893" stroke="#5d6770" />
+        </g>
+        <text x="640" y="58"  font-size="10" fill="#444">radiating layer (FS1)</text>
+        <text x="640" y="86"  font-size="10" fill="#444">parasitic layer (FS2)</text>
+        <text x="640" y="114" font-size="10" fill="#444">parasitic layer (FS3)</text>
+        <text x="640" y="142" font-size="10" fill="#444">feed routing layer</text>
+        <text x="640" y="170" font-size="10" fill="#444">ground plane</text>
+        <text x="76" y="58"  text-anchor="end" font-size="10" fill="#444">copper</text>
+        <text x="76" y="72"  text-anchor="end" font-size="10" fill="#444">dielectric</text>
+        <!-- Center feed vias (close pair) -->
+        <g stroke="#1f3a5f" stroke-width="2.5" fill="none">
+          <line x1="346" y1="50" x2="346" y2="172" />
+          <line x1="354" y1="50" x2="354" y2="172" />
+        </g>
+        <text x="350" y="190" text-anchor="middle" font-size="10.5" fill="#1f3a5f" font-weight="700">
+          plated feed vias (close-spaced pair, near center of unit cell)
+        </text>
+        <!-- Surface-wave suppression vias -->
+        <g stroke="#c54f3c" stroke-width="1.6" fill="none">
+          <line x1="100" y1="50" x2="100" y2="172" />
+          <line x1="140" y1="50" x2="140" y2="172" />
+          <line x1="180" y1="50" x2="180" y2="172" />
+          <line x1="220" y1="50" x2="220" y2="172" />
+          <line x1="260" y1="50" x2="260" y2="172" />
+          <line x1="440" y1="50" x2="440" y2="172" />
+          <line x1="480" y1="50" x2="480" y2="172" />
+          <line x1="520" y1="50" x2="520" y2="172" />
+          <line x1="560" y1="50" x2="560" y2="172" />
+          <line x1="600" y1="50" x2="600" y2="172" />
+        </g>
+        <text x="180" y="210" text-anchor="middle" font-size="10.5" fill="#c54f3c" font-weight="700">
+          surface-wave suppression vias (perimeter)
+        </text>
+      </svg>
+    </div>
+
+    <!-- 7. SCAN -->
+    <div class="h2-eyebrow">§7 · The design fix</div>
+    <h2 id="scan">Sampling the scan volume during optimization, not after.</h2>
+    <p>
+      The reason the 33 : 1 array's upper octave narrowed is that the design optimizer only saw
+      broadside performance with periodic-boundary FDTD. The scan volume was a side-effect, not a
+      target. The 2011 design suite added a spectral-domain FDTD with periodic boundaries:
+      essentially, the optimizer can now run a unit-cell simulation with a steered phase taper
+      built in, and the genetic algorithm can score candidates against scan-angle performance
+      directly.
+    </p>
+    <p>
+      A useful empirical observation drove the sampling strategy: scan problems show up at high
+      frequency and large scan angle, not low frequency or boresight. So we weight the
+      transverse-wavenumber sample set toward that corner of the scan volume.
+    </p>
+
+    <!-- 8. X-BAND -->
+    <div class="h2-eyebrow">§8 · Worked example</div>
+    <h2 id="xband">Whole X-band element on a laminated PCB.</h2>
+    <p>
+      To prove the upgraded process, the 2011 paper designed a single element for the whole
+      X-band (8 – 12 GHz) with a target ±60° scan volume, in the simplified PCB form factor.
+      The lattice is sized so no grating lobes are allowed. The genetic algorithm uses 20 – 30
+      pixels across the unique quadrant of the unit cell, modified to use the new spectral-FDTD
+      scoring described above.
+    </p>
+    <p>
+      For an embedded element in a 21 × 21 simulated finite array, the broadside realized gain
+      is within ~0.2 dB of the uniform-aperture limit across the entire X-band. Embedded-element
+      VSWR and scanned-array VSWR are both better than 2 : 1 — and they are not equal, because
+      the scanned VSWR includes the mutual coupling that the optimizer is using to widen the
+      scan volume. Scan volume exceeds 60° across the band, with some slight degradation in
+      azimuth at the very top of the band (12 GHz).
+    </p>
+
+    <div class="csd-pull">
+      Net result: the upper-octave scan narrowing is gone, the form factor is a single laminated
+      panel, and the loss budget is appropriate for transmit — without giving up any of the
+      bandwidth advantage that put fragmented apertures on the map in the first place.
+    </div>
+
+    <!-- 9. TAKEAWAYS -->
+    <div class="h2-eyebrow">§9 · For your engagement</div>
+    <h2 id="takeaways">What's portable to your problem.</h2>
+    <p>
+      MRS is the working continuation of the GTRI fragmented-aperture program — same principal,
+      same modeling tools, same design instincts. If a fragmented-aperture-style aperture is on
+      the table for your program, here is what an engagement could look like:
+    </p>
+    <ul>
+      <li><strong>Trade study</strong> — bandwidth, scan, polarization, and form-factor trades against your spec, with a candidate stack-up and a credible loss budget at the end.</li>
+      <li><strong>FDTD design pass</strong> — periodic-boundary or spectral-FDTD unit-cell optimization, plus an embedded-element check in a finite array.</li>
+      <li><strong>PCB or air-cavity build</strong> — choose the fabrication path that matches your power, cost, and integration constraints. We've done both.</li>
+      <li><strong>Range-correlation</strong> — anechoic, compact, and outdoor far-field measurements when warranted. We've coordinated all three on a single article.</li>
+    </ul>
+
+    <div class="csd-cite">
+      <div class="cite-eyebrow">Citation</div>
+      <p>
+        J. G. Maloney, B. N. Baker, R. T. Lee, G. N. Kiesel, J. J. Acree,
+        <em>"Wide Scan, Integrated Printed Circuit Board, Fragmented Aperture Array Antennas,"</em>
+        IEEE Int'l Symp. on Antennas &amp; Propagation / USNC–URSI Radio Science Meeting (APSURSI),
+        Spokane, WA, July 2011, pp. 1965 – 1968.
+        See also U.S. Patent 6,323,809 — "Fragmented aperture antennas and broadband antenna ground planes."
+      </p>
+    </div>
+
+    <!-- CTA -->
+    <section class="cta-box csd-bottom-cta">
+      <div class="cta-eyebrow">Have an aperture problem?</div>
+      <h3>Bring us your spec — we'll tell you what's possible.</h3>
+      <p>
+        30-minute scoping call, no charge. Bring a band plan, scan envelope, or platform-integration
+        constraint. We'll tell you whether a fragmented-aperture approach is the right tool, and
+        what an engagement would cost.
+      </p>
+      <a class="btn btn-gold" href="contact.html">Book a Scoping Call →</a>
+    </section>
+
+  </article>
+</div>
+
+<p class="last-updated">Last updated: May 2026</p>
+
+<footer>
+  <p>
+    © 2026 Marietta Research Solutions<br />
+    1640 Powers Ferry Rd SE, Bldg 11, Suite 200<br />
+    Marietta, GA 30067<br />
+    <a href="tel:+14047957674">404-795-7674</a><br />
+    |
+    <a href="dr-maloney.html">Dr. Maloney</a> |
+    <a href="contact.html">Request Consult</a> |
+    <a href="capabilities.pdf" target="_blank" rel="noopener">Capabilities (PDF)</a> |
+    <a href="privacy.html">Privacy</a>
+  </p>
+  <div class="site-tagline-footer">
+    <p>Strategic Consulting at the Intersection of Engineering &amp; Intelligence.</p>
+  </div>
+</footer>
+
+<button id="backToTop" title="Back to top" aria-label="Back to top">⇧</button>
+
+<script src="site.js?v=20260505"></script>
+<script src="jargon-translator.js" defer></script>
+</body>
+</html>
