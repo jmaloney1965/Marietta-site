@@ -8,4 +8,8 @@ git status
 grep -rn "Free 915\|915 MHz ISM\|MRS-FS-915" \
   --include="*.html" --include="*.css" --include="*.js" .
 
+git add -A 
+
+git commit -m "wideband fragmented - edits"
+
 
