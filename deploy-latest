@@ -1,0 +1,11 @@
+git checkout main                             
+git pull
+
+cp -R ~/Downloads/live-site-changes-5/. . 
+
+git status 
+
+grep -rn "Free 915\|915 MHz ISM\|MRS-FS-915" \
+  --include="*.html" --include="*.css" --include="*.js" .
+
+
