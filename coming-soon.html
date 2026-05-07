@@ -484,6 +484,8 @@
     }
     .blade-free-left {
       padding: 1.75rem 1.9rem;
+      min-width: 0;
+      overflow: hidden;
     }
     .blade-free-pill {
       display: inline-flex;
@@ -569,6 +571,10 @@
       cursor: pointer;
     }
     .blade-free-checkbox input { margin-top: 2px; flex: 0 0 auto; }
+    .blade-free-checkbox span { min-width: 0; flex: 1 1 auto; }
+    @media (max-width: 760px) {
+      .blade-free { grid-template-columns: 1fr; }
+    }
     .blade-free-btn {
       padding: 0.85rem 1.2rem;
       border-radius: 6px;
@@ -609,6 +615,9 @@
       padding: 1.75rem 1.9rem;
       display: grid;
       place-content: center;
+      min-width: 0;
+      position: relative;
+      z-index: 1;
     }
     .blade-free-package {
       background: rgba(255,255,255,0.06);
