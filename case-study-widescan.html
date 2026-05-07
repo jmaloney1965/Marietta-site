@@ -254,6 +254,11 @@
 
     /* Closing CTA reuses .cta-box from style.css */
     .csd-bottom-cta { margin-top: 2.4rem; }
+    /* Belt-and-braces text colors so the CTA reads correctly even if a
+       stale style.css is cached on a visitor's browser. */
+    .csd-bottom-cta h3 { color: #ffffff !important; }
+    .csd-bottom-cta p  { color: rgba(255,255,255,.9) !important; }
+    .csd-bottom-cta .cta-eyebrow { color: var(--mrs-gold, #E8B830) !important; }
 
     /* Print */
     @media print {
@@ -676,13 +681,25 @@
     </ul>
 
     <div class="csd-cite">
-      <div class="cite-eyebrow">Citation</div>
-      <p>
+      <div class="cite-eyebrow">Citations &amp; Source Material</div>
+      <p style="margin-bottom:.6rem;">
+        <strong>Original public presentation</strong> &mdash;
         J. G. Maloney, B. N. Baker, R. T. Lee, G. N. Kiesel, J. J. Acree,
         <em>"Wide Scan, Integrated Printed Circuit Board, Fragmented Aperture Array Antennas,"</em>
-        IEEE Int'l Symp. on Antennas &amp; Propagation / USNC–URSI Radio Science Meeting (APSURSI),
-        Spokane, WA, July 2011, pp. 1965 – 1968.
-        See also U.S. Patent 6,323,809 — "Fragmented aperture antennas and broadband antenna ground planes."
+        Military Antennas, 18&ndash;20 September 2006, Arlington, VA. Institute for Defense and
+        Government Advancement (IDGA). Figures and measurement data on this page are drawn from
+        the briefing distributed at that event.
+      </p>
+      <p style="margin-bottom:.6rem;">
+        <strong>Peer-reviewed follow-on</strong> &mdash;
+        J. G. Maloney, B. N. Baker, R. T. Lee, G. N. Kiesel, J. J. Acree,
+        <em>"Wide Scan, Integrated Printed Circuit Board, Fragmented Aperture Array Antennas,"</em>
+        IEEE Int'l Symp. on Antennas &amp; Propagation / USNC&ndash;URSI Radio Science Meeting
+        (APSURSI), Spokane, WA, July 2011, pp. 1965&ndash;1968.
+      </p>
+      <p style="margin:0;">
+        <strong>Foundational patent</strong> &mdash; U.S. Patent 6,323,809,
+        <em>"Fragmented aperture antennas and broadband antenna ground planes."</em>
       </p>
     </div>
 
