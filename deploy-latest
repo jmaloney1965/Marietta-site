@@ -1,7 +1,7 @@
 git checkout main                             
 git pull
 
-cp -R ~/Downloads/live-site-changes-6/. . 
+cp -R ~/Downloads/live-site-changes-7/. . 
 
 git status 
 
@@ -10,6 +10,6 @@ grep -rn "Free 915\|915 MHz ISM\|MRS-FS-915" \
 
 git add -A 
 
-git commit -m "wideband fragmented - edits"
+git commit -m "refresh initial Blade specs - edits"
 
-
+git push

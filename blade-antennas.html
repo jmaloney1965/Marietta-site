@@ -15,7 +15,7 @@
   <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-  <meta name="description" content="Fragmented Blade Antennas — a turnkey product line of planar blade antennas covering 2.4–7.5 GHz, distributed as production-ready Gerber files. Five sub-bands × two substrates (FR4, Rogers 4350B). Free 915 MHz reference design." />
+  <meta name="description" content="Fragmented Blade Antennas — a turnkey product line of planar blade antennas covering 2.4–7.5 GHz, distributed as production-ready Gerber files. Six sub-bands. × two substrates (FR4, Rogers 4350B). Free 915 MHz reference design." />
   <meta name="robots" content="index,follow" />
 
   <meta property="og:site_name" content="Marietta Research Solutions" />
@@ -141,9 +141,22 @@
     /* Band grid */
     .blade-band-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 0.7rem;
       margin-top: 1rem;
+    }
+    .blade-band-aperture {
+      font-size: 0.78rem;
+      color: #555;
+      margin-top: 0.4rem;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+    }
+    .blade-band-bw {
+      font-size: 0.7rem;
+      color: #8a7a32;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-top: 0.15rem;
     }
     .blade-band-card {
       background: #fff;
@@ -155,10 +168,15 @@
       text-align: center;
     }
     .blade-band-id {
-      font-size: 0.7rem;
-      color: #999;
+      font-size: 0.72rem;
+      color: #1f3a5f;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.04em;
+      font-family: ui-monospace, Menlo, Consolas, monospace;
+      background: rgba(31,58,95,0.07);
+      border-radius: 4px;
+      padding: 0.2rem 0.4rem;
+      display: inline-block;
     }
     .blade-band-range {
       font-size: 1.1rem;
@@ -841,7 +859,7 @@
   <div class="blade-hero-inner">
     <div class="blade-hero-eyebrow">Coming Soon · MRS Product Line</div>
     <h1>Fragmented Blade Antennas</h1>
-    <div class="blade-hero-subhead">2.4 &ndash; 7.5&nbsp;GHz · Downloadable Gerber files</div>
+    <div class="blade-hero-subhead">1.1 &ndash; 7.125&nbsp;GHz across six sub-bands · Downloadable Gerber files</div>
     <p class="blade-hero-lede">
       A turnkey line of planar blade antennas, each engineered with the fragmented aperture
       method and distributed as production-ready Gerber packages &mdash; microstrip-fed,
@@ -880,42 +898,61 @@
   <section>
     <h3 class="blade-h3">Initial Band Lineup</h3>
     <p>
-      Five sub-band designs launching simultaneously, each available in two substrate options.
+      Six sub-band designs launching simultaneously, each available in two substrate options.
       Other bands &mdash; including custom UWB and narrow-band variants &mdash; are available as a custom
       design engagement.
     </p>
 
     <div class="blade-band-grid">
       <div class="blade-band-card">
-        <div class="blade-band-id">B1</div>
-        <div class="blade-band-range">2.4 &ndash; 2.7</div>
+        <div class="blade-band-id">1p4_s6x10</div>
+        <div class="blade-band-range">1.1 &ndash; 1.7</div>
         <div class="blade-band-unit">GHz</div>
-        <div class="blade-band-apps">ISM, Wi-Fi 2.4, BLE</div>
+        <div class="blade-band-bw">43% BW</div>
+        <div class="blade-band-aperture">22.5 × 75 mm</div>
+        <div class="blade-band-apps">ADS-B + GNSS + GSM-1800</div>
       </div>
       <div class="blade-band-card">
-        <div class="blade-band-id">B2</div>
-        <div class="blade-band-range">2.7 &ndash; 3.0</div>
+        <div class="blade-band-id">2p0_s6x7</div>
+        <div class="blade-band-range">1.7 &ndash; 2.2</div>
         <div class="blade-band-unit">GHz</div>
-        <div class="blade-band-apps">S-band radar lower</div>
+        <div class="blade-band-bw">26% BW</div>
+        <div class="blade-band-aperture">22.5 × 52.5 mm</div>
+        <div class="blade-band-apps">GSM-1800 + DCS + PCS + UMTS/LTE B1</div>
       </div>
       <div class="blade-band-card">
-        <div class="blade-band-id">B3</div>
-        <div class="blade-band-range">3.0 &ndash; 3.4</div>
+        <div class="blade-band-id">2p45_s4x5</div>
+        <div class="blade-band-range">2.40 &ndash; 2.485</div>
         <div class="blade-band-unit">GHz</div>
-        <div class="blade-band-apps">CBRS, S-band mid</div>
+        <div class="blade-band-bw">3.5% BW</div>
+        <div class="blade-band-aperture">15 × 37.5 mm</div>
+        <div class="blade-band-apps">Wi-Fi 2.4 + Bluetooth + ISM</div>
       </div>
       <div class="blade-band-card">
-        <div class="blade-band-id">B4</div>
-        <div class="blade-band-range">3.4 &ndash; 4.2</div>
+        <div class="blade-band-id">3p0_s4x5</div>
+        <div class="blade-band-range">2.4 &ndash; 3.4</div>
         <div class="blade-band-unit">GHz</div>
-        <div class="blade-band-apps">n77/n78 5G, C-band</div>
+        <div class="blade-band-bw">34% BW</div>
+        <div class="blade-band-aperture">15 × 37.5 mm</div>
+        <div class="blade-band-apps">WCS + ISM 2.4 + n41 + C-band bottom</div>
       </div>
       <div class="blade-band-card">
-        <div class="blade-band-id">B5</div>
-        <div class="blade-band-range">4.2 &ndash; 7.5</div>
+        <div class="blade-band-id">4p0_s4</div>
+        <div class="blade-band-range">3.3 &ndash; 4.9</div>
         <div class="blade-band-unit">GHz</div>
-        <div class="blade-band-apps">Wi-Fi 6E/7, UNII</div>
+        <div class="blade-band-bw">39% BW</div>
+        <div class="blade-band-aperture">15 × 30 mm</div>
+        <div class="blade-band-apps">5G n77/n78 + CBRS + n79</div>
       </div>
+      <div class="blade-band-card">
+        <div class="blade-band-id">6p0_s3</div>
+        <div class="blade-band-range">5.15 &ndash; 7.125</div>
+        <div class="blade-band-unit">GHz</div>
+        <div class="blade-band-bw">32% BW</div>
+        <div class="blade-band-aperture">11.25 × 22.5 mm</div>
+        <div class="blade-band-apps">UNII-1/2/3/5/6/7/8 (Wi-Fi 5/6/6E/7)</div>
+      </div>
+    </div>
     </div>
 
     <div class="blade-substrate-row">
@@ -1273,11 +1310,12 @@
         <div>
           <div class="blade-notify-bands-label">Bands of interest</div>
           <div class="blade-notify-bands">
-            <label class="blade-notify-band"><input type="checkbox" value="2.4–2.7" /><span>2.4&ndash;2.7&nbsp;GHz</span></label>
-            <label class="blade-notify-band"><input type="checkbox" value="2.7–3.0" /><span>2.7&ndash;3.0&nbsp;GHz</span></label>
-            <label class="blade-notify-band"><input type="checkbox" value="3.0–3.4" /><span>3.0&ndash;3.4&nbsp;GHz</span></label>
-            <label class="blade-notify-band"><input type="checkbox" value="3.4–4.2" /><span>3.4&ndash;4.2&nbsp;GHz</span></label>
-            <label class="blade-notify-band"><input type="checkbox" value="4.2–7.5" /><span>4.2&ndash;7.5&nbsp;GHz</span></label>
+            <label class="blade-notify-band"><input type="checkbox" value="1p4_s6x10" /><span>1.1&ndash;1.7&nbsp;GHz</span></label>
+            <label class="blade-notify-band"><input type="checkbox" value="2p0_s6x7" /><span>1.7&ndash;2.2&nbsp;GHz</span></label>
+            <label class="blade-notify-band"><input type="checkbox" value="2p45_s4x5" /><span>2.4&nbsp;Wi-Fi (free)</span></label>
+            <label class="blade-notify-band"><input type="checkbox" value="3p0_s4x5" /><span>2.4&ndash;3.4&nbsp;GHz</span></label>
+            <label class="blade-notify-band"><input type="checkbox" value="4p0_s4" /><span>3.3&ndash;4.9&nbsp;GHz</span></label>
+            <label class="blade-notify-band"><input type="checkbox" value="6p0_s3" /><span>5.15&ndash;7.125&nbsp;GHz</span></label>
           </div>
         </div>
         <button type="submit" class="blade-notify-btn">Notify Me</button>
