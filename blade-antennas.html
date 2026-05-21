@@ -905,7 +905,6 @@
 
     <div class="blade-band-grid">
       <div class="blade-band-card">
-        <div class="blade-band-id">1p4_s6x10</div>
         <div class="blade-band-range">1.1 &ndash; 1.7</div>
         <div class="blade-band-unit">GHz</div>
         <div class="blade-band-bw">43% BW</div>
@@ -913,7 +912,6 @@
         <div class="blade-band-apps">ADS-B + GNSS + GSM-1800</div>
       </div>
       <div class="blade-band-card">
-        <div class="blade-band-id">2p0_s6x7</div>
         <div class="blade-band-range">1.7 &ndash; 2.2</div>
         <div class="blade-band-unit">GHz</div>
         <div class="blade-band-bw">26% BW</div>
@@ -921,15 +919,6 @@
         <div class="blade-band-apps">GSM-1800 + DCS + PCS + UMTS/LTE B1</div>
       </div>
       <div class="blade-band-card">
-        <div class="blade-band-id">2p45_s4x5</div>
-        <div class="blade-band-range">2.40 &ndash; 2.485</div>
-        <div class="blade-band-unit">GHz</div>
-        <div class="blade-band-bw">3.5% BW</div>
-        <div class="blade-band-aperture">15 × 37.5 mm</div>
-        <div class="blade-band-apps">Wi-Fi 2.4 + Bluetooth + ISM</div>
-      </div>
-      <div class="blade-band-card">
-        <div class="blade-band-id">3p0_s4x5</div>
         <div class="blade-band-range">2.4 &ndash; 3.4</div>
         <div class="blade-band-unit">GHz</div>
         <div class="blade-band-bw">34% BW</div>
@@ -937,7 +926,6 @@
         <div class="blade-band-apps">WCS + ISM 2.4 + n41 + C-band bottom</div>
       </div>
       <div class="blade-band-card">
-        <div class="blade-band-id">4p0_s4</div>
         <div class="blade-band-range">3.3 &ndash; 4.9</div>
         <div class="blade-band-unit">GHz</div>
         <div class="blade-band-bw">39% BW</div>
@@ -945,13 +933,20 @@
         <div class="blade-band-apps">5G n77/n78 + CBRS + n79</div>
       </div>
       <div class="blade-band-card">
-        <div class="blade-band-id">6p0_s3</div>
         <div class="blade-band-range">5.15 &ndash; 7.125</div>
         <div class="blade-band-unit">GHz</div>
         <div class="blade-band-bw">32% BW</div>
         <div class="blade-band-aperture">11.25 × 22.5 mm</div>
         <div class="blade-band-apps">UNII-1/2/3/5/6/7/8 (Wi-Fi 5/6/6E/7)</div>
       </div>
+      <div class="blade-band-card">
+        <div class="blade-band-range">5.925 &ndash; 7.4</div>
+        <div class="blade-band-unit">GHz</div>
+        <div class="blade-band-bw">22% BW</div>
+        <div class="blade-band-aperture">7.5 × 22.5 mm</div>
+        <div class="blade-band-apps">Wi-Fi 6E + future 7-GHz expansion</div>
+      </div>
+    </div>
     </div>
     </div>
 
@@ -1310,12 +1305,12 @@
         <div>
           <div class="blade-notify-bands-label">Bands of interest</div>
           <div class="blade-notify-bands">
-            <label class="blade-notify-band"><input type="checkbox" value="1p4_s6x10" /><span>1.1&ndash;1.7&nbsp;GHz</span></label>
-            <label class="blade-notify-band"><input type="checkbox" value="2p0_s6x7" /><span>1.7&ndash;2.2&nbsp;GHz</span></label>
-            <label class="blade-notify-band"><input type="checkbox" value="2p45_s4x5" /><span>2.4&nbsp;Wi-Fi (free)</span></label>
-            <label class="blade-notify-band"><input type="checkbox" value="3p0_s4x5" /><span>2.4&ndash;3.4&nbsp;GHz</span></label>
-            <label class="blade-notify-band"><input type="checkbox" value="4p0_s4" /><span>3.3&ndash;4.9&nbsp;GHz</span></label>
-            <label class="blade-notify-band"><input type="checkbox" value="6p0_s3" /><span>5.15&ndash;7.125&nbsp;GHz</span></label>
+                        <label class="blade-notify-band"><input type="checkbox" value="1.1-1.7" /><span>1.1&ndash;1.7&nbsp;GHz</span></label>
+            <label class="blade-notify-band"><input type="checkbox" value="1.7-2.2" /><span>1.7&ndash;2.2&nbsp;GHz</span></label>
+            <label class="blade-notify-band"><input type="checkbox" value="2.4-3.4" /><span>2.4&ndash;3.4&nbsp;GHz</span></label>
+            <label class="blade-notify-band"><input type="checkbox" value="3.3-4.9" /><span>3.3&ndash;4.9&nbsp;GHz</span></label>
+            <label class="blade-notify-band"><input type="checkbox" value="5.15-7.125" /><span>5.15&ndash;7.125&nbsp;GHz</span></label>
+            <label class="blade-notify-band"><input type="checkbox" value="5.925-7.4" /><span>5.925&ndash;7.4&nbsp;GHz</span></label>
           </div>
         </div>
         <button type="submit" class="blade-notify-btn">Notify Me</button>
