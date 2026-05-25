@@ -1,12 +1,12 @@
 git checkout main                             
 git pull
 
-cp -R ~/Downloads/live-site-changes-10/. . 
+cp -R ~/Downloads/live-site-changes-11/. . 
 
 git status 
 
 git add -A 
 
-git commit -m "Audit fixes: SEO, a11y, social links, CC1101 case study"
+git commit -m "Kickr case study updates"
 
 git push

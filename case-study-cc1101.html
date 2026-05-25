@@ -23,7 +23,7 @@
   <meta property="og:description" content="Four ISM-band matching networks designed and verified in-case. All bands pass −10 dB. Client: KickR Design." />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://www.mariettaresearchsolutions.com/case-study-cc1101.html" />
-  <meta property="og:image" content="https://www.mariettaresearchsolutions.com/images/case-study-cc1101/board.jpeg" />
+  <meta property="og:image" content="https://www.mariettaresearchsolutions.com/images/case-study-cc1101/device-with-cables.jpeg" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFKE4XNDT7"></script>
   <script>
@@ -322,11 +322,12 @@
       </div>
     </div>
     <figure>
-      <img src="images/case-study-cc1101/board.jpeg"
-           alt="The CC1101 test board on a workbench, showing both chip antennas in the corner of the PCB and the matching-network component pads populated with surface-mount inductors and capacitors." />
+      <img src="images/case-study-cc1101/device-with-cables.jpeg"
+           alt="The assembled INTERRUPT handheld with display installed, rubber-banded together, USB charging cable attached, and two RF coax cables connected on the right side for in-case |S11| measurement. The red CC1101 system board is visible through the keypad cutouts on the front." />
       <figcaption>
-        The CC1101 test board. Two chip antennas in the upper corner share a PCB region with the
-        SP4T switch and per-band matching networks; tuning one band measurably affects the others.
+        Production hardware on the bench. The display is installed, the case is closed, and the
+        two chip antennas are connected via coax to the VNA — the only condition under which a
+        production match means anything.
       </figcaption>
     </figure>
   </div>
@@ -402,19 +403,22 @@
     <div class="h2-eyebrow">§2 · Architecture</div>
     <h2 id="architecture">The signal chain &mdash; and why the antennas couple.</h2>
     <div class="csd-arch">
-      <img src="images/case-study-cc1101/board.jpeg"
-           alt="The CC1101 test board, showing both chip antennas in the upper corner of the PCB and the populated matching networks below." />
+      <img src="images/case-study-cc1101/device-open-architecture.jpeg"
+           alt="The handheld opened along its hinge: the red CC1101 system board lies flat on the bench, the back of the LCD display sits in the lifted case half, and two thin coax probes are taped down to the board near the matching-network region for VNA measurement. The chip antennas are visible in the upper corner of the red PCB, adjacent to the back of the display — the source of the antenna detuning the matching networks have to correct." />
       <div>
         <p>
           The CC1101's differential RF port is driven through an
           <strong>Anaren B0310J50100AHF balun</strong> into a <strong>SKY13414-485LF SP4T
           switch</strong>, which selects one of four per-band matching networks. Only one band is
-          active at a time; the switch common port references 50&nbsp;Ω post-balun.
+          active at a time; the switch common port references 50&nbsp;Ω post-balun. The photo
+          shows the board in its production case with the display lifted on its hinge and two
+          coax probes taped to the matching-network test points.
         </p>
         <p>
-          Both antennas sit in the same corner of the PCB, which measurably <em>couples</em> them:
-          tuning one band shifts the response of another. That coupling drove the retune order
-          described in the next section.
+          Both antennas sit in the same corner of the PCB, directly adjacent to the back of the
+          display — which measurably <em>couples</em> them and <em>detunes</em> them: tuning one
+          band shifts the response of another, and any match measured with the display removed is
+          a lie. That coupling drove the retune order described in the next section.
         </p>
       </div>
     </div>
@@ -471,8 +475,8 @@
       <div class="csd-band-grid">
         <div>
           <img src="images/case-study-cc1101/rf3-chart-b.png"
-               alt="|S11| versus frequency for the 315 MHz band. The curve dips below −14 dB inside the gray band indicating the required 314–316 MHz range." />
-          <div class="chart-cap">Final |S₁₁| measurement — gray band indicates the required frequency range.</div>
+               alt="|S11| versus frequency for the 315 MHz band. The curve dips below −14 dB inside the gold band indicating the required 314–316 MHz range." />
+          <div class="chart-cap">Final |S₁₁| measurement — gold band indicates the required frequency range.</div>
         </div>
         <div>
           <dl>
@@ -503,7 +507,7 @@
         <div>
           <img src="images/case-study-cc1101/rf4-chart-b.png"
                alt="|S11| versus frequency for the 433 MHz band, showing a minimum of −13.3 dB across the required range." />
-          <div class="chart-cap">Final |S₁₁| measurement — gray band indicates the required frequency range.</div>
+          <div class="chart-cap">Final |S₁₁| measurement — gold band indicates the required frequency range.</div>
         </div>
         <div>
           <dl>
@@ -534,7 +538,7 @@
         <div>
           <img src="images/case-study-cc1101/rf2-chart-b.png"
                alt="|S11| versus frequency for the 868 MHz band, showing −15 dB or better across the required range." />
-          <div class="chart-cap">Final |S₁₁| measurement — gray band indicates the required frequency range.</div>
+          <div class="chart-cap">Final |S₁₁| measurement — gold band indicates the required frequency range.</div>
         </div>
         <div>
           <dl>
@@ -565,7 +569,7 @@
         <div>
           <img src="images/case-study-cc1101/rf1-chart-b.png"
                alt="|S11| versus frequency for the 915 MHz band, showing −17 dB at 911 MHz across the 26 MHz required range." />
-          <div class="chart-cap">Final |S₁₁| measurement — gray band indicates the required frequency range.</div>
+          <div class="chart-cap">Final |S₁₁| measurement — gold band indicates the required frequency range.</div>
         </div>
         <div>
           <dl>
