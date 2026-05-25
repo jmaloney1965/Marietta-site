@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1f3a5f" />
+  <title>CC1101 Multi-Band Antenna Matching — Case Study | Marietta Research Solutions</title>
+
+  <link rel="canonical" href="https://www.mariettaresearchsolutions.com/case-study-cc1101.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&display=swap" />
+  <link rel="stylesheet" href="style.css?v=20260505" />
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <meta name="description" content="Four ISM-band matching networks for a TI CC1101 multi-band RF transceiver — designed, iterated, and verified in-case. All bands pass the −10 dB return-loss specification. Worked case study from MRS." />
+  <meta name="robots" content="index,follow" />
+
+  <meta property="og:title" content="CC1101 Multi-Band Antenna Matching — Case Study" />
+  <meta property="og:description" content="Four ISM-band matching networks designed and verified in-case. All bands pass −10 dB. Client: KickR Design." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.mariettaresearchsolutions.com/case-study-cc1101.html" />
+  <meta property="og:image" content="https://www.mariettaresearchsolutions.com/images/case-study-cc1101/board.jpeg" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFKE4XNDT7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TFKE4XNDT7');
+  </script>
+
+  <style>
+    /* ---- Page-local styles. Keep generic site styles in style.css ---- */
+    .csd-hero {
+      background: linear-gradient(135deg, #18304d 0%, #1f3a5f 50%, #2a4d7d 100%);
+      color: #fff;
+      padding: 3.2rem 1.25rem 2.6rem;
+    }
+    .csd-hero-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.4fr 1fr; gap: 2.2rem; align-items: center;
+    }
+    @media (max-width: 820px) { .csd-hero-inner { grid-template-columns: 1fr; } }
+    .csd-hero .eyebrow {
+      color: var(--mrs-gold, #E8B830);
+      font-size: .78rem; letter-spacing: .14em; text-transform: uppercase;
+      font-weight: 700; margin-bottom: .8rem;
+    }
+    .csd-hero h1 {
+      font-family: var(--mrs-display, 'Source Serif 4', serif);
+      font-size: clamp(1.75rem, 3.2vw, 2.6rem);
+      line-height: 1.12; margin: 0 0 .9rem; color: #fff;
+    }
+    .csd-hero .lede {
+      font-size: 1.05rem; line-height: 1.55; color: rgba(255,255,255,.86);
+      max-width: 38em; margin: 0 0 1.2rem;
+    }
+    .csd-hero .pill-row { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .csd-hero .pill {
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(232,184,48,.45);
+      color: #fff;
+      font-size: .72rem; letter-spacing: .08em; text-transform: uppercase;
+      padding: .35rem .7rem; border-radius: 999px;
+    }
+    .csd-hero figure {
+      margin: 0; background: #fff;
+      border: 1px solid rgba(255,255,255,.18); border-radius: 6px;
+      padding: .8rem .8rem .65rem;
+      box-shadow: 0 18px 38px rgba(0,0,0,.35);
+    }
+    .csd-hero figure img { display: block; width: 100%; height: auto; border-radius: 3px; }
+    .csd-hero figcaption { font-size: .72rem; color: #555; margin-top: .55rem; line-height: 1.45; }
+
+    /* ---- Stat strip ---- */
+    .csd-stats {
+      background: #f3eedf;
+      border-top: 3px solid var(--mrs-gold, #E8B830);
+      border-bottom: 1px solid #e6dfc7;
+      padding: 1.6rem 1.25rem;
+    }
+    .csd-stats-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem;
+    }
+    @media (max-width: 720px) { .csd-stats-inner { grid-template-columns: repeat(2, 1fr); } }
+    .csd-stat .num {
+      font-family: var(--mrs-display, 'Source Serif 4', serif);
+      font-size: 1.9rem; line-height: 1; color: var(--mrs-navy, #1f3a5f); font-weight: 700;
+    }
+    .csd-stat .num small { font-size: 1rem; color: #6c5e2c; margin-left: .15em; font-weight: 700; }
+    .csd-stat .lbl {
+      font-size: .76rem; letter-spacing: .08em; text-transform: uppercase;
+      color: #5a4f24; font-weight: 700; margin-top: .4rem;
+    }
+    .csd-stat .sub { font-size: .82rem; color: #4a3f1c; margin-top: .15rem; }
+
+    /* ---- Body layout: TOC rail + article ---- */
+    .csd-body {
+      max-width: 1100px; margin: 0 auto; padding: 2.4rem 1.25rem 3rem;
+      display: grid; grid-template-columns: 220px 1fr; gap: 2.2rem;
+    }
+    @media (max-width: 900px) { .csd-body { grid-template-columns: 1fr; } .csd-toc { position: static !important; } }
+    .csd-toc { position: sticky; top: 1rem; align-self: start; font-size: .85rem; }
+    .csd-toc .toc-eyebrow {
+      font-size: .68rem; letter-spacing: .12em; text-transform: uppercase;
+      color: #6f6233; font-weight: 700; margin-bottom: .65rem;
+    }
+    .csd-toc ol { list-style: none; padding: 0; margin: 0; border-left: 2px solid var(--mrs-gold, #E8B830); }
+    .csd-toc li { margin: 0; }
+    .csd-toc a {
+      display: block; padding: .42rem .8rem;
+      color: var(--mrs-ink, #2a2a2a); text-decoration: none;
+      border-left: 2px solid transparent; margin-left: -2px;
+    }
+    .csd-toc a:hover { color: var(--mrs-navy, #1f3a5f); border-left-color: var(--mrs-navy, #1f3a5f); background: #f8f5ea; }
+
+    /* ---- Article ---- */
+    .csd-article h2 {
+      font-family: var(--mrs-display, 'Source Serif 4', serif);
+      color: var(--mrs-navy, #1f3a5f);
+      font-size: 1.7rem; line-height: 1.18;
+      margin: 2.2rem 0 .25rem; scroll-margin-top: 1rem;
+    }
+    .csd-article h2:first-of-type { margin-top: 0; }
+    .csd-article .h2-eyebrow {
+      font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+      color: #8a7a32; font-weight: 700; margin-bottom: .25rem;
+    }
+    .csd-article h3 {
+      font-family: var(--mrs-display, 'Source Serif 4', serif);
+      color: var(--mrs-navy, #1f3a5f);
+      font-size: 1.18rem; margin: 1.6rem 0 .4rem;
+    }
+    .csd-article p { color: var(--mrs-ink, #2a2a2a); font-size: 1rem; line-height: 1.65; margin: 0 0 1rem; text-wrap: pretty; }
+    .csd-article p.lede { font-size: 1.08rem; line-height: 1.6; color: #3a3a3a; }
+    .csd-article ul, .csd-article ol { color: var(--mrs-ink, #2a2a2a); font-size: 1rem; line-height: 1.65; margin: 0 0 1.1rem; padding-left: 1.2rem; }
+    .csd-article ul li, .csd-article ol li { margin-bottom: .35rem; }
+    .csd-article a { color: var(--mrs-navy, #1f3a5f); }
+    .csd-article code {
+      background: rgba(31,58,95,.08); border: 1px solid rgba(31,58,95,.12);
+      padding: .08em .35em; border-radius: 4px;
+      font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .88em; color: #0f2340;
+    }
+
+    /* Architecture two-up (board photo + text) */
+    .csd-arch { display: grid; grid-template-columns: 1fr 1.2fr; gap: 1.5rem; align-items: center; margin: 1.5rem 0; }
+    @media (max-width: 700px) { .csd-arch { grid-template-columns: 1fr; } }
+    .csd-arch img {
+      width: 100%; border-radius: 8px; display: block;
+      border: 1px solid var(--mrs-line-soft, #e7e3d3);
+      box-shadow: 0 10px 24px rgba(0,0,0,.10);
+    }
+
+    /* Pull-quote / callout */
+    .csd-pull {
+      border-left: 4px solid var(--mrs-gold, #E8B830);
+      background: #f8f5ea;
+      padding: 1rem 1.2rem;
+      margin: 1.4rem 0;
+      font-family: var(--mrs-display, 'Source Serif 4', serif);
+      font-size: 1.08rem; line-height: 1.5; color: var(--mrs-navy, #1f3a5f);
+    }
+
+    /* Band result block */
+    .csd-band {
+      background: #fff; border: 1px solid var(--mrs-line-soft, #e7e3d3); border-radius: 10px;
+      padding: 1.2rem 1.3rem; margin: 1.1rem 0;
+      box-shadow: 0 10px 22px rgba(0,0,0,.06);
+    }
+    .csd-band-head {
+      display: flex; align-items: baseline; gap: .9rem; flex-wrap: wrap;
+      margin-bottom: .6rem;
+    }
+    .csd-band-tag {
+      font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      color: #1f3a5f; background: rgba(31,58,95,.08); border: 1px solid rgba(31,58,95,.12);
+      padding: .18rem .55rem; border-radius: 4px;
+    }
+    .csd-band h3 {
+      color: var(--mrs-navy, #1f3a5f); margin: 0;
+      font-size: 1.25rem; font-weight: 700;
+    }
+    .csd-band-range { color: #666; font-size: .92rem; }
+    .csd-band-status {
+      margin-left: auto;
+      background: #E8B830; color: #5a4510; font-weight: 700;
+      padding: .2rem .65rem; border-radius: 999px; font-size: .82rem;
+    }
+    .csd-band-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 1.4rem; align-items: start; }
+    @media (max-width: 720px) { .csd-band-grid { grid-template-columns: 1fr; } }
+    .csd-band-grid img { width: 100%; height: auto; border: 1px solid rgba(0,0,0,.08); border-radius: 6px; display: block; }
+    .csd-band-grid .chart-cap { font-size: .78rem; color: #666; text-align: center; margin-top: .35rem; }
+    .csd-band dl { margin: 0; font-size: .94rem; line-height: 1.5; }
+    .csd-band dl > div {
+      display: grid; grid-template-columns: 150px 1fr; gap: .8rem;
+      padding: .35rem 0; border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+    .csd-band dt {
+      color: #666; font-size: .72rem; text-transform: uppercase;
+      letter-spacing: .06em; font-weight: 700;
+    }
+    .csd-band dd { margin: 0; color: #333; }
+    .csd-band-note { margin: .9rem 0 0; color: #333; font-size: .92rem; line-height: 1.55; }
+    .csd-band-note strong { color: var(--mrs-navy, #1f3a5f); }
+
+    /* Disclaimer block */
+    .csd-disclaim {
+      background: #fffaee; border: 1px solid #f0e6c2;
+      border-radius: 6px; padding: 1rem 1.2rem;
+      margin: 1.6rem 0; font-size: .9rem; line-height: 1.55;
+    }
+    .csd-disclaim h4 {
+      color: var(--mrs-navy, #1f3a5f); font-weight: 700;
+      font-size: .85rem; text-transform: uppercase; letter-spacing: .08em;
+      margin: 0 0 .5rem;
+    }
+    .csd-disclaim ul { margin: 0; padding-left: 1.1rem; color: #555; }
+
+    /* Related download tile */
+    .csd-related {
+      margin-top: 2rem;
+      background: #fff; border: 1px solid rgba(0,0,0,.08);
+      border-left: 4px solid #E8B830;
+      border-radius: 10px;
+      padding: 1.1rem 1.4rem;
+      box-shadow: 0 10px 24px rgba(0,0,0,.08);
+      display: grid; grid-template-columns: auto 1fr auto;
+      gap: 1.25rem; align-items: center;
+    }
+    @media (max-width: 700px) { .csd-related { grid-template-columns: 1fr; text-align: left; } }
+    .csd-related .star {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: #E8B830; color: #5a4510;
+      font-weight: 700; font-size: 1.3rem;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .csd-related .eyebrow {
+      font-size: .68rem; color: #b6841e; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+    }
+    .csd-related .title {
+      font-size: 1.05rem; font-weight: 700; color: var(--mrs-navy, #1f3a5f);
+      margin-top: .15rem;
+    }
+    .csd-related .desc {
+      font-size: .88rem; color: #333; margin-top: .25rem; line-height: 1.55;
+    }
+    .csd-related .btn-go {
+      display: inline-block; padding: .7rem 1.1rem; border-radius: 6px;
+      background: var(--mrs-navy, #1f3a5f); color: #fff;
+      font-weight: 700; font-size: .92rem; text-decoration: none; white-space: nowrap;
+    }
+
+    /* Closing CTA reuses .cta-box from style.css */
+    .csd-bottom-cta { margin-top: 2.4rem; }
+    .csd-bottom-cta h3 { color: #ffffff !important; }
+    .csd-bottom-cta p  { color: rgba(255,255,255,.9) !important; }
+    .csd-bottom-cta .cta-eyebrow { color: var(--mrs-gold, #E8B830) !important; }
+
+    /* Print */
+    @media print {
+      .site-header, .site-nav, footer, #backToTop, .csd-bottom-cta { display: none !important; }
+      .csd-hero { background: #1f3a5f !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .csd-toc { display: none; }
+      .csd-body { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-wrap">
+    <a href="index.html" class="site-logo" aria-label="Home">
+      <img class="site-logo-img"
+        src="mrs-logo-full-800-tight-gold_decontam.png?v=20260211k"
+        srcset="mrs-logo-full-400-tight-gold_decontam.png 400w, mrs-logo-full-600-tight-gold_decontam.png 600w, mrs-logo-full-800-tight-gold_decontam.png 800w"
+        sizes="(max-width: 600px) 92vw, 360px"
+        width="360" height="72"
+        alt="Marietta Research Solutions" />
+    </a>
+    <nav class="site-nav">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="case-studies.html" class="active">Case Studies</a>
+      <a href="fragmented-aperture.html">Research</a>
+      <a href="coming-soon.html">Products</a>
+      <a href="faq.html">FAQ</a>
+      <a href="software.html">Software</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" style="max-width:1100px;margin:0 auto;padding:1rem 1.25rem .25rem;font-size:.85rem;">
+  <a href="case-studies.html" style="color:#666;text-decoration:none;">← All case studies</a>
+</nav>
+
+<!-- HERO -->
+<section class="csd-hero">
+  <div class="csd-hero-inner">
+    <div>
+      <div class="eyebrow">Case Study · April 2026 · IoT Radio Matching</div>
+      <h1>Broadband Antenna Matching for a Multi-Band&nbsp;RF&nbsp;Transceiver</h1>
+      <p class="lede">
+        Four ISM-band matching networks for a TI&nbsp;CC1101-based transceiver &mdash; designed, iterated,
+        and verified in-case with display. All bands passed the &minus;10&nbsp;dB return-loss specification.
+      </p>
+      <div class="pill-row">
+        <span class="pill">Sub-GHz · 315 – 928 MHz</span>
+        <span class="pill">Matching Networks</span>
+        <span class="pill">ISM Bands</span>
+        <span class="pill">Client: KickR Design</span>
+      </div>
+    </div>
+    <figure>
+      <img src="images/case-study-cc1101/board.jpeg"
+           alt="The CC1101 test board on a workbench, showing both chip antennas in the corner of the PCB and the matching-network component pads populated with surface-mount inductors and capacitors." />
+      <figcaption>
+        The CC1101 test board. Two chip antennas in the upper corner share a PCB region with the
+        SP4T switch and per-band matching networks; tuning one band measurably affects the others.
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="csd-stats">
+  <div class="csd-stats-inner">
+    <div class="csd-stat">
+      <div class="num">4 / 4</div>
+      <div class="lbl">Bands in spec</div>
+      <div class="sub">All passed −10 dB return-loss threshold</div>
+    </div>
+    <div class="csd-stat">
+      <div class="num">315<small>– 928</small></div>
+      <div class="lbl">MHz coverage</div>
+      <div class="sub">315 · 433 · 868 · 915 MHz ISM</div>
+    </div>
+    <div class="csd-stat">
+      <div class="num">≤ −10<small> dB</small></div>
+      <div class="lbl">Return loss</div>
+      <div class="sub">All bands, in-case with display installed</div>
+    </div>
+    <div class="csd-stat">
+      <div class="num">≈ 6<small> per band</small></div>
+      <div class="lbl">Solder iterations</div>
+      <div class="sub">2× reduction vs. full SOL calibration</div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY -->
+<div class="csd-body" id="main-content">
+
+  <!-- TOC rail -->
+  <aside class="csd-toc" aria-label="In this case study">
+    <div class="toc-eyebrow">In this case study</div>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#architecture">Architecture</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#results">Results — all four bands</a></li>
+      <li><a href="#recommendations">Production recommendations</a></li>
+      <li><a href="#disclaimers">Notes &amp; disclaimers</a></li>
+      <li><a href="#related">Related: free 2.4 GHz blade design</a></li>
+    </ol>
+  </aside>
+
+  <article class="csd-article">
+
+    <!-- 1. OVERVIEW -->
+    <div class="h2-eyebrow">§1 · Overview</div>
+    <h2 id="overview">Four ISM bands, two antennas, one transceiver.</h2>
+    <p class="lede">
+      KickR Design asked MRS to deliver production-ready matching networks for a sub-GHz multi-band
+      RF transceiver built around the <strong>TI CC1101RGPR</strong>. The board supports four ISM
+      bands routed through an SP4T switch to two chip antennas: a narrowband
+      <strong>Yageo ANT1204F002R0315A</strong> for 315 MHz, and a multi-band
+      <strong>Abracon ACR1504I3</strong> for 433, 868, and 915 MHz.
+    </p>
+    <p>
+      Each band needed a matching network such that <code>|S₁₁| ≤ −10 dB</code> across the
+      required operational range, measured in-case with the display installed &mdash; the closest
+      metallic object to the antennas and, therefore, the largest source of detuning. Deliverables
+      were the four matching designs with component values keyed to the production schematic.
+    </p>
+    <div class="csd-pull">
+      "Measured in-case with display." Anything else is a tuned bench, not a production radio.
+      The display moves the antennas; the matching network must move with it.
+    </div>
+
+    <!-- 2. ARCHITECTURE -->
+    <div class="h2-eyebrow">§2 · Architecture</div>
+    <h2 id="architecture">The signal chain &mdash; and why the antennas couple.</h2>
+    <div class="csd-arch">
+      <img src="images/case-study-cc1101/board.jpeg"
+           alt="The CC1101 test board, showing both chip antennas in the upper corner of the PCB and the populated matching networks below." />
+      <div>
+        <p>
+          The CC1101's differential RF port is driven through an
+          <strong>Anaren B0310J50100AHF balun</strong> into a <strong>SKY13414-485LF SP4T
+          switch</strong>, which selects one of four per-band matching networks. Only one band is
+          active at a time; the switch common port references 50&nbsp;Ω post-balun.
+        </p>
+        <p>
+          Both antennas sit in the same corner of the PCB, which measurably <em>couples</em> them:
+          tuning one band shifts the response of another. That coupling drove the retune order
+          described in the next section.
+        </p>
+      </div>
+    </div>
+
+    <!-- 3. APPROACH -->
+    <div class="h2-eyebrow">§3 · Approach</div>
+    <h2 id="approach">Three calibration strategies. The third one worked.</h2>
+    <p>
+      Three approaches were attempted before the efficient one took hold:
+    </p>
+    <ol>
+      <li>
+        <strong>Analytic PCB model.</strong> A simple delay + attenuation model of the trace from
+        the balun to the matching network. Fast, but could not converge without capturing the
+        balun and switch &mdash; the first-pass match for RF4 was the only one it produced cleanly.
+      </li>
+      <li>
+        <strong>Full Short / Open / Load calibration.</strong> Characterizing the PCB at both
+        sides of each matching network. Highly accurate, but each band required six calibration
+        solderings and three more components per tweak &mdash; sustainable for one band, not four,
+        with the board's wear budget.
+      </li>
+      <li>
+        <strong>Three-measurement calibration <em>(adopted)</em>.</strong> A variation of the
+        first approach: measure the antenna alone, then in series with a known inductor, then with
+        an additional shunt capacitor. Those three measurements extract delay and attenuation for
+        the simple model, after which 2–3 component iterations center each band. Total: about six
+        solderings per band, a 2× reduction over the full SOL approach.
+      </li>
+    </ol>
+    <p>
+      The retune order was driven by coupling: <strong>RF3 (315 MHz) was tuned first</strong>
+      because shifts there propagated to the other three bands through the shared antenna geometry.
+      RF4, RF2, and RF1 were then remeasured, tweaked, and finalized in sequence.
+    </p>
+
+    <!-- 4. RESULTS -->
+    <div class="h2-eyebrow">§4 · Validation</div>
+    <h2 id="results">Final results &mdash; all four bands.</h2>
+    <p>
+      Measurements taken in-case with the display installed. Each chart references the chip's
+      target differential impedance (not 50&nbsp;Ω), so the −10&nbsp;dB threshold corresponds to
+      the conjugate match CC1101 datasheets specify.
+    </p>
+
+    <!-- RF3 -->
+    <section class="csd-band" id="rf3">
+      <div class="csd-band-head">
+        <span class="csd-band-tag">RF3</span>
+        <h3>315 MHz Band</h3>
+        <span class="csd-band-range">314–316 MHz · FCC Part 15</span>
+        <span class="csd-band-status">✓ Pass</span>
+      </div>
+      <div class="csd-band-grid">
+        <div>
+          <img src="images/case-study-cc1101/rf3-chart-b.png"
+               alt="|S11| versus frequency for the 315 MHz band. The curve dips below −14 dB inside the gray band indicating the required 314–316 MHz range." />
+          <div class="chart-cap">Final |S₁₁| measurement — gray band indicates the required frequency range.</div>
+        </div>
+        <div>
+          <dl>
+            <div><dt>Antenna</dt><dd>Yageo ANT1204F002R0315A</dd></div>
+            <div><dt>Required BW</dt><dd>2 MHz</dd></div>
+            <div><dt>Target impedance</dt><dd>122 + j31 Ω</dd></div>
+            <div><dt>Matching topology</dt><dd>51 nH series · 7 pF shunt</dd></div>
+            <div><dt>Board refdes</dt><dd><code>X1 = 51 nH, X4 = 7 pF</code></dd></div>
+            <div><dt>Result (in-band)</dt><dd><strong>−14 to −15 dB</strong></dd></div>
+          </dl>
+          <p class="csd-band-note">
+            <strong>Note.</strong> Band was retuned first because 315 MHz affects the others through
+            antenna coupling. In-case, in-spec.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RF4 -->
+    <section class="csd-band" id="rf4">
+      <div class="csd-band-head">
+        <span class="csd-band-tag">RF4</span>
+        <h3>433 MHz Band</h3>
+        <span class="csd-band-range">432–434 MHz · Region 1 ISM</span>
+        <span class="csd-band-status">✓ Pass</span>
+      </div>
+      <div class="csd-band-grid">
+        <div>
+          <img src="images/case-study-cc1101/rf4-chart-b.png"
+               alt="|S11| versus frequency for the 433 MHz band, showing a minimum of −13.3 dB across the required range." />
+          <div class="chart-cap">Final |S₁₁| measurement — gray band indicates the required frequency range.</div>
+        </div>
+        <div>
+          <dl>
+            <div><dt>Antenna</dt><dd>Abracon ACR1504I3</dd></div>
+            <div><dt>Required BW</dt><dd>1.74 MHz</dd></div>
+            <div><dt>Target impedance</dt><dd>116 + j41 Ω</dd></div>
+            <div><dt>Matching topology</dt><dd>20 nH series · 0.5 pF shunt</dd></div>
+            <div><dt>Board refdes</dt><dd><code>X19 = 20 nH, X23 = 0.5 pF</code></dd></div>
+            <div><dt>Result (in-band)</dt><dd><strong>−13.3 dB (min)</strong></dd></div>
+          </dl>
+          <p class="csd-band-note">
+            <strong>Note.</strong> Relative to 866 MHz (≈2×), the same topology scales cleanly. No
+            final tweak required after the 315 MHz retune.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RF2 -->
+    <section class="csd-band" id="rf2">
+      <div class="csd-band-head">
+        <span class="csd-band-tag">RF2</span>
+        <h3>868 MHz Band</h3>
+        <span class="csd-band-range">863–870 MHz · ETSI EN 300 220</span>
+        <span class="csd-band-status">✓ Pass</span>
+      </div>
+      <div class="csd-band-grid">
+        <div>
+          <img src="images/case-study-cc1101/rf2-chart-b.png"
+               alt="|S11| versus frequency for the 868 MHz band, showing −15 dB or better across the required range." />
+          <div class="chart-cap">Final |S₁₁| measurement — gray band indicates the required frequency range.</div>
+        </div>
+        <div>
+          <dl>
+            <div><dt>Antenna</dt><dd>Abracon ACR1504I3</dd></div>
+            <div><dt>Required BW</dt><dd>7 MHz</dd></div>
+            <div><dt>Target impedance</dt><dd>86 + j43 Ω</dd></div>
+            <div><dt>Matching topology</dt><dd>4 pF shunt · 15 nH series · 1.0 pF shunt</dd></div>
+            <div><dt>Board refdes</dt><dd><code>X10 = 4 pF, X7 = 15 nH, X11 = 1.0 pF</code></dd></div>
+            <div><dt>Result (in-band)</dt><dd><strong>−15 dB or better</strong></dd></div>
+          </dl>
+          <p class="csd-band-note">
+            <strong>Note.</strong> Hardest match of the four. L-section wasn't enough; added a shunt
+            cap to move the resonance into band.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RF1 -->
+    <section class="csd-band" id="rf1">
+      <div class="csd-band-head">
+        <span class="csd-band-tag">RF1</span>
+        <h3>915 MHz Band</h3>
+        <span class="csd-band-range">900–928 MHz · FCC Part 15.247</span>
+        <span class="csd-band-status">✓ Pass</span>
+      </div>
+      <div class="csd-band-grid">
+        <div>
+          <img src="images/case-study-cc1101/rf1-chart-b.png"
+               alt="|S11| versus frequency for the 915 MHz band, showing −17 dB at 911 MHz across the 26 MHz required range." />
+          <div class="chart-cap">Final |S₁₁| measurement — gray band indicates the required frequency range.</div>
+        </div>
+        <div>
+          <dl>
+            <div><dt>Antenna</dt><dd>Abracon ACR1504I3</dd></div>
+            <div><dt>Required BW</dt><dd>26 MHz</dd></div>
+            <div><dt>Target impedance</dt><dd>86 + j43 Ω</dd></div>
+            <div><dt>Matching topology</dt><dd>2 pF shunt · 15 nH series · 0.2 pF shunt</dd></div>
+            <div><dt>Board refdes</dt><dd><code>X16 = 2 pF, X13 = 15 nH, X17 = 0.2 pF</code></dd></div>
+            <div><dt>Result (in-band)</dt><dd><strong>−17 dB at 911 MHz</strong></dd></div>
+          </dl>
+          <p class="csd-band-note">
+            <strong>Note.</strong> Widest fractional bandwidth. Centered the resonance on the band
+            after adjusting the input shunt down to 2 pF.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. RECOMMENDATIONS -->
+    <div class="h2-eyebrow">§5 · Production</div>
+    <h2 id="recommendations">Recommendations for production.</h2>
+    <ul>
+      <li>
+        <strong>Verify on a second board.</strong> A separate fabrication run confirms the
+        solution transfers &mdash; PCB-to-PCB variation in the balun, switch, and trace geometry
+        is small but non-zero.
+      </li>
+      <li>
+        <strong>Avoid 5 %-tolerance components.</strong> The tighter matches (RF2, RF1) rely on
+        component values within 1–2 % of the tuned set; 5 %-tolerance parts risk drifting the
+        resonance out of band.
+      </li>
+    </ul>
+
+    <!-- 6. DISCLAIMERS -->
+    <div class="csd-disclaim" id="disclaimers">
+      <h4>Important notes &amp; disclaimers</h4>
+      <ul>
+        <li>Results apply to the as-measured PCB with the display installed. Changes to enclosure
+          material, nearby metal, or antenna placement may require retuning.</li>
+        <li>Published with KickR Design's written permission. Schematic reference designators
+          (X16, X13, etc.) match the board revision current at the time of work.</li>
+        <li>Outcome is specific to this engagement; past results do not guarantee identical
+          outcomes on other designs.</li>
+      </ul>
+    </div>
+
+    <!-- 7. RELATED -->
+    <div class="csd-related" id="related">
+      <div class="star" aria-hidden="true">★</div>
+      <div>
+        <div class="eyebrow">Related · Free Download</div>
+        <div class="title">Try a Fragmented Blade Antenna at 2.4&ndash;2.485&nbsp;GHz &mdash; no cost</div>
+        <div class="desc">
+          A free reference design covering the 2.4&ndash;2.485&nbsp;GHz ISM band (Wi-Fi, BLE, Zigbee, Thread, Matter).
+          Fabricate it, measure it, and see MRS design quality firsthand before committing to a paid band.
+        </div>
+      </div>
+      <a class="btn-go" href="blade-antennas.html">Get Free Design →</a>
+    </div>
+
+    <!-- CTA -->
+    <section class="cta-box csd-bottom-cta">
+      <div class="cta-eyebrow">Have a similar problem?</div>
+      <h3>Bring us your spec &mdash; we'll tell you what's possible.</h3>
+      <p>
+        30-minute scoping call, no charge. Bring a band plan, schematic, or a screenshot of
+        whatever's not matching. We'll tell you whether a similar engagement is the right fit and
+        what it would cost.
+      </p>
+      <a class="btn btn-gold" href="contact.html">Book a Scoping Call →</a>
+    </section>
+
+  </article>
+</div>
+
+<p class="last-updated">Last updated: May 2026</p>
+
+<footer>
+  <p>
+    © 2026 Marietta Research Solutions<br />
+    1640 Powers Ferry Rd SE, Bldg 11, Suite 200<br />
+    Marietta, GA 30067<br />
+    <a href="tel:+14047957674">404-795-7674</a><br />
+    |
+    <a href="dr-maloney.html">Dr. Maloney</a> |
+    <a href="contact.html">Request Consult</a> |
+    <a href="capabilities.pdf" target="_blank" rel="noopener">Capabilities (PDF)</a> |
+    <a href="privacy.html">Privacy</a>
+  </p>
+  <div class="site-tagline-footer">
+    <p>Strategic Consulting at the Intersection of Engineering &amp; Intelligence.</p>
+  </div>
+
+  <nav class="social-links" aria-label="Dr. Maloney professional profiles">
+    <span class="social-label">Dr. Maloney:</span>
+    <a href="https://www.linkedin.com/in/jim-maloney/" target="_blank" rel="noopener" aria-label="Dr. Maloney on LinkedIn" title="LinkedIn">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0h.01z"/></svg>
+    </a>
+    <a href="https://scholar.google.com/citations?hl=en&user=445KFCoAAAAJ" target="_blank" rel="noopener" aria-label="Dr. Maloney on Google Scholar" title="Google Scholar">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+    </a>
+    <a href="https://ieeexplore.ieee.org/author/37357546700" target="_blank" rel="noopener" aria-label="Dr. Maloney on IEEE Xplore" title="IEEE Xplore">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="12" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="currentColor">IEEE</text></svg>
+    </a>
+    <a href="https://www.researchgate.net/profile/James-Maloney-2" target="_blank" rel="noopener" aria-label="Dr. Maloney on ResearchGate" title="ResearchGate">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19.586 0H4.414A4.414 4.414 0 0 0 0 4.414v15.172A4.414 4.414 0 0 0 4.414 24h15.172A4.414 4.414 0 0 0 24 19.586V4.414A4.414 4.414 0 0 0 19.586 0zM8.5 13.5c-.5 1.2-1.6 2-3 2-2 0-3.5-1.6-3.5-4s1.5-4 3.6-4c1.4 0 2.4.7 2.9 1.8l-1.3.7c-.3-.7-.9-1.1-1.6-1.1-1.3 0-2.1 1.1-2.1 2.6s.9 2.6 2.1 2.6c1.1 0 1.7-.7 1.8-1.5H6V11h2.5v2.5zm6.7-3.3c.7.2 1.2.7 1.2 1.5 0 1.1-.8 1.8-2.1 1.8h-2.7V8.1h2.5c1.3 0 2 .6 2 1.6 0 .5-.3.9-.9 1.1zm-1.6-1.4h-.9v1.1h.9c.5 0 .8-.2.8-.6 0-.3-.3-.5-.8-.5zm.1 2h-1v1.2h1c.6 0 .9-.2.9-.6 0-.4-.3-.6-.9-.6z"/></svg>
+    </a>
+    <a href="https://github.com/jmaloney1965/" target="_blank" rel="noopener" aria-label="Dr. Maloney on GitHub" title="GitHub">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.21-1.5 3.18-1.18 3.18-1.18.63 1.58.23 2.75.11 3.04.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56 4.57-1.53 7.85-5.83 7.85-10.91C23.5 5.65 18.35.5 12 .5z"/></svg>
+    </a>
+  </nav>
+
+</footer>
+
+<button id="backToTop" title="Back to top" aria-label="Back to top">⇧</button>
+
+<script src="site.js?v=20260505"></script>
+<script src="jargon-translator.js" defer></script>
+</body>
+</html>

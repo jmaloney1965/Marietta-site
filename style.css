@@ -1193,6 +1193,43 @@ h2.svc-h2 {
   text-align: center;
 }
 
+/* Photo-thumb variant — replaces gradient + glyph with a background image and
+   keeps the corner tag readable via a bottom gradient overlay. */
+.cs-card a.cs-thumb {
+  text-decoration: none;
+  position: relative;
+  padding: 0;
+  min-height: 160px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.cs-card a.cs-thumb::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 55%;
+  background: linear-gradient(to top, rgba(0,0,0,.72) 0%, rgba(0,0,0,0) 100%);
+  pointer-events: none;
+}
+.cs-card a.cs-thumb .cs-thumb-tag {
+  position: absolute;
+  left: 0; right: 0; bottom: .75rem;
+  z-index: 1;
+  padding: 0 .8rem;
+}
+.cs-card a.cs-thumb:focus-visible {
+  outline: 3px solid var(--mrs-gold);
+  outline-offset: -3px;
+}
+
+/* Title-as-link inside cs-card */
+.cs-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+.cs-card h3 a:hover { color: var(--mrs-navy-mid); text-decoration: underline; }
+
 .cs-card .cs-thumb-glyph {
   font-size: 2.2rem;
   color: var(--mrs-gold);
@@ -1479,8 +1516,78 @@ form textarea { resize: vertical; }
   border-radius: 12px;
 }
 
-.card-link:focus,
+/* Use :focus-visible so keyboard users still see a focus ring.
+   Mouse/touch users don't get the outline (replaces previous outline:none on :focus). */
 .card-link:hover { outline: none; }
+.card-link:focus { outline: none; }
+.card-link:focus-visible {
+  outline: 3px solid rgba(31, 58, 95, 0.45);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
+/* Footer social profile links (Dr. Maloney) */
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin: 1rem auto 0.4rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  max-width: 520px;
+}
+.social-links .social-label {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  margin-right: 0.25rem;
+}
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+.social-links a:hover {
+  background: rgba(232, 184, 48, 0.18);
+  color: #E8B830;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+.social-links a:focus-visible {
+  outline: 2px solid #E8B830;
+  outline-offset: 2px;
+}
+
+/* Skip-to-content link — hidden offscreen until keyboard-focused */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  background: #1f3a5f;
+  color: #fff;
+  padding: 0.75rem 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0 0 6px 0;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  left: 0;
+  outline: 3px solid #E8B830;
+  outline-offset: 2px;
+}
 
 .card-link::after {
   content: "›";

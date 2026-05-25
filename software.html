@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#C8D1DC" />
+  <meta name="theme-color" content="#1f3a5f" />
   <title>Software | Marietta Research Solutions</title>
 
   <link rel="canonical" href="https://www.mariettaresearchsolutions.com/software.html" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600;700&display=swap" />
   <link rel="stylesheet" href="style.css?v=20260504" />
   <link rel="manifest" href="manifest.json" />
 
@@ -16,13 +17,13 @@
   <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
-  <meta name="description" content="Free software from Marietta Research Solutions. Download openTDA Viewer, a 3D DXF geometry viewer for macOS, Windows, and Linux." />
+  <meta name="description" content="MRS software: the proprietary openTDA FDTD solver and its GUI tools (OpenResults, OpenDXF), plus openSmith and openMatch antenna matching tools. Download the openTDA Viewer alpha free." />
   <meta name="robots" content="index,follow" />
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="Marietta Research Solutions" />
   <meta property="og:title" content="Software | Marietta Research Solutions" />
-  <meta property="og:description" content="Free software from Marietta Research Solutions. Download openTDA Viewer, a 3D DXF geometry viewer for macOS, Windows, and Linux." />
+  <meta property="og:description" content="Proprietary FDTD solver, GUI tools, and antenna matching utilities from MRS. Free alpha download." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.mariettaresearchsolutions.com/software.html" />
   <meta property="og:image" content="https://www.mariettaresearchsolutions.com/og-image.png" />
@@ -30,36 +31,32 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Software | Marietta Research Solutions" />
-  <meta name="twitter:description" content="Free software from Marietta Research Solutions. Download openTDA Viewer, a 3D DXF geometry viewer for macOS, Windows, and Linux." />
+  <meta name="twitter:description" content="Proprietary FDTD solver, GUI tools, and antenna matching utilities from MRS." />
   <meta name="twitter:image" content="https://www.mariettaresearchsolutions.com/og-image.png" />
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TFKE4XNDT7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-TFKE4XNDT7');
-</script>
-
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TFKE4XNDT7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-TFKE4XNDT7');
+  </script>
 </head>
 
 <body>
 
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
 <header class="site-header">
   <div class="header-wrap">
     <a href="index.html" class="site-logo" aria-label="Home">
-      <img
-        class="site-logo-img"
+      <img class="site-logo-img"
         src="mrs-logo-full-800-tight-gold_decontam.png?v=20260211k"
-        srcset="
-          mrs-logo-full-400-tight-gold_decontam.png 400w,
-          mrs-logo-full-600-tight-gold_decontam.png 600w,
-          mrs-logo-full-800-tight-gold_decontam.png 800w
-        "
+        srcset="mrs-logo-full-400-tight-gold_decontam.png 400w, mrs-logo-full-600-tight-gold_decontam.png 600w, mrs-logo-full-800-tight-gold_decontam.png 800w"
         sizes="(max-width: 600px) 92vw, 360px"
-        alt="Marietta Research Solutions"
-      />
+        width="360" height="72"
+        alt="Marietta Research Solutions" />
     </a>
     <nav class="site-nav">
       <a href="about.html">About</a>
@@ -74,95 +71,204 @@
   </div>
 </header>
 
-<main class="container">
-  <h2>Software</h2>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Software</div>
+    <h1>Thirty years of applying FDTD to antenna expertise, <span class="accent">available to solve your challenges.</span></h1>
+    <p class="lede">
+      MRS develops and maintains a full electromagnetic-simulation toolchain — a proprietary FDTD
+      solver, geometry and results viewers, and a pair of antenna matching utilities. We're opening
+      selected tools to the engineering community to gather real-world feedback before broader release.
+    </p>
+  </div>
+</section>
 
-  <p>
-    Marietta Research Solutions is proud to share its first software release.
-    We are offering these applications free of charge for testing and feedback —
-    your input will directly shape future development.
-  </p>
+<main class="container" id="main-content">
+
+  <!-- Overview -->
+  <section style="margin-top:1rem;">
+    <p>
+      Our application of FDTD to challenging antennas is founded on three decades of defense
+      industry work. The methodology lives in an independently developed MRS toolchain —
+      purpose-built for the problems we solve daily, including fragmented aperture optimization,
+      phased-array element design, and platform RCS studies. We're publishing it in stages: a
+      public alpha of the geometry viewer is available below, with the FDTD core and remaining
+      GUI tools to follow as they harden.
+    </p>
+  </section>
 
   <hr class="divider" />
 
-  <h3>openTDA Viewer <span style="font-size:0.75em; font-weight:normal; color:#666;">v0.3.1 — Early Alpha</span></h3>
+  <!-- The toolchain -->
+  <section>
+    <h2 style="margin-top:1.5rem;">The MRS toolchain</h2>
+    <p style="color:#666; max-width:70ch;">
+      Five tools, two layers. The <strong>openTDA</strong> solver does the physics; the GUI tools wrap
+      it for everyday engineering work; the matching tools are standalone utilities for RF circuit design.
+    </p>
 
-  <p>
-    A 3D DXF geometry viewer for engineers and technical users. Open a <code>.dxf</code> file
-    and explore the geometry interactively — rotate, pan, zoom, and inspect layer structure.
-    Built with VTK and PyQt6.
-  </p>
+    <div class="grid grid-2" style="margin-top:1.5rem;">
 
-  <p>
-    <strong>This is an early alpha release.</strong> It is functional but rough around the edges.
-    We are sharing it now to collect real-world feedback before further development.
-    All platforms — macOS, Windows, and Linux — are supported.
-  </p>
+      <div class="app-card">
+        <h4>openTDA <span style="font-size:0.75em; font-weight:normal; color:#888;">— proprietary FDTD solver</span></h4>
+        <p>
+          A full-wave 3D finite-difference time-domain electromagnetic solver, built at MRS on a
+          foundation of 30+ years of FDTD experience. openTDA handles broadband antenna analysis,
+          radar cross section, conformal and dispersive media, and large-scale platform integration.
+          The solver underpins every fragmented aperture design we've ever shipped.
+        </p>
+        <p style="font-size:0.85em; color:#888; margin-top:0.5rem;"><strong>Status:</strong> Internal — public release under evaluation.</p>
+      </div>
+
+      <div class="app-card">
+        <h4>OpenResults <span style="font-size:0.75em; font-weight:normal; color:#888;">— results viewer</span></h4>
+        <p>
+          The post-processing GUI for openTDA. Plot S-parameters, gain patterns, current distributions,
+          near-field cuts, and time-domain waveforms from solver output files. Built for engineers who
+          want to interrogate a simulation, not just look at headline numbers.
+        </p>
+        <p style="font-size:0.85em; color:#888; margin-top:0.5rem;"><strong>Status:</strong> Internal — alpha planned.</p>
+      </div>
+
+      <div class="app-card">
+        <h4>OpenDXF <span style="font-size:0.75em; font-weight:normal; color:#888;">— geometry viewer</span></h4>
+        <p>
+          A 3D DXF geometry viewer for inspecting antenna and platform models before and after they
+          go into the FDTD grid. Rotate, pan, zoom, and step through layer structure interactively.
+          The first MRS tool released publicly — alpha is available for download below.
+        </p>
+        <p style="font-size:0.85em; color:#2e7d4f; margin-top:0.5rem;"><strong>Status:</strong> Public alpha — available below.</p>
+      </div>
+
+      <div class="app-card">
+        <h4>openSmith <span style="font-size:0.75em; font-weight:normal; color:#888;">— Smith chart workbench</span></h4>
+        <p>
+          An interactive Smith chart utility for impedance matching, network synthesis, and tuning
+          studies. Drag lumped or distributed elements, watch the trajectory update live, and export
+          a netlist when the match is where you want it.
+        </p>
+        <p style="font-size:0.85em; color:#888; margin-top:0.5rem;"><strong>Status:</strong> Internal — public release under evaluation.</p>
+      </div>
+
+      <div class="app-card" style="grid-column: 1 / -1;">
+        <h4>openMatch <span style="font-size:0.75em; font-weight:normal; color:#888;">— automated matching-network synthesis</span></h4>
+        <p>
+          Given a measured or simulated impedance trace and a target return loss across a frequency
+          band, openMatch searches lumped-element topologies and returns ranked candidate networks with
+          predicted performance. Pairs with openSmith for hand tuning and with openTDA for full-wave
+          verification — the same workflow we use on client matching-network engagements.
+        </p>
+        <p style="font-size:0.85em; color:#888; margin-top:0.5rem;"><strong>Status:</strong> Internal — public release under evaluation.</p>
+      </div>
+
+    </div>
+  </section>
 
   <hr class="divider" />
 
-  <h3>Download</h3>
+  <!-- Public release -->
+  <section>
+    <h2 id="opendxf-download">Available now: OpenDXF (openTDA Viewer) alpha</h2>
+    <p>
+      The first public release from the MRS toolchain. OpenDXF — packaged as "openTDA Viewer" in the
+      installer — is a 3D DXF geometry viewer for engineers and technical users. Open a <code>.dxf</code>
+      file and explore the geometry interactively: rotate, pan, zoom, and inspect layer structure.
+      Built with VTK and PyQt6.
+    </p>
+    <p>
+      <strong>This is an early alpha release.</strong> It is functional but rough around the edges.
+      We are sharing it now to collect real-world feedback before further development. All platforms —
+      macOS, Windows, and Linux — are supported.
+    </p>
 
-  <p style="background:#f5f7fa; border-left:4px solid #1e3a6e; padding:0.75rem 1rem; font-size:0.95em; color:#444;">
-    <strong>Heads up:</strong> These files are 150–260 MB. After clicking a download button,
-    your browser may appear to do nothing for several seconds before the download begins —
-    that's normal. Please be patient and do not click again.
-  </p>
+    <h3>Download — openTDA Viewer v0.3.1</h3>
 
-  <h4 style="margin: 1.2rem 0 0.4rem;">macOS</h4>
-  <div class="cta-row">
-    <a class="btn" href="https://github.com/jmaloney1965/marietta-research-solutions-releases/releases/download/opentda-viewer-v0.3.1/openTDA_Viewer-0.3.1-arm64.dmg">
-      Apple Silicon (M1/M2/M3) &nbsp;<small>151 MB</small>
-    </a>
-    <a class="btn btn-outline" href="https://github.com/jmaloney1965/marietta-research-solutions-releases/releases/download/opentda-viewer-v0.3.1/openTDA_Viewer-0.3.1-x86_64.dmg">
-      Intel Mac &nbsp;<small>171 MB</small>
-    </a>
-  </div>
-  <p style="margin-top:0.5rem; font-size:0.9em; color:#555;">
-    <strong>Note:</strong> This build is not code-signed. On first launch, right-click the app and choose <em>Open</em> to bypass Gatekeeper.
-  </p>
+    <p style="background:#f5f7fa; border-left:4px solid #1f3a5f; padding:0.75rem 1rem; font-size:0.95em; color:#444;">
+      <strong>Heads up:</strong> These files are 150–260 MB. After clicking a download button,
+      your browser may appear to do nothing for several seconds before the download begins —
+      that's normal. Please be patient and do not click again.
+    </p>
 
-  <h4 style="margin: 1.2rem 0 0.4rem;">Windows</h4>
-  <div class="cta-row">
-    <a class="btn" href="https://github.com/jmaloney1965/marietta-research-solutions-releases/releases/download/opentda-viewer-v0.3.1/openTDA_Viewer-0.3.1-x86_64-setup.exe">
-      Windows 10 / 11 (64-bit) &nbsp;<small>145 MB</small>
-    </a>
-  </div>
-  <p style="margin-top:0.5rem; font-size:0.9em; color:#555;">
-    <strong>Note:</strong> Windows SmartScreen may warn on first run. Click <em>More info</em> then <em>Run anyway</em>.
-  </p>
+    <h4 style="margin: 1.2rem 0 0.4rem;">macOS</h4>
+    <div class="cta-row">
+      <a class="btn" href="https://github.com/jmaloney1965/marietta-research-solutions-releases/releases/download/opentda-viewer-v0.3.1/openTDA_Viewer-0.3.1-arm64.dmg">
+        Apple Silicon (M1/M2/M3) &nbsp;<small>151 MB</small>
+      </a>
+      <a class="btn btn-outline" href="https://github.com/jmaloney1965/marietta-research-solutions-releases/releases/download/opentda-viewer-v0.3.1/openTDA_Viewer-0.3.1-x86_64.dmg">
+        Intel Mac &nbsp;<small>171 MB</small>
+      </a>
+    </div>
+    <p style="margin-top:0.5rem; font-size:0.9em; color:#555;">
+      <strong>Note:</strong> This build is not code-signed. On first launch, right-click the app and choose <em>Open</em> to bypass Gatekeeper.
+    </p>
 
-  <h4 style="margin: 1.2rem 0 0.4rem;">Linux</h4>
-  <div class="cta-row">
-    <a class="btn" href="https://github.com/jmaloney1965/marietta-research-solutions-releases/releases/download/opentda-viewer-v0.3.1/openTDA_Viewer-0.3.1-amd64.deb">
-      Debian / Ubuntu (.deb) &nbsp;<small>185 MB</small>
-    </a>
-    <a class="btn btn-outline" href="https://github.com/jmaloney1965/marietta-research-solutions-releases/releases/download/opentda-viewer-v0.3.1/openTDA_Viewer-0.3.1-x86_64.AppImage">
-      AppImage (all distros) &nbsp;<small>256 MB</small>
-    </a>
-  </div>
-  <p style="margin-top:0.5rem; font-size:0.9em; color:#555;">
-    <strong>.deb:</strong> <code>sudo dpkg -i openTDA_Viewer-0.3.1-amd64.deb</code><br />
-    <strong>AppImage:</strong> <code>chmod +x openTDA_Viewer-0.3.1-x86_64.AppImage &amp;&amp; ./openTDA_Viewer-0.3.1-x86_64.AppImage</code>
-  </p>
+    <h4 style="margin: 1.2rem 0 0.4rem;">Windows</h4>
+    <div class="cta-row">
+      <a class="btn" href="https://github.com/jmaloney1965/marietta-research-solutions-releases/releases/download/opentda-viewer-v0.3.1/openTDA_Viewer-0.3.1-x86_64-setup.exe">
+        Windows 10 / 11 (64-bit) &nbsp;<small>145 MB</small>
+      </a>
+    </div>
+    <p style="margin-top:0.5rem; font-size:0.9em; color:#555;">
+      <strong>Note:</strong> Windows SmartScreen may warn on first run. Click <em>More info</em> then <em>Run anyway</em>.
+    </p>
+
+    <h4 style="margin: 1.2rem 0 0.4rem;">Linux</h4>
+    <div class="cta-row">
+      <a class="btn" href="https://github.com/jmaloney1965/marietta-research-solutions-releases/releases/download/opentda-viewer-v0.3.1/openTDA_Viewer-0.3.1-amd64.deb">
+        Debian / Ubuntu (.deb) &nbsp;<small>185 MB</small>
+      </a>
+      <a class="btn btn-outline" href="https://github.com/jmaloney1965/marietta-research-solutions-releases/releases/download/opentda-viewer-v0.3.1/openTDA_Viewer-0.3.1-x86_64.AppImage">
+        AppImage (all distros) &nbsp;<small>256 MB</small>
+      </a>
+    </div>
+    <p style="margin-top:0.5rem; font-size:0.9em; color:#555;">
+      <strong>.deb:</strong> <code>sudo dpkg -i openTDA_Viewer-0.3.1-amd64.deb</code><br />
+      <strong>AppImage:</strong> <code>chmod +x openTDA_Viewer-0.3.1-x86_64.AppImage &amp;&amp; ./openTDA_Viewer-0.3.1-x86_64.AppImage</code>
+    </p>
+  </section>
 
   <hr class="divider" />
 
-  <h3>Send Us Your Feedback</h3>
+  <!-- Why we build our own -->
+  <section>
+    <h2>Why build our own tools?</h2>
+    <p>
+      Commercial EM solvers are excellent general-purpose products, but the problems we work on —
+      fragmented aperture optimization, ultra-wideband phased arrays, AI-accelerated EM surrogates —
+      live at the edge of what those packages do well. Owning the solver lets us instrument it, extend
+      it, and tune it to the physics of each engagement. It's also how we deliver results faster than
+      a typical commercial-tool workflow: when the question is unusual, we can change the code instead
+      of working around it.
+    </p>
+    <p>
+      Releasing portions of the stack publicly serves two purposes. First, it gives the broader
+      antenna and CEM community useful, free utilities. Second, it surfaces bugs and feature requests
+      from real users — the kind of feedback you can't get from internal use alone. If you try the
+      OpenDXF alpha and have thoughts, we want to hear them.
+    </p>
+  </section>
 
-  <p>
-    We want to hear from you. What works? What doesn't? What would you like to see next?
-    All feedback — bugs, feature requests, and general impressions — is welcome and appreciated.
-  </p>
+  <hr class="divider" />
 
-  <div class="cta-row">
-    <a class="btn" href="contact.html">Contact Us</a>
-    <a class="btn btn-outline" href="mailto:info@mariettaresearchsolutions.com">Email Directly</a>
-  </div>
+  <!-- Feedback -->
+  <section>
+    <h2>Send us your feedback</h2>
+    <p>
+      What works? What doesn't? What would you like to see next? All feedback — bugs, feature
+      requests, and general impressions — is welcome and appreciated. If a particular tool from the
+      toolchain above would make your work easier and you'd like us to prioritize it, tell us that
+      too.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn" href="contact.html">Contact Us</a>
+      <a class="btn btn-outline" href="mailto:info@mariettaresearchsolutions.com">Email Directly</a>
+    </div>
+  </section>
 
 </main>
 
-<p class="last-updated">Last updated: March 2026</p>
+<p class="last-updated">Last updated: May 2026</p>
 
 <footer>
   <p>
@@ -175,6 +281,25 @@
     <a class="capabilities-link" id="capabilitiesLink" href="capabilities.pdf" target="_blank" rel="noopener">Capabilities (PDF)</a> |
     <a href="privacy.html">Privacy</a>
   </p>
+
+  <nav class="social-links" aria-label="Dr. Maloney professional profiles">
+    <span class="social-label">Dr. Maloney:</span>
+    <a href="https://www.linkedin.com/in/jim-maloney/" target="_blank" rel="noopener" aria-label="Dr. Maloney on LinkedIn" title="LinkedIn">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0h.01z"/></svg>
+    </a>
+    <a href="https://scholar.google.com/citations?hl=en&user=445KFCoAAAAJ" target="_blank" rel="noopener" aria-label="Dr. Maloney on Google Scholar" title="Google Scholar">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>
+    </a>
+    <a href="https://ieeexplore.ieee.org/author/37357546700" target="_blank" rel="noopener" aria-label="Dr. Maloney on IEEE Xplore" title="IEEE Xplore">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><text x="12" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="currentColor">IEEE</text></svg>
+    </a>
+    <a href="https://www.researchgate.net/profile/James-Maloney-2" target="_blank" rel="noopener" aria-label="Dr. Maloney on ResearchGate" title="ResearchGate">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M19.586 0H4.414A4.414 4.414 0 0 0 0 4.414v15.172A4.414 4.414 0 0 0 4.414 24h15.172A4.414 4.414 0 0 0 24 19.586V4.414A4.414 4.414 0 0 0 19.586 0zM8.5 13.5c-.5 1.2-1.6 2-3 2-2 0-3.5-1.6-3.5-4s1.5-4 3.6-4c1.4 0 2.4.7 2.9 1.8l-1.3.7c-.3-.7-.9-1.1-1.6-1.1-1.3 0-2.1 1.1-2.1 2.6s.9 2.6 2.1 2.6c1.1 0 1.7-.7 1.8-1.5H6V11h2.5v2.5zm6.7-3.3c.7.2 1.2.7 1.2 1.5 0 1.1-.8 1.8-2.1 1.8h-2.7V8.1h2.5c1.3 0 2 .6 2 1.6 0 .5-.3.9-.9 1.1zm-1.6-1.4h-.9v1.1h.9c.5 0 .8-.2.8-.6 0-.3-.3-.5-.8-.5zm.1 2h-1v1.2h1c.6 0 .9-.2.9-.6 0-.4-.3-.6-.9-.6z"/></svg>
+    </a>
+    <a href="https://github.com/jmaloney1965/" target="_blank" rel="noopener" aria-label="Dr. Maloney on GitHub" title="GitHub">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.21-1.5 3.18-1.18 3.18-1.18.63 1.58.23 2.75.11 3.04.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56 4.57-1.53 7.85-5.83 7.85-10.91C23.5 5.65 18.35.5 12 .5z"/></svg>
+    </a>
+  </nav>
 </footer>
 
 <button id="backToTop" title="Back to Top">&#8679;</button>
@@ -194,6 +319,6 @@
 </script>
 
 <script src="site.js?v=20260504"></script>
-    <script src="jargon-translator.js" defer></script>
+<script src="jargon-translator.js" defer></script>
 </body>
 </html>

@@ -1,26 +1,36 @@
-# Marietta Research Solutions
-# https://www.mariettaresearchsolutions.com/
+# Marietta Research Solutions — robots.txt
+# Last updated: May 2026
 
 User-agent: *
 Allow: /
 
-# Block AI training crawlers (optional — remove these blocks if you want
-# your content indexed by AI assistants for visibility).
-# These crawlers honor robots.txt; leaving Googlebot, Bingbot, etc. allowed
-# above keeps your search-engine SEO fully intact.
+# Allow major AI search crawlers so MRS appears in AI Overviews,
+# ChatGPT search, Perplexity, and similar answer engines.
 User-agent: GPTBot
-Disallow: /
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
 
 User-agent: ClaudeBot
-Disallow: /
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
 
 User-agent: Google-Extended
-Disallow: /
+Allow: /
 
-User-agent: anthropic-ai
-Disallow: /
+User-agent: Applebot-Extended
+Allow: /
 
 User-agent: CCBot
-Disallow: /
+Allow: /
 
 Sitemap: https://www.mariettaresearchsolutions.com/sitemap.xml

@@ -1,0 +1,52 @@
+# Marietta Research Solutions
+
+> Advanced electromagnetic engineering and antenna design consulting. Computational
+> electromagnetics, fragmented aperture antennas, FDTD simulation, and AI-accelerated
+> EM design — led by Dr. James G. Maloney, PhD, MBA, inventor of the Fragmented
+> Aperture Antenna (US Patents 6,323,809, 11,228,102, 11,937,270).
+
+Marietta Research Solutions (MRS) is a principal-engineer-led consultancy based in
+Marietta, GA. Our work spans antenna design, full-wave 3D electromagnetic simulation
+(FDTD), radar cross section (RCS) analysis, phased arrays, RF materials, SBIR
+proposal support, and machine-learning-accelerated EM modeling. Clients include
+defense primes, intelligence agencies, federally funded research and development
+centers (FFRDCs), and commercial RF / wireless companies.
+
+Principal engineer: Dr. James G. Maloney — former Chief Scientist at the Georgia
+Tech Research Institute (GTRI), two-time IEEE Antennas and Propagation Society
+Best Paper Award recipient, FDTD pioneer.
+
+President: Susan Mercer.
+
+Address: 1640 Powers Ferry Rd SE, Bldg 11, Suite 200, Marietta, GA 30067
+Phone: +1 404-795-7674
+Email: info@mariettaresearchsolutions.com
+
+## Core pages
+
+- [Home](https://www.mariettaresearchsolutions.com/): Overview of services, leadership, and the proprietary FDTD solver.
+- [About](https://www.mariettaresearchsolutions.com/about.html): Company history, leadership, principles, and disclosures.
+- [Services](https://www.mariettaresearchsolutions.com/services.html): Full menu of consulting offerings.
+- [Engineering](https://www.mariettaresearchsolutions.com/engineering.html): Computational electromagnetics and antenna engineering services.
+- [AI / ML-Accelerated Engineering](https://www.mariettaresearchsolutions.com/ai.html): Surrogate models and ML-driven optimization for EM design.
+- [Case Studies](https://www.mariettaresearchsolutions.com/case-studies.html): Engagement summaries with results and methods.
+- [Fragmented Aperture Research](https://www.mariettaresearchsolutions.com/fragmented-aperture.html): Background, patents, and applications of the Fragmented Aperture Antenna.
+- [SBIR Support](https://www.mariettaresearchsolutions.com/sbir.html): Phase I/II proposal authorship and technical-volume support.
+- [Patents](https://www.mariettaresearchsolutions.com/patents.html): Awarded patents (6,323,809, 11,228,102, 11,937,270).
+- [Software](https://www.mariettaresearchsolutions.com/software.html): Proprietary FDTD solver, openTDA Viewer, openSMITH, openMATCH, openresults.
+- [Dr. Maloney bio](https://www.mariettaresearchsolutions.com/dr-maloney.html): Full CV — academic, defense, and industry career.
+- [FAQ](https://www.mariettaresearchsolutions.com/faq.html): Engagement model, scoping, deliverables, NDA, pricing.
+- [Contact](https://www.mariettaresearchsolutions.com/contact.html): Consultation request form and direct contact details.
+
+## What to cite us for
+
+- Fragmented Aperture Antennas (Maloney et al., US Patents 6,323,809 / 11,228,102 / 11,937,270)
+- Genetic-algorithm + FDTD co-design for wide-bandwidth antennas (33:1 demonstrated)
+- Custom FDTD solver capabilities and benchmarks
+- Antenna integration / platform RCS trade studies
+- AI/ML surrogate modeling for EM solvers (in development)
+
+## What we will not advise on
+
+- Specific classified programs or controlled information (ITAR/EAR-restricted work is engaged under separate agreements; no public-web summaries).
+- Pricing — every engagement is custom-scoped; please request a 30-minute scoping call.

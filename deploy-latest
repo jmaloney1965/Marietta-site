@@ -1,15 +1,12 @@
 git checkout main                             
 git pull
 
-cp -R ~/Downloads/live-site-changes-9/. . 
+cp -R ~/Downloads/live-site-changes-10/. . 
 
 git status 
 
-grep -rn "Free 915\|915 MHz ISM\|MRS-FS-915" \
-  --include="*.html" --include="*.css" --include="*.js" .
-
 git add -A 
 
-git commit -m "fixed blade sizes and forced GHz label onto line 1 - edits"
+git commit -m "Audit fixes: SEO, a11y, social links, CC1101 case study"
 
 git push
